@@ -1,14 +1,14 @@
 /**
  * 
  */
-package spa.samples.healthygroceryshopping.domain;
+package spa.samples.healthygroceryshopping.domain.types;
 
 import java.util.Iterator;
 
 /**
  * Author: Hafedh Mili
  */
-public interface FoodProductItem extends Food {
+public interface FoodProductItem extends FoodProduct {
 	
 	public float getPricePerUnit();
 	

@@ -1,14 +1,14 @@
 /**
  * 
  */
-package spa.samples.healthygroceryshopping.domain;
+package spa.samples.healthygroceryshopping.domain.types;
 
 import java.util.Iterator;
 
 /**
  * Author: Ghizlane Elboussaidi & Hafedh Mili
  */
-public interface FoodProductCategory extends Food {
+public interface FoodProductCategory extends FoodProduct {
 	
 	public String getFDCId();
 	

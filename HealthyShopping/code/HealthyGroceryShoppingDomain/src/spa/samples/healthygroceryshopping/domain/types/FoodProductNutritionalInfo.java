@@ -1,7 +1,7 @@
 /**
  * 
  */
-package spa.samples.healthygroceryshopping.domain;
+package spa.samples.healthygroceryshopping.domain.types;
 
 import java.time.Instant;
 import java.util.Iterator;
@@ -11,7 +11,7 @@ import java.util.Iterator;
  */
 public interface FoodProductNutritionalInfo {
 	
-	public Food getFood();
+	public FoodProduct getFood();
 	
 	public Instant getInfoDate();
 	

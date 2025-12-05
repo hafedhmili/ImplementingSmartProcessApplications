@@ -1,29 +1,15 @@
 /**
  * 
  */
-package spa.samples.healthygroceryshopping.domain;
+package spa.samples.healthygroceryshopping.domain.types;
 
 import java.util.Iterator;
 
 /**
  * Author: Hafedh Mili
  */
-public interface Food {
-	
-	public String getName();
-	
-	public String getDescription();
-	
-	public void setDescription();
-	
-	public String brandOrVariety();
-	
-	public void setBrandOrVariety(String brandOrVariety);
-	
-	public String getProducer();
-	
-	public void setProducer(String producerId);
-	
+public interface FoodProduct extends Product {
+		
 	public MeasurementUnit getMeasurementUnit();
 	
 	public void setMeasurementUnit(MeasurementUnit unit);

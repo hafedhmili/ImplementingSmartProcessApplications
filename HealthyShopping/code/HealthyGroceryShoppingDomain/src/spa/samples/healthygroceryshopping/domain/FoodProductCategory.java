@@ -6,7 +6,7 @@ package spa.samples.healthygroceryshopping.domain;
 import java.util.Iterator;
 
 /**
- * Author: Hafedh Mili
+ * Author: Ghizlane Elboussaidi & Hafedh Mili
  */
 public interface FoodProductCategory extends Food {
 	

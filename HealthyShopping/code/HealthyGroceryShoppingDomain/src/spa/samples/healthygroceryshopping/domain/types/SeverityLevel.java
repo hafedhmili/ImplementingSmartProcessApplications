@@ -6,7 +6,6 @@ package spa.samples.healthygroceryshopping.domain.types;
 /**
  * Author: Hafedh Mili
  */
-public enum CartState {
-	HealthySafe, UnhealthySafe, UnhealthyUnsafe
-
+public enum SeverityLevel {
+	Benign, Low, Moderate, High, Extreme
 }

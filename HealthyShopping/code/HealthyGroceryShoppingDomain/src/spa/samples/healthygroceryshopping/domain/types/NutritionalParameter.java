@@ -19,7 +19,8 @@ import java.util.Iterator;
  * sodium content of a particular food item, the reference unit could be grams, as in
  * "30 mg of Potassium <i>per</i> 30 <b>grams</b> of [food item]", where <b>gram</b> is one
  * of the reference units. For liquid products, we are going to have volume units (liquid ounce,
- * liter, quart, etc.) 
+ * liter, quart, etc.)
+ * 
  * Author: Ghizlane Elboussaidi & Hafedh Mili
  */
 public interface NutritionalParameter {

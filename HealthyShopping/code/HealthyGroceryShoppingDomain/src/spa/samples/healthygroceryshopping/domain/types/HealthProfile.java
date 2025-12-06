@@ -6,7 +6,6 @@ package spa.samples.healthygroceryshopping.domain.types;
 /**
  * Author: Hafedh Mili
  */
-public enum CartState {
-	HealthySafe, UnhealthySafe, UnhealthyUnsafe
+public interface HealthProfile {
 
 }

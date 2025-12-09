@@ -20,6 +20,12 @@ package spa.samples.healthygroceryshopping.domain.types;
 public interface CartItem {
 	
 	/**
+	 * Get the cart into which the item was inserted
+	 * @return
+	 */
+	public Cart getCart();
+	
+	/**
 	 * returns the tag attached to the product. The tag may contain several data items
 	 * @return
 	 */

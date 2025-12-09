@@ -10,7 +10,7 @@ public interface DomainObjectFactory {
 	
 	public Cart createCart(String serialNumber);
 	
-	public CartItem createCartItem(Tag tag);
+	public CartItem createCartItem(Tag tag, Cart cart);
 	
 	public CartScore createCartScore(Cart cart);
 	
@@ -51,6 +51,8 @@ public interface DomainObjectFactory {
 	public ProductLineItem createProductLineItem(Product product, MeasurementUnit unit);
 	
 	public Sensor createSensor(SensorModel model, String serialNumber);
+	
+	public SensorModel createSensorModel(SensorType type, String modelNumber, String modelName);
 	
 	public ShoppingCart createShoppingCart(Person person, Cart cart);
 	

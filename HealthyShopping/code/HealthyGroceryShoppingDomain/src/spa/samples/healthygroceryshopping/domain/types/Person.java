@@ -42,6 +42,12 @@ public interface Person {
 	public Cart pickCart(String serialNumber);
 	
 	/**
+	 * returns the current physical cart--if any
+	 * @return
+	 */
+	public Cart getPhysicalCart();
+	
+	/**
 	 * the person walks into a store and grabs a (physical cart). This will
 	 * start a shopping session
 	 * @param cart

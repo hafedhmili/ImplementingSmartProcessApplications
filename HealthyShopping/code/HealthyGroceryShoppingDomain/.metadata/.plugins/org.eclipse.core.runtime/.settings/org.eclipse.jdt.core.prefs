@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.classpathVariable.ILOG_EXECUTION_SERVER_HOME=/Applications/Eclipse Rule Designer.app/Contents/Eclipse/plugins/com.ibm.rules.res.tools_9.0.0.0-IF004
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=/Users/mili_h/Library/Java/JavaVirtualMachines/corretto-23.0.2/Contents/Home/lib/jrt-fs.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=/Users/mili_h/Library/Java/JavaVirtualMachines/corretto-23.0.2/Contents/Home/lib/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=23
+org.eclipse.jdt.core.compiler.compliance=23
+org.eclipse.jdt.core.compiler.release=enabled
+org.eclipse.jdt.core.compiler.source=23

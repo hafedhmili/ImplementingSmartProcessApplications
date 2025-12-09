@@ -55,11 +55,27 @@ public interface PersonProfile {
 	 */
 	public Iterator<HealthCondition> getHealthConditions();
 	
+	/**
+	 * adds a dietary preference to the profile of the person. This navigates to the
+	 * dietary component of the person profile to make the addition
+	 * @param preference
+	 */
 	public void addDietaryPreference(DietaryPreference preference);
 	
+	/**
+	 * removes a the dietary preference <code>preference</code> from the dietary profile
+	 * of the person profile.
+	 * 
+	 * @param preference
+	 * @return
+	 */
 	public DietaryPreference removeDietaryPreference(DietaryPreference preference);
 	
-	public Iterator<DietaryPreference> getPreferences();
+	/**
+	 * return the list of dietary preferences of the person
+	 * @return
+	 */
+	public Iterator<DietaryPreference> getDietaryPreferences();
 	
 	
 

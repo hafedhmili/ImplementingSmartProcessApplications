@@ -1,0 +1,35 @@
+!SESSION 2025-12-06 14:41:06.664 -----------------------------------------------
+eclipse.buildId=4.37.0.20250905-1455
+java.version=23.0.2
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/mili_h/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/mili_h/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2025-12-06 14:41:08.944
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.lemminx.uber-jar 4 0 2025-12-06 14:41:09.155
+!MESSAGE bundle org.eclipse.lemminx.uber-jar:0.31.0 (272) Component descriptor entry 'OSGI-INF/*.xml' not found
+
+!ENTRY ch.qos.logback.classic 1 0 2025-12-06 14:41:39.933
+!MESSAGE Logback config file: /Users/mili_h/Dropbox/JRules book/2018-book/labs/ODM/case studies/ImplementingSmartProcessApplications/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.100.20250418-1315.xml
+
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2025-12-06 14:41:58.599
+!MESSAGE Setup tasks were performed during startup updating 5 preferences. See '/Applications/eclipse/java-2025-09/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.oomph.setup/setup.log' for details
+!SESSION 2025-12-07 00:05:49.005 -----------------------------------------------
+eclipse.buildId=4.37.0.20250905-1455
+java.version=23.0.2
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/mili_h/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/mili_h/.eclipse_keyring
+
+!ENTRY ch.qos.logback.classic 1 0 2025-12-07 00:05:51.902
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.lemminx.uber-jar 4 0 2025-12-07 00:05:52.137
+!MESSAGE bundle org.eclipse.lemminx.uber-jar:0.31.0 (272) Component descriptor entry 'OSGI-INF/*.xml' not found
+
+!ENTRY ch.qos.logback.classic 1 0 2025-12-07 00:06:00.515
+!MESSAGE Logback config file: /Users/mili_h/Dropbox/JRules book/2018-book/labs/ODM/case studies/ImplementingSmartProcessApplications/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.100.20250418-1315.xml

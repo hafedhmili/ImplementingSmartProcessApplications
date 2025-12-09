@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><teamservers>
+<teamserver>
+<target dataSource="" login="odmAdmin" url="http://localhost:9060/decisioncenter"/>
+<entry baseType="BRLRule" checksum="1334413502" projectName="heart monitoring rules" qualifiedName="heart.device.device not working properly" sourceCS="188BD1A6FE2A30D791DC972DE03CB1DB" targetCS="1334413502" type="BRLRule" uuid="a6ecc4a9-537f-461b-afac-a475d1ce09a2"/>
+<entry baseType="BRLRule" checksum="3891597401" projectName="heart monitoring rules" qualifiedName="heart.test rule ruleset variable" sourceCS="B591E13EA71D46C67C8A73DF15F0577E" targetCS="3891597401" type="BRLRule" uuid="2dd73948-1fbd-4f6a-b62b-f0c31379e706"/>
+<entry baseType="Resource" checksum="151713799" projectName="heart monitoring rules" qualifiedName="xom-libraries/health_monitoring_XOM.zip" sourceCS="6351F1B5FADAFE0531CE55B7CE812BEA" targetCS="151713799" type="Resource" uuid="xom-libraries/health_monitoring_XOM.zip"/>
+<entry baseType="Ruleflow" checksum="3816681515" projectName="heart monitoring rules" qualifiedName="heart.heart monitoring ruleflow" sourceCS="338E326B4DCE73975AA1813AF1007728" targetCS="3816681515" type="Ruleflow" uuid="1f6b5d3d-b814-44e1-bb44-4ffefbdcdac6"/>
+<entry baseType="RulePackageInfo" checksum="292814109" projectName="heart monitoring rules" qualifiedName="heart" sourceCS="200D9A945ED3AB1D630CD10DDA4D0838" targetCS="292814109" type="RulePackageInfo" uuid="d33e5dde-3716-40c0-a44a-d0303ac24717"/>
+<entry baseType="RulePackageInfo" checksum="1137825726" projectName="heart monitoring rules" qualifiedName="heart.device" sourceCS="FC3BFA91A0BF2909D0C334D235443AD0" targetCS="1137825726" type="RulePackageInfo" uuid="8f89a55b-af41-47e2-8b3d-d750ea59eba7"/>
+<entry baseType="RulePackageInfo" checksum="1011423526" projectName="heart monitoring rules" qualifiedName="heart.patient" sourceCS="277563EB63402D989DE5907AB6AEC532" targetCS="1011423526" type="RulePackageInfo" uuid="cf1ff575-2457-4f8d-a527-10306a40143b"/>
+<entry baseType="RulePackageInfo" checksum="4293364018" projectName="heart monitoring rules" qualifiedName="heart.readings" sourceCS="602F16A1E621669798F7ACAD6FF1EDA5" targetCS="4293364018" type="RulePackageInfo" uuid="0ad925d0-6023-46d2-8b6a-4989560ffb82"/>
+<entry baseType="RuleProjectInfo" checksum="389873859" projectName="heart monitoring rules" qualifiedName="heart monitoring rules" sourceCS="F4981CD33DE5B5FA982FFBC828796B43" targetCS="389873859" type="RuleProjectInfo" uuid="3d849777-bf1d-4683-aa8c-27e9688ca16a"/>
+<entry baseType="VariableSet" checksum="1567259629" projectName="heart monitoring rules" qualifiedName="heart monitoring vset" sourceCS="89E7B512A2F9BAA775504557C4DC69ED" targetCS="1567259629" type="VariableSet" uuid="f1e6f092-fd3d-4109-923b-bc46699e8d4a"/>
+</teamserver>
+</teamservers>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>heart monitoring vset</name>
+  <uuid>f1e6f092-fd3d-4109-923b-bc46699e8d4a</uuid>
+  <variables name="heart_patient" type="spa.samples.health.domain.Patient" initialValue="" verbalization="the patient"/>
+  <variables name="heart_monitor" type="spa.samples.health.domain.Device" initialValue="" verbalization="the heart monitor"/>
+  <variables name="heart_alert" type="spa.samples.health.domain.Alert" initialValue="" verbalization="the alert"/>
+  <variables name="monitorIsReliable" type="boolean" initialValue="" verbalization="monitor reliable"/>
+  <variables name="readingValueOK" type="boolean" initialValue="" verbalization="reading value OK"/>
+  <variables name="heart_reading" type="spa.samples.health.domain.Reading" initialValue="" verbalization="the heart monitor reading"/>
+</ilog.rules.studio.model.base:VariableSet>

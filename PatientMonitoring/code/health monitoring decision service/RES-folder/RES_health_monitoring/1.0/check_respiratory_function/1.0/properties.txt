@@ -1,0 +1,4 @@
+#Sun Feb 23 18:35:57 EST 2025
+ruleset.engine.version=1.70.0
+ruleset.engine=de
+ruleset.uuid=13abde7f-5987-47dc-b5d3-252bd43a403c

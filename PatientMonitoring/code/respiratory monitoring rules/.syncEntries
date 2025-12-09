@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><teamservers>
+<teamserver>
+<target dataSource="" login="odmAdmin" url="http://localhost:9060/decisioncenter"/>
+<entry baseType="Ruleflow" checksum="451763957" projectName="respiratory monitoring rules" qualifiedName="respiratory.respiratory monitoring ruleflow" sourceCS="E9C268B26104787B0972E2CD854654C3" targetCS="451763957" type="Ruleflow" uuid="4fbc6c1d-b000-4c92-bdee-2a6e286264d6"/>
+<entry baseType="RulePackageInfo" checksum="566064633" projectName="respiratory monitoring rules" qualifiedName="respiratory" sourceCS="E1A132D39C7406D341FFC74CBC8F36DB" targetCS="566064633" type="RulePackageInfo" uuid="921d3ee6-ed89-4871-8104-85a8d0d62cae"/>
+<entry baseType="RulePackageInfo" checksum="3771952404" projectName="respiratory monitoring rules" qualifiedName="respiratory.device" sourceCS="CB08D6EFF85860638AFC2C25C0774AAE" targetCS="3771952404" type="RulePackageInfo" uuid="24973292-7c15-4d12-aa8e-2c209dca9971"/>
+<entry baseType="RulePackageInfo" checksum="183062890" projectName="respiratory monitoring rules" qualifiedName="respiratory.patient" sourceCS="20509DB5942EC6EC45F4B50D5CCEE87B" targetCS="183062890" type="RulePackageInfo" uuid="f4a4c2ba-6ab8-4ae4-ad53-1b166e8f7d60"/>
+<entry baseType="RulePackageInfo" checksum="2159748289" projectName="respiratory monitoring rules" qualifiedName="respiratory.readings" sourceCS="6A3A7DA7694BB512047A29A5E20C753F" targetCS="2159748289" type="RulePackageInfo" uuid="061b5841-eeff-4555-bdbb-e4691510b487"/>
+<entry baseType="RuleProjectInfo" checksum="723881782" projectName="respiratory monitoring rules" qualifiedName="respiratory monitoring rules" sourceCS="9F47F9E451D66FE827C699C5878F2247" targetCS="723881782" type="RuleProjectInfo" uuid="60f725cc-26e3-451c-b2d3-0ee78658f202"/>
+<entry baseType="VariableSet" checksum="1673644953" projectName="respiratory monitoring rules" qualifiedName="respiratory monitoring vset" sourceCS="85188BE51D302B5FD6B15738D132F371" targetCS="1673644953" type="VariableSet" uuid="4ac73043-9ae7-4bb6-9d97-6454fce0abf4"/>
+</teamserver>
+</teamservers>

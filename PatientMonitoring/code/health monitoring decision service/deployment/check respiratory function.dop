@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="check_respiratory_function" usingRuleflow="true" ruleflowName="respiratory monitoring ruleflow" targetRuleProjectName="respiratory monitoring rules">
+  <name>check respiratory function</name>
+  <uuid>1ae34aea-452d-463b-90a1-7adb33151944</uuid>
+  <referencedVariables variableName="patient" variableSetName="respiratory monitoring vset">
+    <variableSet href="../../respiratory%20monitoring%20rules/rules/respiratory%20monitoring%20vset.var#4ac73043-9ae7-4bb6-9d97-6454fce0abf4"/>
+  </referencedVariables>
+  <referencedVariables variableName="oximeter" variableSetName="respiratory monitoring vset" direction="IN_OUT">
+    <variableSet href="../../respiratory%20monitoring%20rules/rules/respiratory%20monitoring%20vset.var#4ac73043-9ae7-4bb6-9d97-6454fce0abf4"/>
+  </referencedVariables>
+  <referencedVariables variableName="alert" variableSetName="respiratory monitoring vset" direction="OUT">
+    <variableSet href="../../respiratory%20monitoring%20rules/rules/respiratory%20monitoring%20vset.var#4ac73043-9ae7-4bb6-9d97-6454fce0abf4"/>
+  </referencedVariables>
+  <ruleflow href="../../respiratory%20monitoring%20rules/rules/respiratory/respiratory%20monitoring%20ruleflow.rfl#4fbc6c1d-b000-4c92-bdee-2a6e286264d6"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="check respiratory function_extractor" validator="Default Validator"/>
+  <targetRuleProject href="../../respiratory%20monitoring%20rules#60f725cc-26e3-451c-b2d3-0ee78658f202"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

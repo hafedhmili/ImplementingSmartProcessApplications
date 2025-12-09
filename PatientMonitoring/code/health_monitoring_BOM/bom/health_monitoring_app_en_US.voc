@@ -1,0 +1,253 @@
+# Vocabulary Properties
+spa.samples.health.domain.HealthEpisodeType.Cure#instance.label = Cure
+spa.samples.health.domain.HealthEpisodeType.Diagnosis#instance.label = Diagnosis
+spa.samples.health.domain.HealthEpisodeType.Exacerbation#instance.label = Exacerbation
+spa.samples.health.domain.HealthEpisodeType.Healing#instance.label = Healing
+spa.samples.health.domain.HealthEpisodeType.Infection#instance.label = Infection
+spa.samples.health.domain.HealthEpisodeType.Injury#instance.label = Injury
+spa.samples.health.domain.HealthEpisodeType.Medication#instance.label = Medication
+spa.samples.health.domain.HealthEpisodeType.Monitoring#instance.label = Monitoring
+spa.samples.health.domain.HealthEpisodeType.OnSet#instance.label = OnSet
+spa.samples.health.domain.HealthEpisodeType.Relief#instance.label = Relief
+spa.samples.health.domain.HealthEpisodeType.Remission#instance.label = Remission
+spa.samples.health.domain.HealthEpisodeType.Treatment#instance.label = Treatment
+uuid = eaa1b34a-2958-4500-b06e-29dc72452099
+
+# spa.samples.health.domain.ActType
+spa.samples.health.domain.ActType#concept.label = act type
+
+# spa.samples.health.domain.Activity
+spa.samples.health.domain.Activity#concept.label = activity
+spa.samples.health.domain.Activity.activityType#phrase.navigation = {activity type} of {this}
+spa.samples.health.domain.Activity.intensity#phrase.navigation = {intensity} of {this}
+spa.samples.health.domain.Activity.patient#phrase.navigation = {patient} of {this}
+
+# spa.samples.health.domain.ActivityType
+spa.samples.health.domain.ActivityType#concept.label = activity type
+spa.samples.health.domain.ActivityType.description#phrase.navigation = {description} of {this}
+spa.samples.health.domain.ActivityType.name#phrase.navigation = {name} of {this}
+
+# spa.samples.health.domain.Address
+spa.samples.health.domain.Address#concept.label = address
+
+# spa.samples.health.domain.Address.AddressType
+spa.samples.health.domain.Address.AddressType#concept.label = address type
+spa.samples.health.domain.Address.AddressType.Personal#instance.label = Personal
+spa.samples.health.domain.Address.AddressType.Professional#instance.label = Professional
+
+# spa.samples.health.domain.Address.StreetOrientation
+spa.samples.health.domain.Address.StreetOrientation#concept.label = street orientation
+spa.samples.health.domain.Address.StreetOrientation.East#instance.label = East
+spa.samples.health.domain.Address.StreetOrientation.North#instance.label = North
+spa.samples.health.domain.Address.StreetOrientation.South#instance.label = South
+spa.samples.health.domain.Address.StreetOrientation.West#instance.label = West
+
+# spa.samples.health.domain.Address.StreetType
+spa.samples.health.domain.Address.StreetType#concept.label = street type
+spa.samples.health.domain.Address.StreetType.Alley#instance.label = Alley
+spa.samples.health.domain.Address.StreetType.Avenue#instance.label = Avenue
+spa.samples.health.domain.Address.StreetType.Boulevard#instance.label = Boulevard
+spa.samples.health.domain.Address.StreetType.Street#instance.label = Street
+spa.samples.health.domain.Address.city#phrase.navigation = {city} of {this}
+spa.samples.health.domain.Address.doorNumber#phrase.navigation = {door number} of {this}
+spa.samples.health.domain.Address.postalCode#phrase.navigation = {postal code} of {this}
+spa.samples.health.domain.Address.stateProvince#phrase.navigation = {state province} of {this}
+spa.samples.health.domain.Address.streetName#phrase.navigation = {street name} of {this}
+
+# spa.samples.health.domain.Alert
+spa.samples.health.domain.Alert#concept.label = alert
+
+# spa.samples.health.domain.AlertType
+spa.samples.health.domain.AlertType#concept.label = alert type
+spa.samples.health.domain.AlertType.ForTheRecord#instance.label = ForTheRecord
+spa.samples.health.domain.AlertType.NeedsToBeCheckedMidTerm#instance.label = NeedsToBeCheckedMidTerm
+spa.samples.health.domain.AlertType.NeedsToBecheckedShortTerm#instance.label = NeedsToBecheckedShortTerm
+spa.samples.health.domain.AlertType.RequiresEmergency#instance.label = RequiresEmergency
+
+# spa.samples.health.domain.Country
+spa.samples.health.domain.Country#concept.label = country
+spa.samples.health.domain.Country.CA#instance.label = CA
+spa.samples.health.domain.Country.FR#instance.label = FR
+spa.samples.health.domain.Country.IT#instance.label = IT
+spa.samples.health.domain.Country.TN#instance.label = TN
+spa.samples.health.domain.Country.USA#instance.label = USA
+spa.samples.health.domain.Country.fullName#phrase.navigation = {full name} of {this}
+
+# spa.samples.health.domain.Device
+spa.samples.health.domain.Device#concept.label = device
+spa.samples.health.domain.Device.currentLocation#phrase.navigation = {current location} of {this}
+spa.samples.health.domain.Device.deviceID#phrase.navigation = {device ID} of {this}
+spa.samples.health.domain.Device.deviceModel#phrase.navigation = {device model} of {this}
+spa.samples.health.domain.Device.deviceState#phrase.action = set the device state of {this} to {device state}
+spa.samples.health.domain.Device.deviceState#phrase.navigation = {device state} of {this}
+spa.samples.health.domain.Device.patient#phrase.navigation = {patient} of {this}
+
+# spa.samples.health.domain.DeviceModel
+spa.samples.health.domain.DeviceModel#concept.label = device model
+spa.samples.health.domain.DeviceModel.deviceType#phrase.navigation = {device type} of {this}
+spa.samples.health.domain.DeviceModel.manufacturer#phrase.navigation = {manufacturer} of {this}
+spa.samples.health.domain.DeviceModel.modelDescription#phrase.navigation = {model description} of {this}
+spa.samples.health.domain.DeviceModel.modelName#phrase.navigation = {model name} of {this}
+
+# spa.samples.health.domain.DeviceState
+spa.samples.health.domain.DeviceState#concept.label = device state
+spa.samples.health.domain.DeviceState.Broken#instance.label = Broken
+spa.samples.health.domain.DeviceState.LowCharge#instance.label = LowCharge
+spa.samples.health.domain.DeviceState.Off#instance.label = Off
+spa.samples.health.domain.DeviceState.On#instance.label = On
+spa.samples.health.domain.DeviceState.WorkingCondition#instance.label = WorkingCondition
+
+# spa.samples.health.domain.DeviceType
+spa.samples.health.domain.DeviceType#concept.label = device type
+spa.samples.health.domain.DeviceType.name#phrase.navigation = {name} of {this}
+spa.samples.health.domain.DeviceType.supportedReadingTypes#phrase.navigation = {supported reading types} of {this}
+
+# spa.samples.health.domain.HealthAct
+spa.samples.health.domain.HealthAct#concept.label = health act
+spa.samples.health.domain.HealthAct.actType#phrase.navigation = {act type} of {this}
+spa.samples.health.domain.HealthAct.performedBy#phrase.navigation = {performed by} of {this}
+
+# spa.samples.health.domain.HealthCondition
+spa.samples.health.domain.HealthCondition#concept.label = health condition
+spa.samples.health.domain.HealthCondition.history#phrase.navigation = {history} of {this}
+spa.samples.health.domain.HealthCondition.onset#phrase.navigation = {onset} of {this}
+spa.samples.health.domain.HealthCondition.patient#phrase.navigation = {patient} of {this}
+spa.samples.health.domain.HealthCondition.severity#phrase.navigation = {severity} of {this}
+spa.samples.health.domain.HealthCondition.type#phrase.navigation = {type} of {this}
+
+# spa.samples.health.domain.HealthConditionType
+spa.samples.health.domain.HealthConditionType#concept.label = health condition type
+
+# spa.samples.health.domain.HealthEpisode
+spa.samples.health.domain.HealthEpisode#concept.label = health episode
+spa.samples.health.domain.HealthEpisode.endDate#phrase.navigation = {end date} of {this}
+spa.samples.health.domain.HealthEpisode.episodeType#phrase.navigation = {episode type} of {this}
+spa.samples.health.domain.HealthEpisode.readings#phrase.navigation = {readings} of {this}
+spa.samples.health.domain.HealthEpisode.severity#phrase.navigation = {severity} of {this}
+spa.samples.health.domain.HealthEpisode.startDate#phrase.navigation = {start date} of {this}
+
+# spa.samples.health.domain.HealthEpisodeType
+spa.samples.health.domain.HealthEpisodeType#concept.label = health episode type
+
+# spa.samples.health.domain.IntensityLevel
+spa.samples.health.domain.IntensityLevel#concept.label = intensity level
+spa.samples.health.domain.IntensityLevel.High#instance.label = High
+spa.samples.health.domain.IntensityLevel.Low#instance.label = Low
+spa.samples.health.domain.IntensityLevel.Moderate#instance.label = Moderate
+
+# spa.samples.health.domain.Location
+spa.samples.health.domain.Location#concept.label = location
+spa.samples.health.domain.Location.latitude#phrase.navigation = {latitude} of {this}
+spa.samples.health.domain.Location.logitude#phrase.navigation = {logitude} of {this}
+
+# spa.samples.health.domain.Patient
+spa.samples.health.domain.Patient#concept.label = patient
+spa.samples.health.domain.Patient.address#phrase.action = set the address of {this} to {address}
+spa.samples.health.domain.Patient.address#phrase.navigation = {address} of {this}
+spa.samples.health.domain.Patient.birthDate#phrase.navigation = {birth date} of {this}
+spa.samples.health.domain.Patient.currentLocation#phrase.navigation = {current location} of {this}
+spa.samples.health.domain.Patient.currentState#phrase.navigation = {current state} of {this}
+spa.samples.health.domain.Patient.firstName#phrase.navigation = {first name} of {this}
+spa.samples.health.domain.Patient.getLastReading(spa.samples.health.domain.ReadingType)#phrase.navigation = the last reading of type {0} for {this}
+spa.samples.health.domain.Patient.hasHeartCondition()#phrase.navigation = {this} is has heart condition
+spa.samples.health.domain.Patient.healthConditions#phrase.navigation = {health conditions} of {this}
+spa.samples.health.domain.Patient.lastName#phrase.navigation = {last name} of {this}
+spa.samples.health.domain.Patient.ssn#phrase.action = set the ssn of {this} to {ssn}
+spa.samples.health.domain.Patient.ssn#phrase.navigation = {ssn} of {this}
+
+# spa.samples.health.domain.PatientState
+spa.samples.health.domain.PatientState#concept.label = patient state
+spa.samples.health.domain.PatientState.ID#phrase.navigation = {ID} of {this}
+spa.samples.health.domain.PatientState.label#phrase.navigation = {label} of {this}
+spa.samples.health.domain.PatientState.nextState#phrase.action = set the next state of {this} to {next state}
+spa.samples.health.domain.PatientState.nextState#phrase.navigation = {next state} of {this}
+spa.samples.health.domain.PatientState.patient#phrase.navigation = {patient} of {this}
+spa.samples.health.domain.PatientState.previousState#phrase.action = set the previous state of {this} to {previous state}
+spa.samples.health.domain.PatientState.previousState#phrase.navigation = {previous state} of {this}
+
+# spa.samples.health.domain.PatientStateType
+spa.samples.health.domain.PatientStateType#concept.label = problematic state type
+spa.samples.health.domain.PatientStateType.BorderlineWithinBounds#instance.label = BorderlineWithinBounds
+spa.samples.health.domain.PatientStateType.Emergency#instance.label = Emergency
+spa.samples.health.domain.PatientStateType.NeedsAttentionEventually#instance.label = NeedsAttentionEventually
+spa.samples.health.domain.PatientStateType.NeedsAttentionSoon#instance.label = NeedsAttentionSoon
+spa.samples.health.domain.PatientStateType.Normal#instance.label = Normal
+
+# spa.samples.health.domain.ProcessingState
+spa.samples.health.domain.ProcessingState#concept.label = processing state
+spa.samples.health.domain.ProcessingState.Archived#instance.label = Archived
+spa.samples.health.domain.ProcessingState.InProgress#instance.label = InProgress
+spa.samples.health.domain.ProcessingState.Processed#instance.label = Processed
+spa.samples.health.domain.ProcessingState.Rejected#instance.label = Rejected
+spa.samples.health.domain.ProcessingState.Skipped#instance.label = Skipped
+spa.samples.health.domain.ProcessingState.ToBeProcessed#instance.label = ToBeProcessed
+
+# spa.samples.health.domain.Reading
+spa.samples.health.domain.Reading#concept.label = reading
+spa.samples.health.domain.Reading.patient#phrase.navigation = {patient} of {this}
+spa.samples.health.domain.Reading.processingState#phrase.action = set the processing state of {this} to {processing state}
+spa.samples.health.domain.Reading.processingState#phrase.navigation = {processing state} of {this}
+spa.samples.health.domain.Reading.readingDevice#phrase.navigation = {reading device} of {this}
+spa.samples.health.domain.Reading.readingLocation#phrase.navigation = {reading location} of {this}
+spa.samples.health.domain.Reading.type#phrase.navigation = {type} of {this}
+spa.samples.health.domain.Reading.value#phrase.navigation = {value} of {this}
+
+# spa.samples.health.domain.ReadingType
+spa.samples.health.domain.ReadingType#concept.label = reading type
+spa.samples.health.domain.ReadingType.BloodOxygenSaturation#instance.label = BloodOxygenSaturation
+spa.samples.health.domain.ReadingType.BloodPressure#instance.label = BloodPressure
+spa.samples.health.domain.ReadingType.BreathingPace#instance.label = BreathingPace
+spa.samples.health.domain.ReadingType.BreathingStyle#instance.label = BreathingStyle
+spa.samples.health.domain.ReadingType.EKG#instance.label = EKG
+spa.samples.health.domain.ReadingType.HeartBeat#instance.label = HeartBeat
+spa.samples.health.domain.ReadingType.Pulse#instance.label = Pulse
+spa.samples.health.domain.ReadingType.Temperature#instance.label = Temperature
+
+# spa.samples.health.domain.ReadingValue
+spa.samples.health.domain.ReadingValue#concept.label = reading value
+spa.samples.health.domain.ReadingValue.unit#phrase.navigation = {unit} of {this}
+spa.samples.health.domain.ReadingValue.value#phrase.navigation = {value} of {this}
+
+# spa.samples.health.domain.SPAType
+spa.samples.health.domain.SPAType#concept.label = SPAType
+spa.samples.health.domain.SPAType.description#phrase.navigation = {description} of {this}
+spa.samples.health.domain.SPAType.name#phrase.navigation = {name} of {this}
+spa.samples.health.domain.SPAType.subtypes#phrase.navigation = {subtypes} of {this}
+spa.samples.health.domain.SPAType.supertype#phrase.action = set the supertype of {this} to {supertype}
+spa.samples.health.domain.SPAType.supertype#phrase.navigation = {supertype} of {this}
+
+# spa.samples.health.domain.Severity
+spa.samples.health.domain.Severity#concept.label = severity
+spa.samples.health.domain.Severity.High#instance.label = High
+spa.samples.health.domain.Severity.Low#instance.label = Low
+spa.samples.health.domain.Severity.Moderate#instance.label = Moderate
+spa.samples.health.domain.Severity.VeryHigh#instance.label = VeryHigh
+
+# spa.samples.health.domain.TimeSequence
+spa.samples.health.domain.TimeSequence#concept.label = time sequence
+spa.samples.health.domain.TimeSequence.allEvents#phrase.navigation = {all events} of {this}
+spa.samples.health.domain.TimeSequence.mostRecentEvent#phrase.navigation = {most recent event} of {this}
+
+# spa.samples.health.domain.TimedEvent
+spa.samples.health.domain.TimedEvent#concept.label = timed event
+
+# spa.samples.health.domain.ValueUnit
+spa.samples.health.domain.ValueUnit#concept.label = value unit
+spa.samples.health.domain.ValueUnit.degree_celcius#instance.label = degree_celcius
+spa.samples.health.domain.ValueUnit.gram_per_liter#instance.label = gram_per_liter
+spa.samples.health.domain.ValueUnit.metre#instance.label = metre
+spa.samples.health.domain.ValueUnit.ppm#instance.label = ppm
+spa.samples.health.domain.ValueUnit.pulses_per_minute#instance.label = pulses_per_minute
+
+# spa.samples.health.util.AbstractFactory
+spa.samples.health.util.AbstractFactory#concept.label = abstract factory
+
+# spa.samples.health.util.DurationUnit
+spa.samples.health.util.DurationUnit#concept.label = duration unit
+spa.samples.health.util.DurationUnit.Day#instance.label = Day
+spa.samples.health.util.DurationUnit.Hour#instance.label = Hour
+spa.samples.health.util.DurationUnit.Minute#instance.label = Minute
+spa.samples.health.util.DurationUnit.Month#instance.label = Month
+spa.samples.health.util.DurationUnit.Second#instance.label = Second
+spa.samples.health.util.DurationUnit.Week#instance.label = Week
+spa.samples.health.util.DurationUnit.Year#instance.label = Year

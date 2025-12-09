@@ -1,0 +1,31 @@
+<b2x:translation xmlns:b2x="http://schemas.ilog.com/JRules/1.3/Translation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.ilog.com/JRules/1.3/Translation ilog/rules/schemas/1_3/b2x.xsd">
+    <id>c735a1ba-f640-4fd9-b579-337f0eab2f25</id>
+    <lang>ARL</lang>
+    <class>
+        <businessName>java.time.Duration</businessName>
+        <import>java.time.Duration</import>
+    </class>
+    <class>
+        <businessName>java.time.Instant</businessName>
+        <import>java.time.Instant</import>
+    </class>
+    <class>
+        <businessName>spa.samples.health.domain.Oximeter</businessName>
+        <executionName>spa.samples.health.domain.Device</executionName>
+        <tester language="arl"><![CDATA[
+        return this.deviceModel.deviceType.name.equals("Oximeter");
+        ]]></tester>
+    </class>
+    <class>
+        <businessName>spa.samples.health.domain.Patient</businessName>
+        <import>spa.samples.health.util.AbstractFactory</import>
+        <constructor>
+            <parameter type="java.lang.String"/>
+            <parameter type="java.lang.String"/>
+            <parameter type="java.time.Instant"/>
+            <body language="arl"><![CDATA[
+            return spa.samples.health.util.AbstractFactory.getSingleton().createPatient(firstName,lastName,birthDate);
+            ]]></body>
+        </constructor>
+    </class>
+</b2x:translation>

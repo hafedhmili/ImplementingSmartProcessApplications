@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
-  <name>respiratory</name>
-  <uuid>921d3ee6-ed89-4871-8104-85a8d0d62cae</uuid>
-</ilog.rules.studio.model.base:RulePackage>

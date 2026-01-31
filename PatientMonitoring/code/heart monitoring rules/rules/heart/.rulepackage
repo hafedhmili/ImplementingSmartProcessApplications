@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
-  <name>heart</name>
-  <uuid>d33e5dde-3716-40c0-a44a-d0303ac24717</uuid>
-</ilog.rules.studio.model.base:RulePackage>

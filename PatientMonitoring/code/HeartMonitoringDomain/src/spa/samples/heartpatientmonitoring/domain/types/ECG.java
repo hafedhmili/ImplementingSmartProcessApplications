@@ -1,14 +1,8 @@
 package spa.samples.heartpatientmonitoring.domain.types;
 
-import java.time.Instant;
 
-public interface ECG {
+public interface ECG extends ClinicalTest{
 	
-	public Patient getPatient();
-	
-	public Instant getStartTime();
-	
-	public Instant getEndTime();
 	
 	public ECGFile getRawData();
 	
@@ -21,15 +15,7 @@ public interface ECG {
 	public ECGProcessingState getProcessingState();
 	
 	public void setProcessingState(ECGProcessingState processingState);
-	
-	public Location getStartLocation();
-	
-	public void setStartLocation(Location startLocation);
-	
-	public Location getEndLocation();
-	
-	public void setEndLocation(Location endLocation);
-	
+		
 	public HeartMonitorDevice getDevice();
 	
 	public ECGFormat getFormat();

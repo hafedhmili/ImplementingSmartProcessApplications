@@ -1,0 +1,12 @@
+package spa.samples.heartpatientmonitoring.domain.types;
+
+public enum DeviceType {
+
+	BloodPressureCuff, BodyCompositionAnalyzer, CardiovascularDevice, CoagulationMeter, ContinuousGlucoseMonitor, ElectroCardiograph, Generic20601Device, 
+	GlucoseMonitor, IndependentActivitytLivingHub, InsulinPump, PeakFlowMeter, PulseOximeter, RespirationRate, SleepApneaBreathingEquipment,
+	StrengthEquipment, Thermometer, WeightScale, DrySaltInhalationTherapyDevice, FlexibleVideoNephroscope, 
+	DenbtalImplantEndosseousPartiallyEmbedded, BareMetalIntracranialVascularStent,DualChamberImplantablePacemakerDemand,
+	IntrauterineCannulaReusable, AirConductionHearingAidAcousticTube, 
+	SpinalCordPeripheralNerveImplantableAnalgesicElectricalStimulationSystemLeadWiredConnection,
+	BlueLightPhototherapyLampForHomeUse, UncoatedKneeFemurProsthesisCeramic, ADAMTS13ActivityIVDKitChemiluminescentImmunoassay
+}

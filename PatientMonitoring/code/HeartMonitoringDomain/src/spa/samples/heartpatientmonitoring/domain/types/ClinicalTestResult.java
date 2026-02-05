@@ -2,7 +2,7 @@ package spa.samples.heartpatientmonitoring.domain.types;
 
 import java.time.Instant;
 
-public interface ClinicalTest {
+public interface ClinicalTestResult {
 
 	public Patient getPatient();
 	

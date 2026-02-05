@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RuleProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore" xmlns:ilog.rules.studio.model.bom="http://ilog.rules.studio/model/bom.ecore" xmlns:ilog.rules.studio.model.query="http://ilog.rules.studio/model/query.ecore" xmlns:ilog.rules.studio.model.xom="http://ilog.rules.studio/model/xom.ecore" buildMode="DecisionEngine" isADecisionService="true" migrationFlag="3">
+  <name>HeartMonitoringDecisionService</name>
+  <uuid>c47178f7-a77a-44cf-a1a4-1a971dfe7fcb</uuid>
+  <outputLocation>output</outputLocation>
+  <categories>any</categories>
+  <paths xsi:type="ilog.rules.studio.model.xom:XOMPath" pathID="XOM">
+    <entries xsi:type="ilog.rules.studio.model.xom:LibraryXOMPathEntry" name="org.eclipse.jdt.launching.JRE_CONTAINER" url="file:org.eclipse.jdt.launching.JRE_CONTAINER" kind="LIBRARY"/>
+    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="HeartMonitoringHandleDifferenceDecision" url="platform:/HeartMonitoringHandleDifferenceDecision" kind="RULE_PROJECT"/>
+    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="HeartMonitoringHandleProblematicECGDecision" url="platform:/HeartMonitoringHandleProblematicECGDecision" kind="RULE_PROJECT"/>
+    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="HeartMonitoringNeedsToCheckDecision" url="platform:/HeartMonitoringNeedsToCheckDecision" kind="RULE_PROJECT"/>
+  </paths>
+  <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
+    <entries xsi:type="ilog.rules.studio.model.bom:ProjectBOMEntry" name="HeartMonitoringHandleDifferenceDecision" url="platform:/HeartMonitoringHandleDifferenceDecision" kind="RULE_PROJECT">
+      <ruleProject href="HeartMonitoringHandleDifferenceDecision#befba9d6-c0b8-4f13-accd-061832a39afe"/>
+    </entries>
+    <entries xsi:type="ilog.rules.studio.model.bom:ProjectBOMEntry" name="HeartMonitoringHandleProblematicECGDecision" url="platform:/HeartMonitoringHandleProblematicECGDecision" kind="RULE_PROJECT">
+      <ruleProject href="HeartMonitoringHandleProblematicECGDecision#88c70cbc-7c72-4df6-9f2a-1bf48c6c9069"/>
+    </entries>
+    <entries xsi:type="ilog.rules.studio.model.bom:ProjectBOMEntry" name="HeartMonitoringNeedsToCheckDecision" url="platform:/HeartMonitoringNeedsToCheckDecision" kind="RULE_PROJECT">
+      <ruleProject href="HeartMonitoringNeedsToCheckDecision#4bf76478-0cda-43bf-85db-8ef6deb96442"/>
+    </entries>
+  </paths>
+  <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">
+    <name>rules</name>
+  </modelFolders>
+  <modelFolders xsi:type="ilog.rules.studio.model.bom:BOMFolder">
+    <name>bom</name>
+  </modelFolders>
+  <modelFolders xsi:type="ilog.rules.studio.model.query:QueryFolder">
+    <name>queries</name>
+  </modelFolders>
+  <modelFolders xsi:type="ilog.rules.studio.model.base:ResourceFolder">
+    <name>resources</name>
+  </modelFolders>
+  <modelFolders xsi:type="com.ibm.rules.studio.model.decisionservice:OperationFolder">
+    <name>deployment</name>
+  </modelFolders>
+</ilog.rules.studio.model.base:RuleProject>

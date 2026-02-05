@@ -1,7 +1,7 @@
 package spa.samples.heartpatientmonitoring.domain.types;
 
 
-public interface ECG extends ClinicalTest{
+public interface ECG extends ClinicalTestResult{
 	
 	
 	public ECGFile getRawData();

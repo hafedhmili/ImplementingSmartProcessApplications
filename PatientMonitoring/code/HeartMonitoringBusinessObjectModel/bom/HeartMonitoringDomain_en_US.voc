@@ -1,0 +1,319 @@
+# Vocabulary Properties
+uuid = 0de54fbb-7ede-4102-8cab-e3b7ef07a4ac
+
+# spa.samples.heartpatientmonitoring.domain.types.Activity
+spa.samples.heartpatientmonitoring.domain.types.Activity#concept.label = activity
+
+# spa.samples.heartpatientmonitoring.domain.types.ActivityType
+spa.samples.heartpatientmonitoring.domain.types.ActivityType#concept.label = activity type
+spa.samples.heartpatientmonitoring.domain.types.ActivityType.Eating#instance.label = Eating
+spa.samples.heartpatientmonitoring.domain.types.ActivityType.Running#instance.label = Running
+spa.samples.heartpatientmonitoring.domain.types.ActivityType.Sitting#instance.label = Sitting
+spa.samples.heartpatientmonitoring.domain.types.ActivityType.Sleeping#instance.label = Sleeping
+spa.samples.heartpatientmonitoring.domain.types.ActivityType.Walking#instance.label = Walking
+
+# spa.samples.heartpatientmonitoring.domain.types.Address
+spa.samples.heartpatientmonitoring.domain.types.Address#concept.label = address
+
+# spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult
+spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult#concept.label = clinical test result
+spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult.endLocation#phrase.action = set the end location of {this} to {end location}
+spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult.endLocation#phrase.navigation = {end location} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult.patient#phrase.navigation = {patient} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult.startLocation#phrase.action = set the start location of {this} to {start location}
+spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult.startLocation#phrase.navigation = {start location} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.DeviceFamily
+spa.samples.heartpatientmonitoring.domain.types.DeviceFamily#concept.label = device family
+spa.samples.heartpatientmonitoring.domain.types.DeviceFamily.deviceType#phrase.navigation = {device type} of {this}
+spa.samples.heartpatientmonitoring.domain.types.DeviceFamily.familyDescription#phrase.action = set the family description of {this} to {family description}
+spa.samples.heartpatientmonitoring.domain.types.DeviceFamily.familyDescription#phrase.navigation = {family description} of {this}
+spa.samples.heartpatientmonitoring.domain.types.DeviceFamily.familyName#phrase.navigation = {family name} of {this}
+spa.samples.heartpatientmonitoring.domain.types.DeviceFamily.subfamilies#phrase.navigation = {subfamilies} of {this}
+spa.samples.heartpatientmonitoring.domain.types.DeviceFamily.superFamily#phrase.navigation = {super family} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.DeviceModel
+spa.samples.heartpatientmonitoring.domain.types.DeviceModel#concept.label = device model
+spa.samples.heartpatientmonitoring.domain.types.DeviceModel.ECGFormats#phrase.navigation = {ECGFormats} of {this}
+spa.samples.heartpatientmonitoring.domain.types.DeviceModel.deviceFamily#phrase.navigation = {device family} of {this}
+spa.samples.heartpatientmonitoring.domain.types.DeviceModel.manufacturer#phrase.navigation = {manufacturer} of {this}
+spa.samples.heartpatientmonitoring.domain.types.DeviceModel.modelDescription#phrase.action = set the model description of {this} to {model description}
+spa.samples.heartpatientmonitoring.domain.types.DeviceModel.modelDescription#phrase.navigation = {model description} of {this}
+spa.samples.heartpatientmonitoring.domain.types.DeviceModel.modelName#phrase.navigation = {model name} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.DeviceState
+spa.samples.heartpatientmonitoring.domain.types.DeviceState#concept.label = device state
+spa.samples.heartpatientmonitoring.domain.types.DeviceState.Malfunction#instance.label = Malfunction
+spa.samples.heartpatientmonitoring.domain.types.DeviceState.Off#instance.label = Off
+spa.samples.heartpatientmonitoring.domain.types.DeviceState.Reading#instance.label = Reading
+spa.samples.heartpatientmonitoring.domain.types.DeviceState.Recording#instance.label = Recording
+spa.samples.heartpatientmonitoring.domain.types.DeviceState.Sleeping#instance.label = Sleeping
+spa.samples.heartpatientmonitoring.domain.types.DeviceState.Transmitting#instance.label = Transmitting
+
+# spa.samples.heartpatientmonitoring.domain.types.DeviceType
+spa.samples.heartpatientmonitoring.domain.types.DeviceType#concept.label = device type
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.ADAMTS13ActivityIVDKitChemiluminescentImmunoassay#instance.label = ADAMTS13ActivityIVDKitChemiluminescentImmunoassay
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.AirConductionHearingAidAcousticTube#instance.label = AirConductionHearingAidAcousticTube
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.BareMetalIntracranialVascularStent#instance.label = BareMetalIntracranialVascularStent
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.BloodPressureCuff#instance.label = BloodPressureCuff
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.BlueLightPhototherapyLampForHomeUse#instance.label = BlueLightPhototherapyLampForHomeUse
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.BodyCompositionAnalyzer#instance.label = BodyCompositionAnalyzer
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.CardiovascularDevice#instance.label = CardiovascularDevice
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.CoagulationMeter#instance.label = CoagulationMeter
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.ContinuousGlucoseMonitor#instance.label = ContinuousGlucoseMonitor
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.DenbtalImplantEndosseousPartiallyEmbedded#instance.label = DenbtalImplantEndosseousPartiallyEmbedded
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.DrySaltInhalationTherapyDevice#instance.label = DrySaltInhalationTherapyDevice
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.DualChamberImplantablePacemakerDemand#instance.label = DualChamberImplantablePacemakerDemand
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.ElectroCardiograph#instance.label = ElectroCardiograph
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.FlexibleVideoNephroscope#instance.label = FlexibleVideoNephroscope
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.Generic20601Device#instance.label = Generic20601Device
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.GlucoseMonitor#instance.label = GlucoseMonitor
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.IndependentActivitytLivingHub#instance.label = IndependentActivitytLivingHub
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.InsulinPump#instance.label = InsulinPump
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.IntrauterineCannulaReusable#instance.label = IntrauterineCannulaReusable
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.PeakFlowMeter#instance.label = PeakFlowMeter
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.PulseOximeter#instance.label = PulseOximeter
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.RespirationRate#instance.label = RespirationRate
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.SleepApneaBreathingEquipment#instance.label = SleepApneaBreathingEquipment
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.SpinalCordPeripheralNerveImplantableAnalgesicElectricalStimulationSystemLeadWiredConnection#instance.label = SpinalCordPeripheralNerveImplantableAnalgesicElectricalStimulationSystemLeadWiredConnection
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.StrengthEquipment#instance.label = StrengthEquipment
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.Thermometer#instance.label = Thermometer
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.UncoatedKneeFemurProsthesisCeramic#instance.label = UncoatedKneeFemurProsthesisCeramic
+spa.samples.heartpatientmonitoring.domain.types.DeviceType.WeightScale#instance.label = WeightScale
+
+# spa.samples.heartpatientmonitoring.domain.types.ECG
+spa.samples.heartpatientmonitoring.domain.types.ECG#concept.label = ECG
+spa.samples.heartpatientmonitoring.domain.types.ECG.analysisReport#phrase.action = set the analysis report of {this} to {analysis report}
+spa.samples.heartpatientmonitoring.domain.types.ECG.analysisReport#phrase.navigation = {analysis report} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ECG.device#phrase.navigation = {device} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ECG.format#phrase.navigation = {format} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ECG.processingState#phrase.action = set the processing state of {this} to {processing state}
+spa.samples.heartpatientmonitoring.domain.types.ECG.processingState#phrase.navigation = {processing state} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ECG.rawData#phrase.action = set the raw data of {this} to {raw data}
+spa.samples.heartpatientmonitoring.domain.types.ECG.rawData#phrase.navigation = {raw data} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport#concept.label = ECGAnalysis report
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport.classifications#phrase.navigation = {classifications} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport.natureQRSComplexes#phrase.action = set the nature QRSComplexes of {this} to {nature QRSComplexes}
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport.natureQRSComplexes#phrase.navigation = {nature QRSComplexes} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport.rhythm#phrase.action = set the rhythm of {this} to {rhythm}
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport.rhythm#phrase.navigation = {rhythm} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport.rhythmType#phrase.action = set the rhythm type of {this} to {rhythm type}
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport.rhythmType#phrase.navigation = {rhythm type} of {this}
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport.shapePWaves#phrase.action = set the shape PWaves of {this} to {shape PWaves}
+spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport.shapePWaves#phrase.navigation = {shape PWaves} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.ECGClassification
+spa.samples.heartpatientmonitoring.domain.types.ECGClassification#concept.label = ECGClassification
+spa.samples.heartpatientmonitoring.domain.types.ECGClassification.AtrialFibrillation#instance.label = AtrialFibrillation
+spa.samples.heartpatientmonitoring.domain.types.ECGClassification.Normal#instance.label = Normal
+spa.samples.heartpatientmonitoring.domain.types.ECGClassification.Tachycardia#instance.label = Tachycardia
+
+# spa.samples.heartpatientmonitoring.domain.types.ECGFile
+spa.samples.heartpatientmonitoring.domain.types.ECGFile#concept.label = ECGFile
+
+# spa.samples.heartpatientmonitoring.domain.types.ECGFormat
+spa.samples.heartpatientmonitoring.domain.types.ECGFormat#concept.label = ECGFormat
+spa.samples.heartpatientmonitoring.domain.types.ECGFormat.CSV#instance.label = CSV
+spa.samples.heartpatientmonitoring.domain.types.ECGFormat.ECG_XML#instance.label = ECG_XML
+spa.samples.heartpatientmonitoring.domain.types.ECGFormat.HL7_XML#instance.label = HL7_XML
+spa.samples.heartpatientmonitoring.domain.types.ECGFormat.PDF_ECG#instance.label = PDF_ECG
+spa.samples.heartpatientmonitoring.domain.types.ECGFormat.mPCG_XML#instance.label = mPCG_XML
+
+# spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState
+spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState#concept.label = ECGProcessing state
+spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState.Dismissed#instance.label = Dismissed
+spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState.InProgress#instance.label = InProgress
+spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState.Processed#instance.label = Processed
+spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState.ToBeProcessed#instance.label = ToBeProcessed
+
+# spa.samples.heartpatientmonitoring.domain.types.HealthCareAct
+spa.samples.heartpatientmonitoring.domain.types.HealthCareAct#concept.label = health care act
+spa.samples.heartpatientmonitoring.domain.types.HealthCareAct.ECGs#phrase.navigation = {ECGs} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareAct.actType#phrase.navigation = {act type} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareAct.healthCareEpisode#phrase.navigation = {health care episode} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareAct.performedBy#phrase.action = set the performed by of {this} to {performed by}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareAct.performedBy#phrase.navigation = {performed by} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareAct.prodiver#phrase.navigation = {prodiver} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareAct.provider#phrase.action = set the provider of {this} to {provider}
+
+# spa.samples.heartpatientmonitoring.domain.types.HealthCareActType
+spa.samples.heartpatientmonitoring.domain.types.HealthCareActType#concept.label = health care act type
+spa.samples.heartpatientmonitoring.domain.types.HealthCareActType.description#phrase.action = set the description of {this} to {description}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareActType.description#phrase.navigation = {description} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareActType.name#phrase.navigation = {name} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareActType.subtypes#phrase.navigation = {subtypes} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareActType.supertype#phrase.action = set the supertype of {this} to {supertype}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareActType.supertype#phrase.navigation = {supertype} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode
+spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode#concept.label = health care episode
+spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode.careActs#phrase.navigation = {care acts} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode.healthConditionEpisode#phrase.navigation = {health condition episode} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode.latestCareAct#phrase.action = set the latest care act of {this} to {latest care act}
+spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode.latestCareAct#phrase.navigation = {latest care act} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.HealthCareInstitution
+spa.samples.heartpatientmonitoring.domain.types.HealthCareInstitution#concept.label = health care institution
+
+# spa.samples.heartpatientmonitoring.domain.types.HealthCareProfessional
+spa.samples.heartpatientmonitoring.domain.types.HealthCareProfessional#concept.label = health care professional
+
+# spa.samples.heartpatientmonitoring.domain.types.HealthCondition
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition#concept.label = health condition
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.abatement#phrase.action = set the abatement of {this} to {abatement}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.abatement#phrase.navigation = {abatement} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.healthConditionType#phrase.navigation = {health condition type} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.history#phrase.navigation = {history} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.latestUpdateEpisode#phrase.action = set the latest update episode of {this} to {latest update episode}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.latestUpdatedEpisode#phrase.navigation = {latest updated episode} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.onset#phrase.action = set the onset of {this} to {onset}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.onset#phrase.navigation = {onset} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.patientMedicalHistory#phrase.navigation = {patient medical history} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.severity#phrase.action = set the severity of {this} to {severity}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.severity#phrase.navigation = {severity} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.status#phrase.action = set the status of {this} to {status}
+spa.samples.heartpatientmonitoring.domain.types.HealthCondition.status#phrase.navigation = {status} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode#concept.label = health condition episode
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode.careEpisodes#phrase.navigation = {care episodes} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode.healthCondition#phrase.navigation = {health condition} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode.latestCareEpisode#phrase.action = set the latest care episode of {this} to {latest care episode}
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode.latestCareEpisode#phrase.navigation = {latest care episode} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode.severityLebvel#phrase.navigation = {severity lebvel} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode.severityLevel#phrase.action = set the severity level of {this} to {severity level}
+
+# spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus#concept.label = health condition status
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus.Abated#instance.label = Abated
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus.DiagnosedConfirmed#instance.label = DiagnosedConfirmed
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus.DiagnosedExcluded#instance.label = DiagnosedExcluded
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus.GettingManaged#instance.label = GettingManaged
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus.ManagedNotStabilized#instance.label = ManagedNotStabilized
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus.ManagedStabilized#instance.label = ManagedStabilized
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus.Suspected#instance.label = Suspected
+
+# spa.samples.heartpatientmonitoring.domain.types.HealthConditionType
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionType#concept.label = health condition type
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionType.subtypes#phrase.navigation = {subtypes} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionType.supertype#phrase.action = set the supertype of {this} to {supertype}
+spa.samples.heartpatientmonitoring.domain.types.HealthConditionType.supertype#phrase.navigation = {supertype} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice#concept.label = heart monitor device
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.ECGs#phrase.navigation = {ECGs} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.currentLocation#phrase.action = set the current location of {this} to {current location}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.currentLocation#phrase.navigation = {current location} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.deviceID#phrase.navigation = {device ID} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.deviceModel#phrase.navigation = {device model} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.deviceState#phrase.action = set the device state of {this} to {device state}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.deviceState#phrase.navigation = {device state} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.latestECG#phrase.action = set the latest ECG of {this} to {latest ECG}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.latestECG#phrase.navigation = {latest ECG} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.patient#phrase.action = set the patient of {this} to {patient}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.patient#phrase.navigation = {patient} of {this}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.recordingModality#phrase.action = set the recording modality of {this} to {recording modality}
+spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice.recordingModality#phrase.navigation = {recording modality} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.IntensityLevel
+spa.samples.heartpatientmonitoring.domain.types.IntensityLevel#concept.label = intensity level
+spa.samples.heartpatientmonitoring.domain.types.IntensityLevel.High#instance.label = High
+spa.samples.heartpatientmonitoring.domain.types.IntensityLevel.Low#instance.label = Low
+spa.samples.heartpatientmonitoring.domain.types.IntensityLevel.Moderate#instance.label = Moderate
+
+# spa.samples.heartpatientmonitoring.domain.types.Interval
+spa.samples.heartpatientmonitoring.domain.types.Interval#concept.label = interval
+
+# spa.samples.heartpatientmonitoring.domain.types.Location
+spa.samples.heartpatientmonitoring.domain.types.Location#concept.label = location
+
+# spa.samples.heartpatientmonitoring.domain.types.NatureQRSComplexes
+spa.samples.heartpatientmonitoring.domain.types.NatureQRSComplexes#concept.label = nature QRSComplexes
+spa.samples.heartpatientmonitoring.domain.types.NatureQRSComplexes.NarrowAndPointy#instance.label = NarrowAndPointy
+spa.samples.heartpatientmonitoring.domain.types.NatureQRSComplexes.Normal#instance.label = Normal
+
+# spa.samples.heartpatientmonitoring.domain.types.Patient
+spa.samples.heartpatientmonitoring.domain.types.Patient#concept.label = patient
+spa.samples.heartpatientmonitoring.domain.types.Patient.SSN#phrase.navigation = {SSN} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.address#phrase.action = set the address of {this} to {address}
+spa.samples.heartpatientmonitoring.domain.types.Patient.address#phrase.navigation = {address} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.currentActivity#phrase.action = set the current activity of {this} to {current activity}
+spa.samples.heartpatientmonitoring.domain.types.Patient.currentActivity#phrase.navigation = {current activity} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.currentLocation#phrase.action = set the current location of {this} to {current location}
+spa.samples.heartpatientmonitoring.domain.types.Patient.currentLocation#phrase.navigation = {current location} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.currentState#phrase.action = set the current state of {this} to {current state}
+spa.samples.heartpatientmonitoring.domain.types.Patient.currentState#phrase.navigation = {current state} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.firstName#phrase.navigation = {first name} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.heartMonitor#phrase.navigation = {heart monitor} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.heartMonitorDevice#phrase.action = set the heart monitor device of {this} to {heart monitor device}
+spa.samples.heartpatientmonitoring.domain.types.Patient.lastName#phrase.navigation = {last name} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.medicalHistory#phrase.navigation = {medical history} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.mostRecentECG#phrase.navigation = {most recent ECG} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.pastActivities#phrase.navigation = {past activities} of {this}
+spa.samples.heartpatientmonitoring.domain.types.Patient.pastStates#phrase.navigation = {past states} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory
+spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory#concept.label = patient medical history
+spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory.healthConditions#phrase.navigation = {health conditions} of {this}
+spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory.latestUpdatedHealthCondition#phrase.action = set the latest updated health condition of {this} to {latest updated health condition}
+spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory.latestUpdatedHealthCondition#phrase.navigation = {latest updated health condition} of {this}
+spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory.patient#phrase.navigation = {patient} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.PatientState
+spa.samples.heartpatientmonitoring.domain.types.PatientState#concept.label = patient state
+spa.samples.heartpatientmonitoring.domain.types.PatientState.clinicalTestResults#phrase.navigation = {clinical test results} of {this}
+spa.samples.heartpatientmonitoring.domain.types.PatientState.endLocation#phrase.action = set the end location of {this} to {end location}
+spa.samples.heartpatientmonitoring.domain.types.PatientState.endLocation#phrase.navigation = {end location} of {this}
+spa.samples.heartpatientmonitoring.domain.types.PatientState.label#phrase.navigation = {label} of {this}
+spa.samples.heartpatientmonitoring.domain.types.PatientState.previousState#phrase.action = set the previous state of {this} to {previous state}
+spa.samples.heartpatientmonitoring.domain.types.PatientState.previousState#phrase.navigation = {previous state} of {this}
+spa.samples.heartpatientmonitoring.domain.types.PatientState.startLocation#phrase.action = set the start location of {this} to {start location}
+spa.samples.heartpatientmonitoring.domain.types.PatientState.startLocation#phrase.navigation = {start location} of {this}
+
+# spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel
+spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel#concept.label = patient state label
+spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel.AllIsNormal#instance.label = AllIsNormal
+spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel.Critical#instance.label = Critical
+spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel.Discomfort#instance.label = Discomfort
+spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel.Unsafe#instance.label = Unsafe
+
+# spa.samples.heartpatientmonitoring.domain.types.PointOfInterest
+spa.samples.heartpatientmonitoring.domain.types.PointOfInterest#concept.label = point of interest
+
+# spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory#concept.label = province or territory
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.ALBERTA#instance.label = ALBERTA
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.BRITISH_COLUMBIA#instance.label = BRITISH_COLUMBIA
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.MANITOBA#instance.label = MANITOBA
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.NEWFOUNDLAND_AND_LABRADOR#instance.label = NEWFOUNDLAND_AND_LABRADOR
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.NEW_BRUNSWICK#instance.label = NEW_BRUNSWICK
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.NORTHWEST_TERRITORIES#instance.label = NORTHWEST_TERRITORIES
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.NOVA_SCOTIA#instance.label = NOVA_SCOTIA
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.NUNAVUT#instance.label = NUNAVUT
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.ONTARIO#instance.label = ONTARIO
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.PRINCE_EDWARD_ISLAND#instance.label = PRINCE_EDWARD_ISLAND
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.QUEBEC#instance.label = QUEBEC
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.SASKATCHEWAN#instance.label = SASKATCHEWAN
+spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory.YUKON#instance.label = YUKON
+
+# spa.samples.heartpatientmonitoring.domain.types.RecordingModality
+spa.samples.heartpatientmonitoring.domain.types.RecordingModality#concept.label = recording modality
+
+# spa.samples.heartpatientmonitoring.domain.types.RhythmType
+spa.samples.heartpatientmonitoring.domain.types.RhythmType#concept.label = rhythm type
+spa.samples.heartpatientmonitoring.domain.types.RhythmType.Irregular#instance.label = Irregular
+spa.samples.heartpatientmonitoring.domain.types.RhythmType.IrregularlyIrregular#instance.label = IrregularlyIrregular
+spa.samples.heartpatientmonitoring.domain.types.RhythmType.Regular#instance.label = Regular
+
+# spa.samples.heartpatientmonitoring.domain.types.SeverityLevel
+spa.samples.heartpatientmonitoring.domain.types.SeverityLevel#concept.label = severity level
+spa.samples.heartpatientmonitoring.domain.types.SeverityLevel.Benign#instance.label = Benign
+spa.samples.heartpatientmonitoring.domain.types.SeverityLevel.Moderate#instance.label = Moderate
+spa.samples.heartpatientmonitoring.domain.types.SeverityLevel.Severe#instance.label = Severe
+
+# spa.samples.heartpatientmonitoring.domain.types.ShapePWaves
+spa.samples.heartpatientmonitoring.domain.types.ShapePWaves#concept.label = shape PWaves
+spa.samples.heartpatientmonitoring.domain.types.ShapePWaves.Abnormal#instance.label = Abnormal
+spa.samples.heartpatientmonitoring.domain.types.ShapePWaves.Normal#instance.label = Normal

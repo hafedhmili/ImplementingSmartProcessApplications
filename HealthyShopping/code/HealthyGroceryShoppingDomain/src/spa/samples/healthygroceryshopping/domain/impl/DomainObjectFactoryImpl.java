@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 import spa.samples.healthygroceryshopping.domain.types.Cart;
 import spa.samples.healthygroceryshopping.domain.types.CartItem;
-import spa.samples.healthygroceryshopping.domain.types.CartScore;
+import spa.samples.healthygroceryshopping.domain.types.HealthScore;
 import spa.samples.healthygroceryshopping.domain.types.DietaryPreference;
 import spa.samples.healthygroceryshopping.domain.types.DomainObjectFactory;
 import spa.samples.healthygroceryshopping.domain.types.FoodProduct;
@@ -72,7 +72,7 @@ public class DomainObjectFactoryImpl implements DomainObjectFactory {
 	}
 
 	@Override
-	public CartScore createCartScore(Cart cart) {
+	public HealthScore createCartScore(Cart cart) {
 		// TODO Auto-generated method stub
 		return null;
 	}

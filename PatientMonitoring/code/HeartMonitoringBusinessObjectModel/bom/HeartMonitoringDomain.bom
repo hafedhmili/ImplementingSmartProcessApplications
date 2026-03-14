@@ -404,8 +404,7 @@ interface Patient
     abstract spa.samples.heartpatientmonitoring.domain.types.Location currentLocation;
     abstract spa.samples.heartpatientmonitoring.domain.types.PatientState currentState;
     readonly abstract string firstName;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice heartMonitor;
-    writeonly abstract spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice heartMonitorDevice;
+    abstract spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice heartMonitor;
     readonly abstract string lastName;
     readonly abstract spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory medicalHistory;
     readonly abstract spa.samples.heartpatientmonitoring.domain.types.ECG mostRecentECG;
@@ -417,7 +416,7 @@ interface Patient
     java.util.Iterator getECGsBetween(java.time.Instant arg1, java.time.Instant arg2);
     java.util.Iterator getECGsSince(java.time.Instant arg);
     java.util.Iterator getPastActivitiesByRecency(int[] arg);
-    java.util.Iterator getPastSttesByRecency(int[] arg);
+    java.util.Iterator getPastStatesByRecency(int[] arg);
 }
 
 interface PatientMedicalHistory

@@ -247,7 +247,6 @@ spa.samples.heartpatientmonitoring.domain.types.Patient.currentState#phrase.acti
 spa.samples.heartpatientmonitoring.domain.types.Patient.currentState#phrase.navigation = {current state} of {this}
 spa.samples.heartpatientmonitoring.domain.types.Patient.firstName#phrase.navigation = {first name} of {this}
 spa.samples.heartpatientmonitoring.domain.types.Patient.heartMonitor#phrase.navigation = {heart monitor} of {this}
-spa.samples.heartpatientmonitoring.domain.types.Patient.heartMonitorDevice#phrase.action = set the heart monitor device of {this} to {heart monitor device}
 spa.samples.heartpatientmonitoring.domain.types.Patient.lastName#phrase.navigation = {last name} of {this}
 spa.samples.heartpatientmonitoring.domain.types.Patient.medicalHistory#phrase.navigation = {medical history} of {this}
 spa.samples.heartpatientmonitoring.domain.types.Patient.mostRecentECG#phrase.navigation = {most recent ECG} of {this}

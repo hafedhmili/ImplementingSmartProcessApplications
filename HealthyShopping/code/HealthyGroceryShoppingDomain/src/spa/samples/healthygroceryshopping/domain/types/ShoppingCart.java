@@ -70,7 +70,7 @@ public interface ShoppingCart {
 	 * return the cart score
 	 * @return
 	 */
-	public CartScore getScore();
+	public HealthScore getScore();
 	
 	/**
 	 * return the score for a specific nutritional parameter (e.g. sodium content)

@@ -52,5 +52,10 @@ public interface CartItem {
 	 * @param productLineItem
 	 */
 	public void setProductLineItem(ProductLineItem productLineItem);
+	
+	public HealthScore getHealthScore();
+	
+	public void setScoreForHealthParameter(HealthParameter parameter, ScoreValue value);
 
+	public ScoreValue getScoreForHealthParameter(HealthParameter parameter);
 }

@@ -37,7 +37,7 @@ public interface Patient {
 	
 	public Iterator<PatientState> getPastStates();
 	
-	public Iterator<PatientState> getPastSttesByRecency(int...lastN);
+	public Iterator<PatientState> getPastStatesByRecency(int...lastN);
 	
 	public void archiveCurrentState();
 	
@@ -51,7 +51,7 @@ public interface Patient {
 	
 	public HeartMonitorDevice getHeartMonitor();
 	
-	public void setHeartMonitorDevice(HeartMonitorDevice device);
+	public void setHeartMonitor(HeartMonitorDevice device);
 	
 
 }

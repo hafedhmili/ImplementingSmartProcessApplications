@@ -17,7 +17,7 @@ public interface DomainObjectFactory {
 	
 	public CartItem createCartItem(Tag tag, Cart cart);
 	
-	public CartScore createCartScore(Cart cart);
+	public HealthScore createCartScore(Cart cart);
 	
 	public DietaryPreference createDietaryPreference(FoodProduct foodInQuestion);
 	

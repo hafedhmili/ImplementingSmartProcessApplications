@@ -1,0 +1,463 @@
+
+#loadGetterSetterAsProperties
+property origin "xom:/HealthGroceryShoppingBusinessObjectModel//HealthyGroceryShoppingDomain"
+property uuid "1a55783d-72ff-4c09-b99b-7baa876e6842"
+package spa.samples.healthygroceryshopping.domain.types;
+
+
+final class Address
+        extends java.lang.Record
+{
+    Address(string arg1, string arg2, string arg3, string arg4, spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState arg5, string arg6);
+    string city();
+    string doorNumber();
+    final boolean equals(object arg);
+    final int hashCode();
+    spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState province();
+    string streeNumber();
+    string streetName();
+    final string toString();
+    string zipCode();
+}
+
+final class AuthorityType
+        extends java.lang.Enum
+{
+    domain {static Public, static Private}
+    static final readonly spa.samples.healthygroceryshopping.domain.types.AuthorityType Private;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.AuthorityType Public;
+    static spa.samples.healthygroceryshopping.domain.types.AuthorityType valueOf(string arg);
+    static spa.samples.healthygroceryshopping.domain.types.AuthorityType[] values();
+}
+
+interface Cart
+{
+    readonly abstract java.util.Iterator items;
+    readonly abstract java.util.Iterator sensors;
+    readonly abstract string serialNumber;
+    void addItem(spa.samples.healthygroceryshopping.domain.types.CartItem arg);
+    void addSensor(spa.samples.healthygroceryshopping.domain.types.Sensor arg);
+    spa.samples.healthygroceryshopping.domain.types.CartItem removeItem(spa.samples.healthygroceryshopping.domain.types.CartItem arg);
+    spa.samples.healthygroceryshopping.domain.types.Sensor removeSensor(spa.samples.healthygroceryshopping.domain.types.Sensor arg);
+}
+
+interface CartItem
+{
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Cart cart;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.HealthScore healthScore;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Product product;
+    abstract spa.samples.healthygroceryshopping.domain.types.ProductLineItem productLineItem;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Tag tag;
+    spa.samples.healthygroceryshopping.domain.types.ScoreValue getScoreForHealthParameter(spa.samples.healthygroceryshopping.domain.types.HealthParameter arg);
+    void setScoreForHealthParameter(spa.samples.healthygroceryshopping.domain.types.HealthParameter arg1, spa.samples.healthygroceryshopping.domain.types.ScoreValue arg2);
+}
+
+final class CartState
+        extends java.lang.Enum
+{
+    domain {static HealthySafe, static UnhealthySafe, static UnhealthyUnsafe}
+    static final readonly spa.samples.healthygroceryshopping.domain.types.CartState HealthySafe;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.CartState UnhealthySafe;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.CartState UnhealthyUnsafe;
+    static spa.samples.healthygroceryshopping.domain.types.CartState valueOf(string arg);
+    static spa.samples.healthygroceryshopping.domain.types.CartState[] values();
+}
+
+final class DietaryPreference
+        extends java.lang.Record
+{
+    DietaryPreference(spa.samples.healthygroceryshopping.domain.types.FoodProduct arg1, spa.samples.healthygroceryshopping.domain.types.PreferenceModality arg2);
+    final boolean equals(object arg);
+    spa.samples.healthygroceryshopping.domain.types.FoodProduct foodProduct();
+    final int hashCode();
+    spa.samples.healthygroceryshopping.domain.types.PreferenceModality preference();
+    final string toString();
+}
+
+interface DietaryProfile
+{
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Person person;
+    readonly abstract java.util.Iterator preferences;
+    void addDietaryPreference(spa.samples.healthygroceryshopping.domain.types.DietaryPreference arg);
+    spa.samples.healthygroceryshopping.domain.types.DietaryPreference addDietaryPreference(spa.samples.healthygroceryshopping.domain.types.FoodProduct arg1, spa.samples.healthygroceryshopping.domain.types.PreferenceModality arg2);
+    spa.samples.healthygroceryshopping.domain.types.DietaryPreference removeDietaryPreference(spa.samples.healthygroceryshopping.domain.types.DietaryPreference arg);
+    spa.samples.healthygroceryshopping.domain.types.DietaryPreference removeDietaryPreferenceForProduct(spa.samples.healthygroceryshopping.domain.types.FoodProduct arg);
+}
+
+interface DomainObjectFactory
+{
+    spa.samples.healthygroceryshopping.domain.types.Cart createCart(string arg);
+    spa.samples.healthygroceryshopping.domain.types.CartItem createCartItem(spa.samples.healthygroceryshopping.domain.types.Tag arg1, spa.samples.healthygroceryshopping.domain.types.Cart arg2);
+    spa.samples.healthygroceryshopping.domain.types.HealthScore createCartScore(spa.samples.healthygroceryshopping.domain.types.Cart arg);
+    spa.samples.healthygroceryshopping.domain.types.DietaryPreference createDietaryPreference(spa.samples.healthygroceryshopping.domain.types.FoodProduct arg);
+    spa.samples.healthygroceryshopping.domain.types.FoodProduct createFoodProduct(string arg);
+    spa.samples.healthygroceryshopping.domain.types.FoodProductCategory createFoodProductCategory(string arg);
+    spa.samples.healthygroceryshopping.domain.types.FoodProductItem createFoodProductItem(string arg);
+    spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo createFoodProductNutritionalInfo(spa.samples.healthygroceryshopping.domain.types.FoodProduct arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthCondition createHealthCondition(spa.samples.healthygroceryshopping.domain.types.Person arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthCondition createHealthCondition(spa.samples.healthygroceryshopping.domain.types.Person arg1, spa.samples.healthygroceryshopping.domain.types.HealthCondition arg2);
+    spa.samples.healthygroceryshopping.domain.types.HealthConditionType createHealthConditionType(string arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthParameterScore createHealthParameterScore(spa.samples.healthygroceryshopping.domain.types.HealthParameter arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthParameterScore createHealthParameterScore(spa.samples.healthygroceryshopping.domain.types.HealthParameter arg1, spa.samples.healthygroceryshopping.domain.types.ScoreValue arg2);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalIndication createNutritionalIndication(spa.samples.healthygroceryshopping.domain.types.NutritionalParameter arg);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalInfoAuthority createNutritionalInfoAuthority(string arg1, string arg2);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalParameter createNutritionalParameter(string arg1, string arg2);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue createNutritionalParameterValue(spa.samples.healthygroceryshopping.domain.types.NutritionalParameter arg);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue createNutritionalParameterValue(spa.samples.healthygroceryshopping.domain.types.NutritionalParameter arg1, spa.samples.healthygroceryshopping.domain.types.MeasurementUnit arg2, spa.samples.healthygroceryshopping.domain.types.Range arg3, spa.samples.healthygroceryshopping.domain.types.MeasurementUnit arg4, spa.samples.healthygroceryshopping.domain.types.Range arg5);
+    spa.samples.healthygroceryshopping.domain.types.Person createPerson(string arg1, string arg2, java.time.Instant arg3);
+    spa.samples.healthygroceryshopping.domain.types.Person createPerson(string arg1, string arg2, string arg3);
+    spa.samples.healthygroceryshopping.domain.types.PersonProfile createPersonProfile(spa.samples.healthygroceryshopping.domain.types.Person arg1, java.time.Instant arg2);
+    spa.samples.healthygroceryshopping.domain.types.Product createProduct(string arg);
+    spa.samples.healthygroceryshopping.domain.types.ProductLineItem createProductLineItem(spa.samples.healthygroceryshopping.domain.types.Product arg1, spa.samples.healthygroceryshopping.domain.types.MeasurementUnit arg2);
+    spa.samples.healthygroceryshopping.domain.types.Sensor createSensor(spa.samples.healthygroceryshopping.domain.types.SensorModel arg1, string arg2);
+    spa.samples.healthygroceryshopping.domain.types.SensorModel createSensorModel(spa.samples.healthygroceryshopping.domain.types.SensorType arg1, string arg2, string arg3);
+    spa.samples.healthygroceryshopping.domain.types.ShoppingCart createShoppingCart(spa.samples.healthygroceryshopping.domain.types.Person arg1, spa.samples.healthygroceryshopping.domain.types.Cart arg2);
+    spa.samples.healthygroceryshopping.domain.types.Tag createTag(spa.samples.healthygroceryshopping.domain.types.Product arg1, string arg2);
+    spa.samples.healthygroceryshopping.domain.types.Cart getCartWithSerialNumber(string arg);
+    static spa.samples.healthygroceryshopping.domain.types.DomainObjectFactory getSingleton();
+}
+
+interface FoodProduct
+        extends spa.samples.healthygroceryshopping.domain.types.Product
+{
+    abstract spa.samples.healthygroceryshopping.domain.types.MeasurementUnit measurementUnit;
+    readonly abstract java.util.Iterator nutritionalInfo;
+    void addNutritionalInfo(spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo arg);
+    spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo removeNutritionalInfo(spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo arg);
+}
+
+interface FoodProductCategory
+        extends spa.samples.healthygroceryshopping.domain.types.FoodProduct
+{
+    abstract string FDCId;
+    readonly abstract java.util.Iterator subcategories;
+    void addSubcategory(spa.samples.healthygroceryshopping.domain.types.FoodProductCategory arg);
+    spa.samples.healthygroceryshopping.domain.types.FoodProductCategory removeSubcategory(spa.samples.healthygroceryshopping.domain.types.FoodProductCategory arg);
+}
+
+interface FoodProductItem
+        extends spa.samples.healthygroceryshopping.domain.types.FoodProduct
+{
+    abstract float pricePerUnit;
+    readonly abstract java.util.Iterator productCategories;
+    void addProductCategory(spa.samples.healthygroceryshopping.domain.types.FoodProductCategory arg);
+    spa.samples.healthygroceryshopping.domain.types.FoodProductCategory removeProductCategory(spa.samples.healthygroceryshopping.domain.types.FoodProductCategory arg);
+}
+
+interface FoodProductNutritionalInfo
+{
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.FoodProduct food;
+    readonly abstract java.time.Instant infoDate;
+    abstract spa.samples.healthygroceryshopping.domain.types.NutritionalInfoAuthority nutritionalInfoAuthority;
+    readonly abstract java.util.Iterator nutritionalParameterValues;
+    void addNutritionalParameterValue(spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue arg);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue removeNutritionalParameterValue(spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue arg);
+}
+
+interface HealthCondition
+{
+    abstract java.time.Instant dateOnset;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Person person;
+    abstract spa.samples.healthygroceryshopping.domain.types.SeverityLevel severityLevel;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.HealthConditionType type;
+}
+
+interface HealthConditionType
+{
+    abstract string description;
+    readonly abstract string name;
+    readonly abstract java.util.Iterator nutritionalIndications;
+    readonly abstract java.util.Iterator subtypes;
+    void addNutritionalIndication(spa.samples.healthygroceryshopping.domain.types.NutritionalIndication arg);
+    void addSubtype(spa.samples.healthygroceryshopping.domain.types.HealthConditionType arg);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalIndication removeNutritionalIndication(spa.samples.healthygroceryshopping.domain.types.NutritionalIndication arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthConditionType removeSubtype(spa.samples.healthygroceryshopping.domain.types.HealthConditionType arg);
+}
+
+interface HealthParameter
+{
+    abstract string description;
+    readonly abstract string name;
+}
+
+interface HealthParameterScore
+{
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.HealthParameter parameter;
+    abstract spa.samples.healthygroceryshopping.domain.types.ScoreValue score;
+}
+
+interface HealthProfile
+{
+    abstract java.time.Instant birthdate;
+    readonly abstract java.util.Iterator healthConditions;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Person person;
+    void addHealthCondition(spa.samples.healthygroceryshopping.domain.types.HealthCondition arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthCondition addHealthCondition(spa.samples.healthygroceryshopping.domain.types.HealthConditionType arg1, java.time.Instant arg2, spa.samples.healthygroceryshopping.domain.types.SeverityLevel arg3);
+    java.util.Iterator getHealthConditionsOfType(spa.samples.healthygroceryshopping.domain.types.HealthConditionType arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthCondition removeHealthCondition(spa.samples.healthygroceryshopping.domain.types.HealthCondition arg);
+}
+
+interface HealthScore
+{
+    readonly abstract java.util.Iterator healthParameterScores;
+    readonly abstract java.util.Iterator nutritionalParameterValues;
+    void addHealthParameterScore(spa.samples.healthygroceryshopping.domain.types.HealthParameterScore arg);
+    void addNutritionalParameterValue(spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthParameterScore removeHealthParameterScore(spa.samples.healthygroceryshopping.domain.types.HealthParameterScore arg);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue removeNutritionalParemeterValue(spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue arg);
+}
+
+final class MeasurementUnit
+        extends java.lang.Enum
+{
+    domain {static ByTheUnit, static LiquidOunce, static Liter, static Quart, static Gallon, static Gram, static Pound, static Kilogram}
+    static final readonly spa.samples.healthygroceryshopping.domain.types.MeasurementUnit ByTheUnit;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.MeasurementUnit Gallon;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.MeasurementUnit Gram;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.MeasurementUnit Kilogram;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.MeasurementUnit LiquidOunce;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.MeasurementUnit Liter;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.MeasurementUnit Pound;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.MeasurementUnit Quart;
+    static spa.samples.healthygroceryshopping.domain.types.MeasurementUnit valueOf(string arg);
+    static spa.samples.healthygroceryshopping.domain.types.MeasurementUnit[] values();
+}
+
+interface NutritionalIndication
+{
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.HealthConditionType healthConditionType;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.NutritionalParameter parameter;
+    abstract spa.samples.healthygroceryshopping.domain.types.MeasurementUnit periodUnit;
+    abstract spa.samples.healthygroceryshopping.domain.types.Range periodValue;
+    abstract spa.samples.healthygroceryshopping.domain.types.MeasurementUnit referenceUnit;
+    abstract spa.samples.healthygroceryshopping.domain.types.Range referenceValue;
+    abstract spa.samples.healthygroceryshopping.domain.types.MeasurementUnit unit;
+    abstract spa.samples.healthygroceryshopping.domain.types.Range value;
+}
+
+interface NutritionalInfoAuthority
+{
+    abstract spa.samples.healthygroceryshopping.domain.types.AuthorityType authorityType;
+    readonly abstract string description;
+    readonly abstract string name;
+}
+
+interface NutritionalParameter
+{
+    abstract string description;
+    readonly abstract string name;
+    readonly abstract java.util.Iterator referenceUnits;
+    readonly abstract java.util.Iterator valueUnits;
+    void addRefertenceUnit(spa.samples.healthygroceryshopping.domain.types.MeasurementUnit arg);
+    void addValueUnit(spa.samples.healthygroceryshopping.domain.types.MeasurementUnit arg);
+    spa.samples.healthygroceryshopping.domain.types.MeasurementUnit removeReferenceUnit(spa.samples.healthygroceryshopping.domain.types.MeasurementUnit arg);
+    spa.samples.healthygroceryshopping.domain.types.MeasurementUnit removeValueUnit(spa.samples.healthygroceryshopping.domain.types.MeasurementUnit arg);
+}
+
+interface NutritionalParameterValue
+{
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.NutritionalParameter nutritionalParameter;
+    abstract spa.samples.healthygroceryshopping.domain.types.MeasurementUnit referenceUnit;
+    abstract float referenceValue;
+    abstract spa.samples.healthygroceryshopping.domain.types.MeasurementUnit unit;
+    abstract spa.samples.healthygroceryshopping.domain.types.Range value;
+}
+
+interface Person
+{
+    readonly abstract java.time.Instant birthdate;
+    abstract spa.samples.healthygroceryshopping.domain.types.ShoppingCart currentShoppingCart;
+    readonly abstract string firstName;
+    readonly abstract string lastName;
+    readonly abstract java.util.Iterator pastCarts;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Cart physicalCart;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.PersonProfile profile;
+    void addPastCart(spa.samples.healthygroceryshopping.domain.types.ShoppingCart arg);
+    void archiveCurrentCart();
+    spa.samples.healthygroceryshopping.domain.types.Cart pickCart(string arg);
+    spa.samples.healthygroceryshopping.domain.types.ShoppingCart removePastCart(spa.samples.healthygroceryshopping.domain.types.ShoppingCart arg);
+    spa.samples.healthygroceryshopping.domain.types.ShoppingCart startShoppingCart(spa.samples.healthygroceryshopping.domain.types.Cart arg);
+}
+
+interface PersonProfile
+{
+    readonly abstract string SSN;
+    abstract spa.samples.healthygroceryshopping.domain.types.Address address;
+    readonly abstract java.util.Iterator dietaryPreferences;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.DietaryProfile dietrayProfile;
+    readonly abstract java.util.Iterator healthConditions;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.HealthProfile healthProfile;
+    void addDietaryPreference(spa.samples.healthygroceryshopping.domain.types.DietaryPreference arg);
+    void addHealthCondition(spa.samples.healthygroceryshopping.domain.types.HealthCondition arg);
+    spa.samples.healthygroceryshopping.domain.types.DietaryPreference removeDietaryPreference(spa.samples.healthygroceryshopping.domain.types.DietaryPreference arg);
+    void removeHealthCondition(spa.samples.healthygroceryshopping.domain.types.HealthCondition arg);
+}
+
+final class PreferenceModality
+        extends java.lang.Enum
+{
+    domain {static Never, static EveryOnceInAWhile, static Regularly, static Often, static Always}
+    static final readonly spa.samples.healthygroceryshopping.domain.types.PreferenceModality Always;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.PreferenceModality EveryOnceInAWhile;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.PreferenceModality Never;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.PreferenceModality Often;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.PreferenceModality Regularly;
+    static spa.samples.healthygroceryshopping.domain.types.PreferenceModality valueOf(string arg);
+    static spa.samples.healthygroceryshopping.domain.types.PreferenceModality[] values();
+}
+
+interface Product
+{
+    writeonly abstract string brandOrVariety;
+    abstract string description;
+    readonly abstract string name;
+    abstract string producer;
+    string brandOrVariety();
+}
+
+interface ProductLineItem
+{
+    writeonly abstract spa.samples.healthygroceryshopping.domain.types.MeasurementUnit measurementUnit;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Product product;
+    abstract float quantity;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.MeasurementUnit unit;
+}
+
+final class ProvinceTerritoryState
+        extends java.lang.Enum
+{
+    domain 
+    {
+        static ALBERTA,
+        static BRITISH_COLUMBIA,
+        static MANITOBA,
+        static NEW_BRUNSWICK,
+        static NEWFOUNDLAND_AND_LABRADOR,
+        static NOVA_SCOTIA,
+        static ONTARIO,
+        static PRINCE_EDWARD_ISLAND,
+        static QUEBEC,
+        static SASKATCHEWAN,
+        static NORTHWEST_TERRITORIES,
+        static NUNAVUT,
+        static YUKON
+    }
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState ALBERTA;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState BRITISH_COLUMBIA;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState MANITOBA;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState NEWFOUNDLAND_AND_LABRADOR;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState NEW_BRUNSWICK;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState NORTHWEST_TERRITORIES;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState NOVA_SCOTIA;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState NUNAVUT;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState ONTARIO;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState PRINCE_EDWARD_ISLAND;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState QUEBEC;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState SASKATCHEWAN;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState YUKON;
+    static spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState valueOf(string arg);
+    static spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState[] values();
+}
+
+final class Range
+        extends java.lang.Record
+{
+    Range(float arg);
+    Range(float arg1, boolean arg2, float arg3, boolean arg4);
+    float LowerBound();
+    float UpperBound();
+    final boolean equals(object arg);
+    final int hashCode();
+    boolean lowerIncluded();
+    final string toString();
+    boolean upperIncluded();
+}
+
+final class ScoreValue
+        extends java.lang.Enum
+{
+    domain {static VeryHealthy, static Healthy, static Indifferent, static Unhealthy, static VeryUnhealthy}
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ScoreValue Healthy;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ScoreValue Indifferent;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ScoreValue Unhealthy;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ScoreValue VeryHealthy;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.ScoreValue VeryUnhealthy;
+    static spa.samples.healthygroceryshopping.domain.types.ScoreValue valueOf(string arg);
+    static spa.samples.healthygroceryshopping.domain.types.ScoreValue[] values();
+}
+
+interface Sensor
+{
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.SensorModel sensorModel;
+    abstract spa.samples.healthygroceryshopping.domain.types.SensorState state;
+}
+
+interface SensorModel
+{
+    abstract string description;
+    abstract string manufacturer;
+    readonly abstract string modelName;
+    readonly abstract string modelNumber;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.SensorType sensorType;
+}
+
+final class SensorState
+        extends java.lang.Enum
+{
+    domain {static Working, static Down, static Unreliable}
+    static final readonly spa.samples.healthygroceryshopping.domain.types.SensorState Down;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.SensorState Unreliable;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.SensorState Working;
+    static spa.samples.healthygroceryshopping.domain.types.SensorState valueOf(string arg);
+    static spa.samples.healthygroceryshopping.domain.types.SensorState[] values();
+}
+
+interface SensorType
+{
+    readonly abstract string description;
+    readonly abstract string name;
+    readonly abstract java.util.Iterator subtypes;
+    void addSubtype(spa.samples.healthygroceryshopping.domain.types.SensorType arg);
+    spa.samples.healthygroceryshopping.domain.types.SensorType removeSubtype(spa.samples.healthygroceryshopping.domain.types.SensorType arg);
+}
+
+final class SeverityLevel
+        extends java.lang.Enum
+{
+    domain {static Benign, static Low, static Moderate, static High, static Extreme}
+    static final readonly spa.samples.healthygroceryshopping.domain.types.SeverityLevel Benign;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.SeverityLevel Extreme;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.SeverityLevel High;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.SeverityLevel Low;
+    static final readonly spa.samples.healthygroceryshopping.domain.types.SeverityLevel Moderate;
+    static spa.samples.healthygroceryshopping.domain.types.SeverityLevel valueOf(string arg);
+    static spa.samples.healthygroceryshopping.domain.types.SeverityLevel[] values();
+}
+
+interface ShoppingCart
+{
+    abstract spa.samples.healthygroceryshopping.domain.types.Cart cart;
+    readonly abstract java.util.Iterator healthParameterScores;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.HealthScore healthScore;
+    readonly abstract java.util.Iterator nutritionalParameterValues;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Person person;
+    readonly abstract java.util.Iterator productLineItems;
+    void addHealthParameterScore(spa.samples.healthygroceryshopping.domain.types.HealthParameterScore arg);
+    spa.samples.healthygroceryshopping.domain.types.ProductLineItem addLineItemForProduct(spa.samples.healthygroceryshopping.domain.types.Product arg);
+    spa.samples.healthygroceryshopping.domain.types.ProductLineItem addLineItemForProduct(spa.samples.healthygroceryshopping.domain.types.Product arg1, spa.samples.healthygroceryshopping.domain.types.MeasurementUnit arg2, float arg3);
+    void addNutritionalParameterValue(spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue arg);
+    spa.samples.healthygroceryshopping.domain.types.ProductLineItem getProductLineItemForProduct(spa.samples.healthygroceryshopping.domain.types.Product arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthParameterScore getScoreForHealthParameter(spa.samples.healthygroceryshopping.domain.types.HealthParameter arg);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue getValueForNutritionalParameter(spa.samples.healthygroceryshopping.domain.types.NutritionalParameter arg);
+    spa.samples.healthygroceryshopping.domain.types.HealthParameterScore removeHealthParameterScore(spa.samples.healthygroceryshopping.domain.types.HealthParameterScore arg);
+    spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue removeNutritionalParameterValue(spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue arg);
+    void setScoreForHealthParameter(spa.samples.healthygroceryshopping.domain.types.HealthParameter arg1, spa.samples.healthygroceryshopping.domain.types.ScoreValue arg2);
+    void setValueForNutritionalParameter(spa.samples.healthygroceryshopping.domain.types.NutritionalParameter arg1, spa.samples.healthygroceryshopping.domain.types.ScoreValue arg2);
+}
+
+interface Tag
+{
+    readonly abstract string inventoryId;
+    readonly abstract spa.samples.healthygroceryshopping.domain.types.Product product;
+}
+

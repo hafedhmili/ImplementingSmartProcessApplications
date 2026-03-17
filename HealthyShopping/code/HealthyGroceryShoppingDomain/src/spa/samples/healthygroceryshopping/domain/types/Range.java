@@ -8,10 +8,10 @@ package spa.samples.healthygroceryshopping.domain.types;
  * represent a single value
  * Author: Hafedh Mili
  */
-public record Range(float LowerBound ,float UpperBound ) {
+public record Range(float LowerBound , boolean lowerIncluded, float UpperBound, boolean upperIncluded ) {
 	
 	public Range(float singleValue) {
-		this(singleValue,singleValue);
+		this(singleValue,true,singleValue,true);
 	}
 
 }

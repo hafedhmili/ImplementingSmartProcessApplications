@@ -17,11 +17,12 @@ import spa.samples.healthygroceryshopping.domain.types.FoodProductItem;
 import spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo;
 import spa.samples.healthygroceryshopping.domain.types.HealthCondition;
 import spa.samples.healthygroceryshopping.domain.types.HealthConditionType;
+import spa.samples.healthygroceryshopping.domain.types.HealthParameter;
+import spa.samples.healthygroceryshopping.domain.types.HealthParameterScore;
 import spa.samples.healthygroceryshopping.domain.types.MeasurementUnit;
 import spa.samples.healthygroceryshopping.domain.types.NutritionalIndication;
 import spa.samples.healthygroceryshopping.domain.types.NutritionalInfoAuthority;
 import spa.samples.healthygroceryshopping.domain.types.NutritionalParameter;
-import spa.samples.healthygroceryshopping.domain.types.NutritionalParameterScore;
 import spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue;
 import spa.samples.healthygroceryshopping.domain.types.Person;
 import spa.samples.healthygroceryshopping.domain.types.PersonProfile;
@@ -155,18 +156,6 @@ public class DomainObjectFactoryImpl implements DomainObjectFactory {
 	}
 
 	@Override
-	public NutritionalParameterScore createNutritionalParameterScore(NutritionalParameter parameter) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public NutritionalParameterScore createNutritionalParameterScore(NutritionalParameter parameter, ScoreValue value) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public NutritionalParameterValue createNutritionalParameterValue(NutritionalParameter parameter) {
 		// TODO Auto-generated method stub
 		return null;
@@ -223,6 +212,18 @@ public class DomainObjectFactoryImpl implements DomainObjectFactory {
 
 	@Override
 	public Cart getCartWithSerialNumber(String serialNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HealthParameterScore createHealthParameterScore(HealthParameter parameter) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public HealthParameterScore createHealthParameterScore(HealthParameter parameter, ScoreValue value) {
 		// TODO Auto-generated method stub
 		return null;
 	}

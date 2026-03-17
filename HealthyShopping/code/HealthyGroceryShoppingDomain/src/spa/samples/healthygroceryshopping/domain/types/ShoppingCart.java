@@ -10,9 +10,8 @@ import java.util.Iterator;
  * Interface that represents a shopping cart
  * 
  * In additional to accessing the attributes of a shopping cart (the person/shopper,
- * the physical cart, the product line items, and the cart score), it provides us
- * methods to manipulate the cart score (CRUDing nutritional parameters and
- * CartState)
+ * the physical cart, the product line items, and the cart's health score), it provides us
+ * methods to manipulate (CRUDing) the indvidual nutritional parameter values and health parameter scores.
  * Author: Ghizlane Elboussaidi & Hafedh Mili
  */
 public interface ShoppingCart {
@@ -70,52 +69,75 @@ public interface ShoppingCart {
 	 * return the cart score
 	 * @return
 	 */
-	public HealthScore getScore();
+	public HealthScore getHealthScore();
 	
 	/**
 	 * return the score for a specific nutritional parameter (e.g. sodium content)
 	 * @param parameter
 	 * @return
 	 */
-	public NutritionalParameterScore getScoreForParameter(NutritionalParameter parameter);
+	public NutritionalParameterValue getValueForNutritionalParameter(NutritionalParameter parameter);
 	
 	/**
 	 * set the <code>value</code> for the nutritional <code>parameter</code>
 	 * @param parameter
 	 * @param value
 	 */
-	public void setNutritionalScoreFor(NutritionalParameter parameter, ScoreValue value);
+	public void setValueForNutritionalParameter(NutritionalParameter parameter, ScoreValue value);
 	
 	/**
 	 * return the list of nutritional scores
 	 * @return
 	 */
-	public Iterator<NutritionalParameterScore> getNutritionalScores();
+	public Iterator<NutritionalParameterValue> getNutritionalParameterValues();
 	
 	/**
 	 * add a nutritional score
 	 * 
 	 * @param parameterScore
 	 */
-	public void addNutritionalScore(NutritionalParameterScore parameterScore);
+	public void addNutritionalParameterValue(NutritionalParameterValue parameterValue);
 	
 	/**
 	 * remove a nutritional score
 	 * @param parameterScore
 	 * @return
 	 */
-	public NutritionalParameterScore removeNutritionalScore(NutritionalParameterScore parameterScore);
+	public NutritionalParameterValue removeNutritionalParameterValue(NutritionalParameterValue parameterValue);
 	
+
 	/**
-	 * return the cart state
+	 * return the score for a specific health parameter (e.g. balance)
+	 * @param parameter
 	 * @return
 	 */
-	public CartState getCartState();
+	public HealthParameterScore getScoreForHealthParameter(HealthParameter parameter);
 	
 	/**
-	 * set the cart state
-	 * @param state
+	 * set the <code>value</code> for the health <code>parameter</code>
+	 * @param parameter
+	 * @param value
 	 */
-	public void setCartState(CartState state);
+	public void setScoreForHealthParameter(HealthParameter parameter, ScoreValue value);
+	
+	/**
+	 * return the list of health scores
+	 * @return
+	 */
+	public Iterator<HealthParameterScore> getHealthParameterScores();
+	
+	/**
+	 * add a health parameter score
+	 * 
+	 * @param parameterScore
+	 */
+	public void addHealthParameterScore(HealthParameterScore parameterScore);
+	
+	/**
+	 * remove a health parameter score
+	 * @param parameterScore
+	 * @return
+	 */
+	public HealthParameterScore removeHealthParameterScore(HealthParameterScore parameterScore);
 
 }

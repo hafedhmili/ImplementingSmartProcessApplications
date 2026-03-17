@@ -8,15 +8,15 @@ import java.util.Iterator;
 /**
  * 
  * This interface represents the object that centralizes the results
- * of evaluating the "fitness" of the shopping cart to the shopper.
+ * of evaluating the "fitness" of a food item or the entire caret.
  * 
- * This is the entity where we centralize the nutritional info, which
- * is an aggregate of the contents of the cart, along with the final
- * overall <code>carState</code>, which is the result of the 
- * business rule processing.
+ * This is the entity where we centralize the nutritional info, and the health score
  * 
- * We can score a shopping cart relative to sodium content, trans fats, sugar,
- * processed foods, pesticides, etc. (all instances of <code>NutritionalParameterScore</code>)
+ * The NutritionalParameterValue's are just computed/looked up, with no judgement. For example,
+ * to say that a food item has 11 g protein is neutral.
+ * 
+ * The business rules will then assess whether those numbers are healthy for the given 
+ * shopper, and that is the HealthParameterScore, which is a qualitative judgement
  * 
  * Author: Ghizlane ElBoussaidi & Hafedh Mili
  */
@@ -26,28 +26,28 @@ public interface HealthScore {
 	 * return the list of nutritional value
 	 * @return
 	 */
-	public Iterator<NutritionalParameterValue> getNutritionalValues();
+	public Iterator<NutritionalParameterValue> getNutritionalParameterValues();
 	
 	/**
-	 * add a nutritional value.
+	 * add a nutritional parameter value.
 	 * 
 	 * @param parameterValue
 	 */
-	public void addNutritionalValue(NutritionalParameterValue parameterValue);
+	public void addNutritionalParameterValue(NutritionalParameterValue parameterValue);
 	
 	/**
-	 * remove a nutritional vaue
+	 * remove a nutritional parameter value
 	 * 
 	 * @param parameterValue
 	 * @return
 	 */
-	public NutritionalParameterScore removeNutritionalScore(NutritionalParameterValue parameterValue);
+	public NutritionalParameterValue removeNutritionalParemeterValue(NutritionalParameterValue parameterValue);
 	
 	/**
-	 * return the list of nutritional value
+	 * return the list of health parameter values
 	 * @return
 	 */
-	public Iterator<HealthParameterScore> getHealthScore();
+	public Iterator<HealthParameterScore> getHealthParameterScores();
 	
 	/**
 	 * add a health parameter score.

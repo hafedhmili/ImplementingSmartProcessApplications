@@ -5,9 +5,6 @@ package spa.samples.healthygroceryshopping.domain.types;
 
 import java.time.Instant;
 
-import spa.samples.healthygroceryshopping.domain.impl.DomainObjectFactoryImpl;
-import spa.samples.healthygroceryshopping.domain.impl.PersonImpl;
-
 /**
  * Author: Ghizlane Elboussaidi & Hafedh Mili
  */
@@ -45,9 +42,9 @@ public interface DomainObjectFactory {
 	
 	public NutritionalParameter createNutritionalParameter(String name, String description);
 	
-	public NutritionalParameterScore createNutritionalParameterScore(NutritionalParameter parameter);
+	public HealthParameterScore createHealthParameterScore(HealthParameter parameter);
 	
-	public NutritionalParameterScore createNutritionalParameterScore(NutritionalParameter parameter, ScoreValue value);
+	public HealthParameterScore createHealthParameterScore(HealthParameter parameter, ScoreValue value);
 
 	public NutritionalParameterValue createNutritionalParameterValue(NutritionalParameter parameter);
 	
@@ -69,7 +66,8 @@ public interface DomainObjectFactory {
 	 * @return
 	 */
 	public static DomainObjectFactory getSingleton() {
-		return DomainObjectFactoryImpl.getSingleton();
+		// return DomainObjectFactoryImpl.getSingleton();
+		return null;
 	}
 
 	/**

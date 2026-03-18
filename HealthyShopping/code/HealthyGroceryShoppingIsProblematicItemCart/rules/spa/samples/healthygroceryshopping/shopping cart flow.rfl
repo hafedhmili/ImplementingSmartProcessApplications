@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>shopping cart flow</name>
+  <uuid>1bcd2f5e-74e9-4e66-bb4f-123bbf999ef0</uuid>
+  <locale>en_US</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_0"/>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="general" Ordering="Default">
+        <RuleList>
+          <Package Name="spa.samples.healthygroceryshopping.shoppingcartrules.general"/>
+        </RuleList>
+      </RuleTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="shooperfitness" Ordering="Default">
+        <RuleList>
+          <Package Name="spa.samples.healthygroceryshopping.shoppingcartrules.shooperfitness"/>
+        </RuleList>
+      </RuleTask>
+      <StopTask Identifier="task_1"/>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node2" Task="task_0"/>
+      <TaskNode Identifier="node3" Task="task_1"/>
+      <TaskNode Identifier="node_2" Task="general"/>
+      <TaskNode Identifier="node_3" Task="shooperfitness"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="link4" Source="node2" Target="node_2"/>
+      <Transition Identifier="link5" Source="node_2" Target="node_3"/>
+      <Transition Identifier="link6" Source="node_3" Target="node3"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="en_US">
+      <Data Name="node3#y">245.0</Data>
+      <Data Name="node2#y">15.0</Data>
+      <Data Name="node3#x">64.559</Data>
+      <Data Name="node2#x">64.559</Data>
+      <Data Name="node_3#label">shooperfitness</Data>
+      <Data Name="node_2#label">general</Data>
+      <Data Name="node_3#y">170.0</Data>
+      <Data Name="node_2#x">64.559</Data>
+      <Data Name="node_2#y">90.0</Data>
+      <Data Name="node_3#x">64.559</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties/>
+</Ruleflow>
+</rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

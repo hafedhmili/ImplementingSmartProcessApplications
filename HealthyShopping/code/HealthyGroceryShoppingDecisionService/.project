@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>HealthGroceryShoppingDecisionService</name>
+	<comment></comment>
+	<projects>
+		<project>HealthGroceryShoppingHandleProblematicItemCart</project>
+		<project>HealthyGroceryShoppingIsProblematicItemCart</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>ilog.rules.studio.model.ruleBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>ilog.rules.studio.model.decisionProject</nature>
+		<nature>ilog.rules.studio.model.operationProject</nature>
+		<nature>ilog.rules.studio.model.ruleNature</nature>
+	</natures>
+</projectDescription>

@@ -1,0 +1,276 @@
+# Vocabulary Properties
+uuid = f1ae61a5-e267-4c71-afb2-4b06a64be535
+
+# spa.samples.healthygroceryshopping.domain.types.Address
+spa.samples.healthygroceryshopping.domain.types.Address#concept.label = address
+
+# spa.samples.healthygroceryshopping.domain.types.AuthorityType
+spa.samples.healthygroceryshopping.domain.types.AuthorityType#concept.label = authority type
+spa.samples.healthygroceryshopping.domain.types.AuthorityType.Private#instance.label = Private
+spa.samples.healthygroceryshopping.domain.types.AuthorityType.Public#instance.label = Public
+
+# spa.samples.healthygroceryshopping.domain.types.Cart
+spa.samples.healthygroceryshopping.domain.types.Cart#concept.label = cart
+spa.samples.healthygroceryshopping.domain.types.Cart.items#phrase.navigation = {items} of {this}
+spa.samples.healthygroceryshopping.domain.types.Cart.sensors#phrase.navigation = {sensors} of {this}
+spa.samples.healthygroceryshopping.domain.types.Cart.serialNumber#phrase.navigation = {serial number} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.CartItem
+spa.samples.healthygroceryshopping.domain.types.CartItem#concept.label = cart item
+spa.samples.healthygroceryshopping.domain.types.CartItem.cart#phrase.navigation = {cart} of {this}
+spa.samples.healthygroceryshopping.domain.types.CartItem.healthScore#phrase.navigation = {health score} of {this}
+spa.samples.healthygroceryshopping.domain.types.CartItem.product#phrase.navigation = {product} of {this}
+spa.samples.healthygroceryshopping.domain.types.CartItem.productLineItem#phrase.action = set the product line item of {this} to {product line item}
+spa.samples.healthygroceryshopping.domain.types.CartItem.productLineItem#phrase.navigation = {product line item} of {this}
+spa.samples.healthygroceryshopping.domain.types.CartItem.tag#phrase.navigation = {tag} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.DietaryPreference
+spa.samples.healthygroceryshopping.domain.types.DietaryPreference#concept.label = dietary preference
+
+# spa.samples.healthygroceryshopping.domain.types.DietaryProfile
+spa.samples.healthygroceryshopping.domain.types.DietaryProfile#concept.label = dietary profile
+spa.samples.healthygroceryshopping.domain.types.DietaryProfile.person#phrase.navigation = {person} of {this}
+spa.samples.healthygroceryshopping.domain.types.DietaryProfile.preferences#phrase.navigation = {preferences} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.DomainObjectFactory
+spa.samples.healthygroceryshopping.domain.types.DomainObjectFactory#concept.label = domain object factory
+
+# spa.samples.healthygroceryshopping.domain.types.FoodProduct
+spa.samples.healthygroceryshopping.domain.types.FoodProduct#concept.label = food product
+spa.samples.healthygroceryshopping.domain.types.FoodProduct.measurementUnit#phrase.action = set the measurement unit of {this} to {measurement unit}
+spa.samples.healthygroceryshopping.domain.types.FoodProduct.measurementUnit#phrase.navigation = {measurement unit} of {this}
+spa.samples.healthygroceryshopping.domain.types.FoodProduct.nutritionalInfo#phrase.navigation = {nutritional info} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.FoodProductCategory
+spa.samples.healthygroceryshopping.domain.types.FoodProductCategory#concept.label = food product category
+spa.samples.healthygroceryshopping.domain.types.FoodProductCategory.FDCId#phrase.action = set the FDCId of {this} to {FDCId}
+spa.samples.healthygroceryshopping.domain.types.FoodProductCategory.FDCId#phrase.navigation = {FDCId} of {this}
+spa.samples.healthygroceryshopping.domain.types.FoodProductCategory.subcategories#phrase.navigation = {subcategories} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.FoodProductItem
+spa.samples.healthygroceryshopping.domain.types.FoodProductItem#concept.label = food product item
+spa.samples.healthygroceryshopping.domain.types.FoodProductItem.pricePerUnit#phrase.action = set the price per unit of {this} to {price per unit}
+spa.samples.healthygroceryshopping.domain.types.FoodProductItem.pricePerUnit#phrase.navigation = {price per unit} of {this}
+spa.samples.healthygroceryshopping.domain.types.FoodProductItem.productCategories#phrase.navigation = {product categories} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo
+spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo#concept.label = food product nutritional info
+spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo.food#phrase.navigation = {food} of {this}
+spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo.nutritionalInfoAuthority#phrase.action = set the nutritional info authority of {this} to {nutritional info authority}
+spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo.nutritionalInfoAuthority#phrase.navigation = {nutritional info authority} of {this}
+spa.samples.healthygroceryshopping.domain.types.FoodProductNutritionalInfo.nutritionalParameterValues#phrase.navigation = {nutritional parameter values} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.HealthCondition
+spa.samples.healthygroceryshopping.domain.types.HealthCondition#concept.label = health condition
+spa.samples.healthygroceryshopping.domain.types.HealthCondition.person#phrase.navigation = {person} of {this}
+spa.samples.healthygroceryshopping.domain.types.HealthCondition.severityLevel#phrase.action = set the severity level of {this} to {severity level}
+spa.samples.healthygroceryshopping.domain.types.HealthCondition.severityLevel#phrase.navigation = {severity level} of {this}
+spa.samples.healthygroceryshopping.domain.types.HealthCondition.type#phrase.navigation = {type} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.HealthConditionType
+spa.samples.healthygroceryshopping.domain.types.HealthConditionType#concept.label = health condition type
+spa.samples.healthygroceryshopping.domain.types.HealthConditionType.description#phrase.action = set the description of {this} to {description}
+spa.samples.healthygroceryshopping.domain.types.HealthConditionType.description#phrase.navigation = {description} of {this}
+spa.samples.healthygroceryshopping.domain.types.HealthConditionType.name#phrase.navigation = {name} of {this}
+spa.samples.healthygroceryshopping.domain.types.HealthConditionType.nutritionalIndications#phrase.navigation = {nutritional indications} of {this}
+spa.samples.healthygroceryshopping.domain.types.HealthConditionType.subtypes#phrase.navigation = {subtypes} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.HealthParameter
+spa.samples.healthygroceryshopping.domain.types.HealthParameter#concept.label = health parameter
+spa.samples.healthygroceryshopping.domain.types.HealthParameter.description#phrase.action = set the description of {this} to {description}
+spa.samples.healthygroceryshopping.domain.types.HealthParameter.description#phrase.navigation = {description} of {this}
+spa.samples.healthygroceryshopping.domain.types.HealthParameter.name#phrase.navigation = {name} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.HealthParameterScore
+spa.samples.healthygroceryshopping.domain.types.HealthParameterScore#concept.label = health parameter score
+spa.samples.healthygroceryshopping.domain.types.HealthParameterScore.parameter#phrase.navigation = {parameter} of {this}
+spa.samples.healthygroceryshopping.domain.types.HealthParameterScore.score#phrase.action = set the score of {this} to {score}
+spa.samples.healthygroceryshopping.domain.types.HealthParameterScore.score#phrase.navigation = {score} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.HealthProfile
+spa.samples.healthygroceryshopping.domain.types.HealthProfile#concept.label = health profile
+spa.samples.healthygroceryshopping.domain.types.HealthProfile.healthConditions#phrase.navigation = {health conditions} of {this}
+spa.samples.healthygroceryshopping.domain.types.HealthProfile.person#phrase.navigation = {person} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.HealthScore
+spa.samples.healthygroceryshopping.domain.types.HealthScore#concept.label = health score
+spa.samples.healthygroceryshopping.domain.types.HealthScore.healthParameterScores#phrase.navigation = {health parameter scores} of {this}
+spa.samples.healthygroceryshopping.domain.types.HealthScore.nutritionalParameterValues#phrase.navigation = {nutritional parameter values} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.MeasurementUnit
+spa.samples.healthygroceryshopping.domain.types.MeasurementUnit#concept.label = measurement unit
+spa.samples.healthygroceryshopping.domain.types.MeasurementUnit.ByTheUnit#instance.label = ByTheUnit
+spa.samples.healthygroceryshopping.domain.types.MeasurementUnit.Gallon#instance.label = Gallon
+spa.samples.healthygroceryshopping.domain.types.MeasurementUnit.Gram#instance.label = Gram
+spa.samples.healthygroceryshopping.domain.types.MeasurementUnit.Kilogram#instance.label = Kilogram
+spa.samples.healthygroceryshopping.domain.types.MeasurementUnit.LiquidOunce#instance.label = LiquidOunce
+spa.samples.healthygroceryshopping.domain.types.MeasurementUnit.Liter#instance.label = Liter
+spa.samples.healthygroceryshopping.domain.types.MeasurementUnit.Pound#instance.label = Pound
+spa.samples.healthygroceryshopping.domain.types.MeasurementUnit.Quart#instance.label = Quart
+
+# spa.samples.healthygroceryshopping.domain.types.NutritionalIndication
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication#concept.label = nutritional indication
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.healthConditionType#phrase.navigation = {health condition type} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.parameter#phrase.navigation = {parameter} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.periodUnit#phrase.action = set the period unit of {this} to {period unit}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.periodUnit#phrase.navigation = {period unit} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.periodValue#phrase.action = set the period value of {this} to {period value}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.periodValue#phrase.navigation = {period value} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.referenceUnit#phrase.action = set the reference unit of {this} to {reference unit}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.referenceUnit#phrase.navigation = {reference unit} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.referenceValue#phrase.action = set the reference value of {this} to {reference value}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.referenceValue#phrase.navigation = {reference value} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.unit#phrase.action = set the unit of {this} to {unit}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.unit#phrase.navigation = {unit} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.value#phrase.action = set the value of {this} to {value}
+spa.samples.healthygroceryshopping.domain.types.NutritionalIndication.value#phrase.navigation = {value} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.NutritionalInfoAuthority
+spa.samples.healthygroceryshopping.domain.types.NutritionalInfoAuthority#concept.label = nutritional info authority
+spa.samples.healthygroceryshopping.domain.types.NutritionalInfoAuthority.authorityType#phrase.action = set the authority type of {this} to {authority type}
+spa.samples.healthygroceryshopping.domain.types.NutritionalInfoAuthority.authorityType#phrase.navigation = {authority type} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalInfoAuthority.description#phrase.navigation = {description} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalInfoAuthority.name#phrase.navigation = {name} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.NutritionalParameter
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameter#concept.label = nutritional parameter
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameter.description#phrase.action = set the description of {this} to {description}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameter.description#phrase.navigation = {description} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameter.name#phrase.navigation = {name} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameter.referenceUnits#phrase.navigation = {reference units} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameter.valueUnits#phrase.navigation = {value units} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue#concept.label = nutritional parameter value
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue.nutritionalParameter#phrase.navigation = {nutritional parameter} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue.referenceUnit#phrase.action = set the reference unit of {this} to {reference unit}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue.referenceUnit#phrase.navigation = {reference unit} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue.referenceValue#phrase.action = set the reference value of {this} to {reference value}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue.referenceValue#phrase.navigation = {reference value} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue.unit#phrase.action = set the unit of {this} to {unit}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue.unit#phrase.navigation = {unit} of {this}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue.value#phrase.action = set the value of {this} to {value}
+spa.samples.healthygroceryshopping.domain.types.NutritionalParameterValue.value#phrase.navigation = {value} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.Person
+spa.samples.healthygroceryshopping.domain.types.Person#concept.label = person
+spa.samples.healthygroceryshopping.domain.types.Person.currentShoppingCart#phrase.action = set the current shopping cart of {this} to {current shopping cart}
+spa.samples.healthygroceryshopping.domain.types.Person.currentShoppingCart#phrase.navigation = {current shopping cart} of {this}
+spa.samples.healthygroceryshopping.domain.types.Person.firstName#phrase.navigation = {first name} of {this}
+spa.samples.healthygroceryshopping.domain.types.Person.lastName#phrase.navigation = {last name} of {this}
+spa.samples.healthygroceryshopping.domain.types.Person.pastCarts#phrase.navigation = {past carts} of {this}
+spa.samples.healthygroceryshopping.domain.types.Person.physicalCart#phrase.navigation = {physical cart} of {this}
+spa.samples.healthygroceryshopping.domain.types.Person.profile#phrase.navigation = {profile} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.PersonProfile
+spa.samples.healthygroceryshopping.domain.types.PersonProfile#concept.label = person profile
+spa.samples.healthygroceryshopping.domain.types.PersonProfile.SSN#phrase.navigation = {SSN} of {this}
+spa.samples.healthygroceryshopping.domain.types.PersonProfile.address#phrase.action = set the address of {this} to {address}
+spa.samples.healthygroceryshopping.domain.types.PersonProfile.address#phrase.navigation = {address} of {this}
+spa.samples.healthygroceryshopping.domain.types.PersonProfile.dietaryPreferences#phrase.navigation = {dietary preferences} of {this}
+spa.samples.healthygroceryshopping.domain.types.PersonProfile.dietrayProfile#phrase.navigation = {dietray profile} of {this}
+spa.samples.healthygroceryshopping.domain.types.PersonProfile.healthConditions#phrase.navigation = {health conditions} of {this}
+spa.samples.healthygroceryshopping.domain.types.PersonProfile.healthProfile#phrase.navigation = {health profile} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.PreferenceModality
+spa.samples.healthygroceryshopping.domain.types.PreferenceModality#concept.label = preference modality
+spa.samples.healthygroceryshopping.domain.types.PreferenceModality.Always#instance.label = Always
+spa.samples.healthygroceryshopping.domain.types.PreferenceModality.EveryOnceInAWhile#instance.label = EveryOnceInAWhile
+spa.samples.healthygroceryshopping.domain.types.PreferenceModality.Never#instance.label = Never
+spa.samples.healthygroceryshopping.domain.types.PreferenceModality.Often#instance.label = Often
+spa.samples.healthygroceryshopping.domain.types.PreferenceModality.Regularly#instance.label = Regularly
+
+# spa.samples.healthygroceryshopping.domain.types.Product
+spa.samples.healthygroceryshopping.domain.types.Product#concept.label = product
+spa.samples.healthygroceryshopping.domain.types.Product.brandOrVariety#phrase.action = set the brand or variety of {this} to {brand or variety}
+spa.samples.healthygroceryshopping.domain.types.Product.description#phrase.action = set the description of {this} to {description}
+spa.samples.healthygroceryshopping.domain.types.Product.description#phrase.navigation = {description} of {this}
+spa.samples.healthygroceryshopping.domain.types.Product.name#phrase.navigation = {name} of {this}
+spa.samples.healthygroceryshopping.domain.types.Product.producer#phrase.action = set the producer of {this} to {producer}
+spa.samples.healthygroceryshopping.domain.types.Product.producer#phrase.navigation = {producer} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.ProductLineItem
+spa.samples.healthygroceryshopping.domain.types.ProductLineItem#concept.label = product line item
+spa.samples.healthygroceryshopping.domain.types.ProductLineItem.measurementUnit#phrase.action = set the measurement unit of {this} to {measurement unit}
+spa.samples.healthygroceryshopping.domain.types.ProductLineItem.product#phrase.navigation = {product} of {this}
+spa.samples.healthygroceryshopping.domain.types.ProductLineItem.quantity#phrase.action = set the quantity of {this} to {quantity}
+spa.samples.healthygroceryshopping.domain.types.ProductLineItem.quantity#phrase.navigation = {quantity} of {this}
+spa.samples.healthygroceryshopping.domain.types.ProductLineItem.unit#phrase.navigation = {unit} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState#concept.label = province territory state
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.ALBERTA#instance.label = ALBERTA
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.BRITISH_COLUMBIA#instance.label = BRITISH_COLUMBIA
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.MANITOBA#instance.label = MANITOBA
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.NEWFOUNDLAND_AND_LABRADOR#instance.label = NEWFOUNDLAND_AND_LABRADOR
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.NEW_BRUNSWICK#instance.label = NEW_BRUNSWICK
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.NORTHWEST_TERRITORIES#instance.label = NORTHWEST_TERRITORIES
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.NOVA_SCOTIA#instance.label = NOVA_SCOTIA
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.NUNAVUT#instance.label = NUNAVUT
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.ONTARIO#instance.label = ONTARIO
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.PRINCE_EDWARD_ISLAND#instance.label = PRINCE_EDWARD_ISLAND
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.QUEBEC#instance.label = QUEBEC
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.SASKATCHEWAN#instance.label = SASKATCHEWAN
+spa.samples.healthygroceryshopping.domain.types.ProvinceTerritoryState.YUKON#instance.label = YUKON
+
+# spa.samples.healthygroceryshopping.domain.types.Range
+spa.samples.healthygroceryshopping.domain.types.Range#concept.label = range
+
+# spa.samples.healthygroceryshopping.domain.types.ScoreValue
+spa.samples.healthygroceryshopping.domain.types.ScoreValue#concept.label = score value
+spa.samples.healthygroceryshopping.domain.types.ScoreValue.Healthy#instance.label = Healthy
+spa.samples.healthygroceryshopping.domain.types.ScoreValue.Indifferent#instance.label = Indifferent
+spa.samples.healthygroceryshopping.domain.types.ScoreValue.Unhealthy#instance.label = Unhealthy
+spa.samples.healthygroceryshopping.domain.types.ScoreValue.VeryHealthy#instance.label = VeryHealthy
+spa.samples.healthygroceryshopping.domain.types.ScoreValue.VeryUnhealthy#instance.label = VeryUnhealthy
+
+# spa.samples.healthygroceryshopping.domain.types.Sensor
+spa.samples.healthygroceryshopping.domain.types.Sensor#concept.label = sensor
+spa.samples.healthygroceryshopping.domain.types.Sensor.sensorModel#phrase.navigation = {sensor model} of {this}
+spa.samples.healthygroceryshopping.domain.types.Sensor.state#phrase.action = set the state of {this} to {state}
+spa.samples.healthygroceryshopping.domain.types.Sensor.state#phrase.navigation = {state} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.SensorModel
+spa.samples.healthygroceryshopping.domain.types.SensorModel#concept.label = sensor model
+spa.samples.healthygroceryshopping.domain.types.SensorModel.description#phrase.action = set the description of {this} to {description}
+spa.samples.healthygroceryshopping.domain.types.SensorModel.description#phrase.navigation = {description} of {this}
+spa.samples.healthygroceryshopping.domain.types.SensorModel.manufacturer#phrase.action = set the manufacturer of {this} to {manufacturer}
+spa.samples.healthygroceryshopping.domain.types.SensorModel.manufacturer#phrase.navigation = {manufacturer} of {this}
+spa.samples.healthygroceryshopping.domain.types.SensorModel.modelName#phrase.navigation = {model name} of {this}
+spa.samples.healthygroceryshopping.domain.types.SensorModel.modelNumber#phrase.navigation = {model number} of {this}
+spa.samples.healthygroceryshopping.domain.types.SensorModel.sensorType#phrase.navigation = {sensor type} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.SensorState
+spa.samples.healthygroceryshopping.domain.types.SensorState#concept.label = sensor state
+spa.samples.healthygroceryshopping.domain.types.SensorState.Down#instance.label = Down
+spa.samples.healthygroceryshopping.domain.types.SensorState.Unreliable#instance.label = Unreliable
+spa.samples.healthygroceryshopping.domain.types.SensorState.Working#instance.label = Working
+
+# spa.samples.healthygroceryshopping.domain.types.SensorType
+spa.samples.healthygroceryshopping.domain.types.SensorType#concept.label = sensor type
+spa.samples.healthygroceryshopping.domain.types.SensorType.description#phrase.navigation = {description} of {this}
+spa.samples.healthygroceryshopping.domain.types.SensorType.name#phrase.navigation = {name} of {this}
+spa.samples.healthygroceryshopping.domain.types.SensorType.subtypes#phrase.navigation = {subtypes} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.SeverityLevel
+spa.samples.healthygroceryshopping.domain.types.SeverityLevel#concept.label = severity level
+spa.samples.healthygroceryshopping.domain.types.SeverityLevel.Benign#instance.label = Benign
+spa.samples.healthygroceryshopping.domain.types.SeverityLevel.Extreme#instance.label = Extreme
+spa.samples.healthygroceryshopping.domain.types.SeverityLevel.High#instance.label = High
+spa.samples.healthygroceryshopping.domain.types.SeverityLevel.Low#instance.label = Low
+spa.samples.healthygroceryshopping.domain.types.SeverityLevel.Moderate#instance.label = Moderate
+
+# spa.samples.healthygroceryshopping.domain.types.ShoppingCart
+spa.samples.healthygroceryshopping.domain.types.ShoppingCart#concept.label = shopping cart
+spa.samples.healthygroceryshopping.domain.types.ShoppingCart.cart#phrase.action = set the cart of {this} to {cart}
+spa.samples.healthygroceryshopping.domain.types.ShoppingCart.cart#phrase.navigation = {cart} of {this}
+spa.samples.healthygroceryshopping.domain.types.ShoppingCart.healthParameterScores#phrase.navigation = {health parameter scores} of {this}
+spa.samples.healthygroceryshopping.domain.types.ShoppingCart.healthScore#phrase.navigation = {health score} of {this}
+spa.samples.healthygroceryshopping.domain.types.ShoppingCart.nutritionalParameterValues#phrase.navigation = {nutritional parameter values} of {this}
+spa.samples.healthygroceryshopping.domain.types.ShoppingCart.person#phrase.navigation = {person} of {this}
+spa.samples.healthygroceryshopping.domain.types.ShoppingCart.productLineItems#phrase.navigation = {product line items} of {this}
+
+# spa.samples.healthygroceryshopping.domain.types.Tag
+spa.samples.healthygroceryshopping.domain.types.Tag#concept.label = tag
+spa.samples.healthygroceryshopping.domain.types.Tag.inventoryId#phrase.navigation = {inventory id} of {this}
+spa.samples.healthygroceryshopping.domain.types.Tag.product#phrase.navigation = {product} of {this}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>shoppingcartrules</name>
+  <uuid>8eb6c90b-ac83-44d3-a033-51a01ade7173</uuid>
+</ilog.rules.studio.model.base:RulePackage>

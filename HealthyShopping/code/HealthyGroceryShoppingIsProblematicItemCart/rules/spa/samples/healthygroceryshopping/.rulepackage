@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>healthygroceryshopping</name>
+  <uuid>935e9ce9-6ee6-46e7-95e1-b1a17640fa53</uuid>
+</ilog.rules.studio.model.base:RulePackage>

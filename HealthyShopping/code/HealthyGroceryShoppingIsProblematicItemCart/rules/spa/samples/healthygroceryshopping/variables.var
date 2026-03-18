@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>variables</name>
+  <uuid>3653959b-e885-455e-ae6a-81333730b872</uuid>
+  <variables name="shopper" type="spa.samples.healthygroceryshopping.domain.types.Person" initialValue="" verbalization="the shopper"/>
+  <variables name="foodItem" type="spa.samples.healthygroceryshopping.domain.types.FoodProductItem" initialValue="" verbalization="the food item"/>
+</ilog.rules.studio.model.base:VariableSet>

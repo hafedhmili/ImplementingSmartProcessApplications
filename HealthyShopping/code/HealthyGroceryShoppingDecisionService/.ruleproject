@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RuleProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore" xmlns:ilog.rules.studio.model.bom="http://ilog.rules.studio/model/bom.ecore" xmlns:ilog.rules.studio.model.query="http://ilog.rules.studio/model/query.ecore" xmlns:ilog.rules.studio.model.xom="http://ilog.rules.studio/model/xom.ecore" buildMode="DecisionEngine" isADecisionService="true" migrationFlag="3">
+  <name>HealthGroceryShoppingDecisionService</name>
+  <uuid>f0c47ede-fc8b-4b3b-9c06-1a92f1094648</uuid>
+  <outputLocation>output</outputLocation>
+  <categories>any</categories>
+  <paths xsi:type="ilog.rules.studio.model.xom:XOMPath" pathID="XOM">
+    <entries xsi:type="ilog.rules.studio.model.xom:LibraryXOMPathEntry" name="org.eclipse.jdt.launching.JRE_CONTAINER" url="file:org.eclipse.jdt.launching.JRE_CONTAINER" kind="LIBRARY"/>
+    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="HealthGroceryShoppingHandleProblematicItemCart" url="platform:/HealthGroceryShoppingHandleProblematicItemCart" kind="RULE_PROJECT"/>
+    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="HealthyGroceryShoppingIsProblematicItemCart" url="platform:/HealthyGroceryShoppingIsProblematicItemCart" kind="RULE_PROJECT"/>
+  </paths>
+  <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
+    <entries xsi:type="ilog.rules.studio.model.bom:ProjectBOMEntry" name="HealthGroceryShoppingHandleProblematicItemCart" url="platform:/HealthGroceryShoppingHandleProblematicItemCart" kind="RULE_PROJECT">
+      <ruleProject href="HealthGroceryShoppingHandleProblematicItemCart#1ff9c57e-5d3f-4aca-a723-3a3725ed258c"/>
+    </entries>
+    <entries xsi:type="ilog.rules.studio.model.bom:ProjectBOMEntry" name="HealthyGroceryShoppingIsProblematicItemCart" url="platform:/HealthyGroceryShoppingIsProblematicItemCart" kind="RULE_PROJECT">
+      <ruleProject href="HealthyGroceryShoppingIsProblematicItemCart#0d195444-9ae0-4c87-9e2d-2c8a2ff0dd94"/>
+    </entries>
+  </paths>
+  <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">
+    <name>rules</name>
+  </modelFolders>
+  <modelFolders xsi:type="ilog.rules.studio.model.bom:BOMFolder">
+    <name>bom</name>
+  </modelFolders>
+  <modelFolders xsi:type="ilog.rules.studio.model.query:QueryFolder">
+    <name>queries</name>
+  </modelFolders>
+  <modelFolders xsi:type="ilog.rules.studio.model.base:ResourceFolder">
+    <name>resources</name>
+  </modelFolders>
+  <modelFolders xsi:type="com.ibm.rules.studio.model.decisionservice:OperationFolder">
+    <name>deployment</name>
+  </modelFolders>
+</ilog.rules.studio.model.base:RuleProject>

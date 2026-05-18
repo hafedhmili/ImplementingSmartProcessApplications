@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>HealthGroceryShoppingBusinessObjectModel</name>
+	<name>HealthyGroceryShoppingBusinessObjectModel</name>
 	<comment></comment>
 	<projects>
 		<project>HealthyGroceryShoppingDomain</project>

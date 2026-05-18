@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>HealthGroceryShoppingHandleProblematicItemCart</name>
+	<name>HealthyGroceryShoppingHandleProblematicItemCart</name>
 	<comment></comment>
 	<projects>
-		<project>HealthGroceryShoppingBusinessObjectModel</project>
+		<project>HealthyGroceryShoppingBusinessObjectModel</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

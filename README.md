@@ -29,7 +29,7 @@ Hafedh Mili and Ghizlane El-Boussaidi
 
 We wish to acknowledge the contributions of the following colleagues and friends, to both the manuscript, and to this repository:
 
-- Our colleague Mounir Boukadoum, who likes to call himself "A Jack of many trades", and we like to add, "a Master of many", has authored _Chapter 8 - Core Machine Learning Concepts and Techniques_ and contributed many insights for the implementations shown in this repository.
+- Our colleague Prof. Mounir Boukadoum, who likes to call himself "A Jack of many trades", and we like to add, "a Master of many", has authored _Chapter 8 - Core Machine Learning Concepts and Techniques_ and contributed many insights for the implementations shown in this repository.
 - Dr. Anis Boubaker started working with us on _Part III - Infrastructure_ before bowing out for personal reasons.
 - Prof. Petko Valtchev and Dr Irinia Muhina co-authored _Chapter 9 - Analytics and machine learning in industry_, based on a study of the literature--and first hand experience, for the case of Irinia.
 - Our colleague Prof. Mohamed Bouguessa, who is a Machine Laarning expert, commented on various chapters of  _Part IV - Analytics and Machine Learning_ and advised us on the implementation choices for the case studies presaented in this repository.

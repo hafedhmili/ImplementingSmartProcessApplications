@@ -3,6 +3,8 @@ package spa.samples.heartpatientmonitoring.domain.types;
 import java.time.Instant;
 import java.util.Iterator;
 
+import spa.samples.heartpatientmonitoring.domain.types.device.ECG;
+
 public interface HealthCareAct {
 	
 	/**

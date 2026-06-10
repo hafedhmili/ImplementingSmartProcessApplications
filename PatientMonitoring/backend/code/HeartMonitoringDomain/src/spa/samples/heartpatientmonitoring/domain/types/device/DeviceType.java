@@ -1,4 +1,4 @@
-package spa.samples.heartpatientmonitoring.domain.types;
+package spa.samples.heartpatientmonitoring.domain.types.device;
 
 public enum DeviceType {
 

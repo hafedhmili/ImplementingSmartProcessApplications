@@ -1,5 +1,7 @@
-package spa.samples.heartpatientmonitoring.domain.types;
+package spa.samples.heartpatientmonitoring.domain.types.device;
 
+import spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult;
+import spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport;
 
 public interface ECG extends ClinicalTestResult{
 	

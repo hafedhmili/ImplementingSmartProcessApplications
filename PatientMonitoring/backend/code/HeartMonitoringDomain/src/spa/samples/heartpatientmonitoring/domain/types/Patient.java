@@ -3,6 +3,9 @@ package spa.samples.heartpatientmonitoring.domain.types;
 import java.time.Instant;
 import java.util.Iterator;
 
+import spa.samples.heartpatientmonitoring.domain.types.device.ECG;
+import spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice;
+
 public interface Patient {
 	
 	public String getSSN();

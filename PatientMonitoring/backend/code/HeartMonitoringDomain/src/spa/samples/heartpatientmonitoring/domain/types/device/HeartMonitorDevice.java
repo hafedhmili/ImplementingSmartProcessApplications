@@ -1,7 +1,10 @@
-package spa.samples.heartpatientmonitoring.domain.types;
+package spa.samples.heartpatientmonitoring.domain.types.device;
 
 import java.time.Instant;
 import java.util.Iterator;
+
+import spa.samples.heartpatientmonitoring.domain.types.Location;
+import spa.samples.heartpatientmonitoring.domain.types.Patient;
 
 public interface HeartMonitorDevice {
 	

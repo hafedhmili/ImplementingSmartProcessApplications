@@ -1,7 +1,7 @@
 
 #loadGetterSetterAsProperties
 property origin "xom:/HeartMonitoringBusinessObjectModel//HeartMonitoringDomain"
-property uuid "9a559a60-23f6-41a4-ad35-15e55a2c3810"
+property uuid "6746849f-c272-4509-86a3-64b86c122f6e"
 package spa.samples.heartpatientmonitoring.domain.types;
 
 
@@ -58,118 +58,6 @@ interface ClinicalTestResult
     readonly abstract java.time.Instant startTime;
 }
 
-interface DeviceFamily
-{
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.DeviceType deviceType;
-    abstract string familyDescription;
-    readonly abstract string familyName;
-    readonly abstract java.util.Iterator subfamilies;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.DeviceFamily superFamily;
-    void addSubfamily(spa.samples.heartpatientmonitoring.domain.types.DeviceFamily arg);
-    spa.samples.heartpatientmonitoring.domain.types.DeviceFamily removeDeviceSubfamily(spa.samples.heartpatientmonitoring.domain.types.DeviceFamily arg);
-}
-
-interface DeviceModel
-{
-    readonly abstract java.util.Iterator ECGFormats;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.DeviceFamily deviceFamily;
-    readonly abstract string manufacturer;
-    abstract string modelDescription;
-    readonly abstract string modelName;
-    void addECGFormat(spa.samples.heartpatientmonitoring.domain.types.ECGFormat arg);
-    spa.samples.heartpatientmonitoring.domain.types.ECGFormat removeECGFormat(spa.samples.heartpatientmonitoring.domain.types.ECGFormat arg);
-}
-
-final class DeviceState
-        extends java.lang.Enum
-{
-    domain {static Off, static Reading, static Recording, static Transmitting, static Sleeping, static Malfunction}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceState Malfunction;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceState Off;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceState Reading;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceState Recording;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceState Sleeping;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceState Transmitting;
-    static spa.samples.heartpatientmonitoring.domain.types.DeviceState valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.DeviceState[] values();
-}
-
-final class DeviceType
-        extends java.lang.Enum
-{
-    domain 
-    {
-        static BloodPressureCuff,
-        static BodyCompositionAnalyzer,
-        static CardiovascularDevice,
-        static CoagulationMeter,
-        static ContinuousGlucoseMonitor,
-        static ElectroCardiograph,
-        static Generic20601Device,
-        static GlucoseMonitor,
-        static IndependentActivitytLivingHub,
-        static InsulinPump,
-        static PeakFlowMeter,
-        static PulseOximeter,
-        static RespirationRate,
-        static SleepApneaBreathingEquipment,
-        static StrengthEquipment,
-        static Thermometer,
-        static WeightScale,
-        static DrySaltInhalationTherapyDevice,
-        static FlexibleVideoNephroscope,
-        static DenbtalImplantEndosseousPartiallyEmbedded,
-        static BareMetalIntracranialVascularStent,
-        static DualChamberImplantablePacemakerDemand,
-        static IntrauterineCannulaReusable,
-        static AirConductionHearingAidAcousticTube,
-        static SpinalCordPeripheralNerveImplantableAnalgesicElectricalStimulationSystemLeadWiredConnection,
-        static BlueLightPhototherapyLampForHomeUse,
-        static UncoatedKneeFemurProsthesisCeramic,
-        static ADAMTS13ActivityIVDKitChemiluminescentImmunoassay
-    }
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType ADAMTS13ActivityIVDKitChemiluminescentImmunoassay;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType AirConductionHearingAidAcousticTube;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType BareMetalIntracranialVascularStent;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType BloodPressureCuff;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType BlueLightPhototherapyLampForHomeUse;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType BodyCompositionAnalyzer;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType CardiovascularDevice;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType CoagulationMeter;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType ContinuousGlucoseMonitor;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType DenbtalImplantEndosseousPartiallyEmbedded;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType DrySaltInhalationTherapyDevice;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType DualChamberImplantablePacemakerDemand;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType ElectroCardiograph;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType FlexibleVideoNephroscope;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType Generic20601Device;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType GlucoseMonitor;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType IndependentActivitytLivingHub;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType InsulinPump;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType IntrauterineCannulaReusable;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType PeakFlowMeter;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType PulseOximeter;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType RespirationRate;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType SleepApneaBreathingEquipment;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType SpinalCordPeripheralNerveImplantableAnalgesicElectricalStimulationSystemLeadWiredConnection;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType StrengthEquipment;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType Thermometer;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType UncoatedKneeFemurProsthesisCeramic;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.DeviceType WeightScale;
-    static spa.samples.heartpatientmonitoring.domain.types.DeviceType valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.DeviceType[] values();
-}
-
-interface ECG
-        extends spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult
-{
-    abstract spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport analysisReport;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice device;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.ECGFormat format;
-    abstract spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState processingState;
-    abstract spa.samples.heartpatientmonitoring.domain.types.ECGFile rawData;
-}
-
 interface ECGAnalysisReport
 {
     readonly abstract java.util.Iterator classifications;
@@ -191,35 +79,6 @@ final class ECGClassification
     static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGClassification Tachycardia;
     static spa.samples.heartpatientmonitoring.domain.types.ECGClassification valueOf(string arg);
     static spa.samples.heartpatientmonitoring.domain.types.ECGClassification[] values();
-}
-
-interface ECGFile
-{
-}
-
-final class ECGFormat
-        extends java.lang.Enum
-{
-    domain {static CSV, static PDF_ECG, static ECG_XML, static HL7_XML, static mPCG_XML}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGFormat CSV;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGFormat ECG_XML;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGFormat HL7_XML;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGFormat PDF_ECG;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGFormat mPCG_XML;
-    static spa.samples.heartpatientmonitoring.domain.types.ECGFormat valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.ECGFormat[] values();
-}
-
-final class ECGProcessingState
-        extends java.lang.Enum
-{
-    domain {static ToBeProcessed, static InProgress, static Processed, static Dismissed}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState Dismissed;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState InProgress;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState Processed;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState ToBeProcessed;
-    static spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.ECGProcessingState[] values();
 }
 
 interface HealthCareAct
@@ -334,21 +193,6 @@ interface HealthConditionType
     spa.samples.heartpatientmonitoring.domain.types.HealthConditionType removeSubtype(spa.samples.heartpatientmonitoring.domain.types.HealthConditionType arg);
 }
 
-interface HeartMonitorDevice
-{
-    readonly abstract java.util.Iterator ECGs;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Location currentLocation;
-    readonly abstract string deviceID;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.DeviceModel deviceModel;
-    abstract spa.samples.heartpatientmonitoring.domain.types.DeviceState deviceState;
-    abstract spa.samples.heartpatientmonitoring.domain.types.ECG latestECG;
-    abstract java.time.Instant latestStartRecordingTime;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Patient patient;
-    abstract spa.samples.heartpatientmonitoring.domain.types.RecordingModality recordingModality;
-    void addECG(spa.samples.heartpatientmonitoring.domain.types.ECG arg);
-    spa.samples.heartpatientmonitoring.domain.types.ECG removeECG(spa.samples.heartpatientmonitoring.domain.types.ECG arg);
-}
-
 final class IntensityLevel
         extends java.lang.Enum
 {
@@ -404,10 +248,10 @@ interface Patient
     abstract spa.samples.heartpatientmonitoring.domain.types.Location currentLocation;
     abstract spa.samples.heartpatientmonitoring.domain.types.PatientState currentState;
     readonly abstract string firstName;
-    abstract spa.samples.heartpatientmonitoring.domain.types.HeartMonitorDevice heartMonitor;
+    abstract spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice heartMonitor;
     readonly abstract string lastName;
     readonly abstract spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory medicalHistory;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.ECG mostRecentECG;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.ECG mostRecentECG;
     readonly abstract java.util.Iterator pastActivities;
     readonly abstract java.util.Iterator pastStates;
     void archiveCurrentActivity();
@@ -498,18 +342,6 @@ final class ProvinceOrTerritory
     static spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory[] values();
 }
 
-final class RecordingModality
-        extends java.lang.Record
-{
-    RecordingModality(int arg1, java.time.Duration arg2, java.time.Duration arg3);
-    java.time.Duration duration();
-    final boolean equals(object arg);
-    int frequency();
-    final int hashCode();
-    java.time.Duration referencePeriod();
-    string toString();
-}
-
 final class RhythmType
         extends java.lang.Enum
 {
@@ -540,5 +372,176 @@ final class ShapePWaves
     static final readonly spa.samples.heartpatientmonitoring.domain.types.ShapePWaves Normal;
     static spa.samples.heartpatientmonitoring.domain.types.ShapePWaves valueOf(string arg);
     static spa.samples.heartpatientmonitoring.domain.types.ShapePWaves[] values();
+}
+
+package spa.samples.heartpatientmonitoring.domain.types.device;
+
+
+interface DeviceFamily
+{
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.DeviceType deviceType;
+    abstract string familyDescription;
+    readonly abstract string familyName;
+    readonly abstract java.util.Iterator subfamilies;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily superFamily;
+    void addSubfamily(spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily arg);
+    spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily removeDeviceSubfamily(spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily arg);
+}
+
+interface DeviceModel
+{
+    readonly abstract java.util.Iterator ECGFormats;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily deviceFamily;
+    readonly abstract string manufacturer;
+    abstract string modelDescription;
+    readonly abstract string modelName;
+    void addECGFormat(spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat arg);
+    spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat removeECGFormat(spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat arg);
+}
+
+final class DeviceState
+        extends java.lang.Enum
+{
+    domain {static Off, static Reading, static Recording, static Transmitting, static Sleeping, static Malfunction}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceState Malfunction;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceState Off;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceState Reading;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceState Recording;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceState Sleeping;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceState Transmitting;
+    static spa.samples.heartpatientmonitoring.domain.types.device.DeviceState valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.device.DeviceState[] values();
+}
+
+final class DeviceType
+        extends java.lang.Enum
+{
+    domain 
+    {
+        static BloodPressureCuff,
+        static BodyCompositionAnalyzer,
+        static CardiovascularDevice,
+        static CoagulationMeter,
+        static ContinuousGlucoseMonitor,
+        static ElectroCardiograph,
+        static Generic20601Device,
+        static GlucoseMonitor,
+        static IndependentActivitytLivingHub,
+        static InsulinPump,
+        static PeakFlowMeter,
+        static PulseOximeter,
+        static RespirationRate,
+        static SleepApneaBreathingEquipment,
+        static StrengthEquipment,
+        static Thermometer,
+        static WeightScale,
+        static DrySaltInhalationTherapyDevice,
+        static FlexibleVideoNephroscope,
+        static DenbtalImplantEndosseousPartiallyEmbedded,
+        static BareMetalIntracranialVascularStent,
+        static DualChamberImplantablePacemakerDemand,
+        static IntrauterineCannulaReusable,
+        static AirConductionHearingAidAcousticTube,
+        static SpinalCordPeripheralNerveImplantableAnalgesicElectricalStimulationSystemLeadWiredConnection,
+        static BlueLightPhototherapyLampForHomeUse,
+        static UncoatedKneeFemurProsthesisCeramic,
+        static ADAMTS13ActivityIVDKitChemiluminescentImmunoassay
+    }
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType ADAMTS13ActivityIVDKitChemiluminescentImmunoassay;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType AirConductionHearingAidAcousticTube;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType BareMetalIntracranialVascularStent;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType BloodPressureCuff;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType BlueLightPhototherapyLampForHomeUse;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType BodyCompositionAnalyzer;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType CardiovascularDevice;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType CoagulationMeter;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType ContinuousGlucoseMonitor;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType DenbtalImplantEndosseousPartiallyEmbedded;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType DrySaltInhalationTherapyDevice;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType DualChamberImplantablePacemakerDemand;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType ElectroCardiograph;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType FlexibleVideoNephroscope;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType Generic20601Device;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType GlucoseMonitor;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType IndependentActivitytLivingHub;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType InsulinPump;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType IntrauterineCannulaReusable;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType PeakFlowMeter;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType PulseOximeter;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType RespirationRate;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType SleepApneaBreathingEquipment;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType SpinalCordPeripheralNerveImplantableAnalgesicElectricalStimulationSystemLeadWiredConnection;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType StrengthEquipment;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType Thermometer;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType UncoatedKneeFemurProsthesisCeramic;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.DeviceType WeightScale;
+    static spa.samples.heartpatientmonitoring.domain.types.device.DeviceType valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.device.DeviceType[] values();
+}
+
+interface ECG
+        extends spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult
+{
+    abstract spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport analysisReport;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice device;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat format;
+    abstract spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState processingState;
+    abstract spa.samples.heartpatientmonitoring.domain.types.device.ECGFile rawData;
+}
+
+interface ECGFile
+{
+}
+
+final class ECGFormat
+        extends java.lang.Enum
+{
+    domain {static CSV, static PDF_ECG, static ECG_XML, static HL7_XML, static mPCG_XML}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat CSV;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat ECG_XML;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat HL7_XML;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat PDF_ECG;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat mPCG_XML;
+    static spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat[] values();
+}
+
+final class ECGProcessingState
+        extends java.lang.Enum
+{
+    domain {static ToBeProcessed, static InProgress, static Processed, static Dismissed}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState Dismissed;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState InProgress;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState Processed;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState ToBeProcessed;
+    static spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState[] values();
+}
+
+interface HeartMonitorDevice
+{
+    readonly abstract java.util.Iterator ECGs;
+    abstract spa.samples.heartpatientmonitoring.domain.types.Location currentLocation;
+    readonly abstract string deviceID;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.DeviceModel deviceModel;
+    abstract spa.samples.heartpatientmonitoring.domain.types.device.DeviceState deviceState;
+    abstract spa.samples.heartpatientmonitoring.domain.types.device.ECG latestECG;
+    abstract java.time.Instant latestStartRecordingTime;
+    abstract spa.samples.heartpatientmonitoring.domain.types.Patient patient;
+    abstract spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality recordingModality;
+    void addECG(spa.samples.heartpatientmonitoring.domain.types.device.ECG arg);
+    spa.samples.heartpatientmonitoring.domain.types.device.ECG removeECG(spa.samples.heartpatientmonitoring.domain.types.device.ECG arg);
+}
+
+final class RecordingModality
+        extends java.lang.Record
+{
+    RecordingModality(int arg1, java.time.Duration arg2, java.time.Duration arg3);
+    java.time.Duration duration();
+    final boolean equals(object arg);
+    int frequency();
+    final int hashCode();
+    java.time.Duration referencePeriod();
+    string toString();
 }
 

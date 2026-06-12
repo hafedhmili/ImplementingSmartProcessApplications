@@ -2,378 +2,6 @@
 #loadGetterSetterAsProperties
 property origin "xom:/HeartMonitoringBusinessObjectModel//HeartMonitoringDomain"
 property uuid "6746849f-c272-4509-86a3-64b86c122f6e"
-package spa.samples.heartpatientmonitoring.domain.types;
-
-
-final class Activity
-        extends java.lang.Record
-{
-    Activity(spa.samples.heartpatientmonitoring.domain.types.Patient arg1, spa.samples.heartpatientmonitoring.domain.types.ActivityType arg2, spa.samples.heartpatientmonitoring.domain.types.IntensityLevel arg3, java.time.Instant arg4, java.time.Instant arg5, spa.samples.heartpatientmonitoring.domain.types.Location arg6, spa.samples.heartpatientmonitoring.domain.types.Location arg7);
-    spa.samples.heartpatientmonitoring.domain.types.ActivityType activityType();
-    spa.samples.heartpatientmonitoring.domain.types.Location endLocation();
-    java.time.Instant endTime();
-    final boolean equals(object arg);
-    final int hashCode();
-    spa.samples.heartpatientmonitoring.domain.types.IntensityLevel intensityLevel();
-    spa.samples.heartpatientmonitoring.domain.types.Patient patient();
-    spa.samples.heartpatientmonitoring.domain.types.Location startLocation();
-    java.time.Instant startTime();
-    final string toString();
-}
-
-final class ActivityType
-        extends java.lang.Enum
-{
-    domain {static Walking, static Sitting, static Sleeping, static Running, static Eating}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ActivityType Eating;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ActivityType Running;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ActivityType Sitting;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ActivityType Sleeping;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ActivityType Walking;
-    static spa.samples.heartpatientmonitoring.domain.types.ActivityType valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.ActivityType[] values();
-}
-
-final class Address
-        extends java.lang.Record
-{
-    Address(string arg1, string arg2, string arg3, string arg4, string arg5, spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory arg6);
-    string city();
-    string doorNumber();
-    final boolean equals(object arg);
-    final int hashCode();
-    spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory provinceOrTerritory();
-    string streetName();
-    string streetNumber();
-    final string toString();
-    string zipCode();
-}
-
-interface ClinicalTestResult
-{
-    abstract spa.samples.heartpatientmonitoring.domain.types.Location endLocation;
-    readonly abstract java.time.Instant endTime;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.Patient patient;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Location startLocation;
-    readonly abstract java.time.Instant startTime;
-}
-
-interface ECGAnalysisReport
-{
-    readonly abstract java.util.Iterator classifications;
-    abstract spa.samples.heartpatientmonitoring.domain.types.NatureQRSComplexes natureQRSComplexes;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Interval rhythm;
-    abstract spa.samples.heartpatientmonitoring.domain.types.RhythmType rhythmType;
-    abstract spa.samples.heartpatientmonitoring.domain.types.ShapePWaves shapePWaves;
-    void addClassification(spa.samples.heartpatientmonitoring.domain.types.ECGClassification arg1, float arg2);
-    float getConfidenceLevelForClassification(spa.samples.heartpatientmonitoring.domain.types.ECGClassification arg);
-    float removeClassification(spa.samples.heartpatientmonitoring.domain.types.ECGClassification arg);
-}
-
-final class ECGClassification
-        extends java.lang.Enum
-{
-    domain {static Normal, static AtrialFibrillation, static Tachycardia}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGClassification AtrialFibrillation;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGClassification Normal;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ECGClassification Tachycardia;
-    static spa.samples.heartpatientmonitoring.domain.types.ECGClassification valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.ECGClassification[] values();
-}
-
-interface HealthCareAct
-{
-    readonly abstract java.util.Iterator ECGs;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.HealthCareActType actType;
-    abstract java.time.Instant endDate;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode healthCareEpisode;
-    abstract spa.samples.heartpatientmonitoring.domain.types.HealthCareProfessional performedBy;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.HealthCareInstitution prodiver;
-    writeonly abstract spa.samples.heartpatientmonitoring.domain.types.HealthCareInstitution provider;
-    abstract java.time.Instant startDate;
-}
-
-interface HealthCareActType
-{
-    abstract string description;
-    readonly abstract string name;
-    readonly abstract java.util.Iterator subtypes;
-    abstract spa.samples.heartpatientmonitoring.domain.types.HealthCareActType supertype;
-    void addSubtype(spa.samples.heartpatientmonitoring.domain.types.HealthCareActType arg);
-    boolean isSubtypeOf(spa.samples.heartpatientmonitoring.domain.types.HealthCareActType arg);
-    spa.samples.heartpatientmonitoring.domain.types.HealthCareActType removeSubtype(spa.samples.heartpatientmonitoring.domain.types.HealthCareActType arg);
-}
-
-interface HealthCareEpisode
-{
-    readonly abstract java.util.Iterator careActs;
-    readonly abstract java.time.Instant dateLatestAct;
-    abstract java.time.Instant endDate;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode healthConditionEpisode;
-    abstract spa.samples.heartpatientmonitoring.domain.types.HealthCareAct latestCareAct;
-    abstract java.time.Instant startDate;
-    void addCareAct(spa.samples.heartpatientmonitoring.domain.types.HealthCareAct arg);
-    spa.samples.heartpatientmonitoring.domain.types.HealthCareAct removeCareAct(spa.samples.heartpatientmonitoring.domain.types.HealthCareAct arg);
-}
-
-final class HealthCareInstitution
-        extends java.lang.Record
-{
-    HealthCareInstitution(string arg1, string arg2, spa.samples.heartpatientmonitoring.domain.types.Address arg3);
-    spa.samples.heartpatientmonitoring.domain.types.Address address();
-    final boolean equals(object arg);
-    final int hashCode();
-    string name();
-    string providerCode();
-    string toString();
-}
-
-final class HealthCareProfessional
-        extends java.lang.Record
-{
-    HealthCareProfessional(string arg1, string arg2, spa.samples.heartpatientmonitoring.domain.types.HealthCareInstitution arg3);
-    spa.samples.heartpatientmonitoring.domain.types.HealthCareInstitution affiliation();
-    final boolean equals(object arg);
-    final int hashCode();
-    string id();
-    string role();
-    final string toString();
-}
-
-interface HealthCondition
-{
-    abstract spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode abatement;
-    abstract java.time.Instant dateLatestUpdate;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.HealthConditionType healthConditionType;
-    readonly abstract java.util.Iterator history;
-    writeonly abstract spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode latestUpdateEpisode;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode latestUpdatedEpisode;
-    abstract spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode onset;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory patientMedicalHistory;
-    abstract spa.samples.heartpatientmonitoring.domain.types.SeverityLevel severity;
-    abstract spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus status;
-    void addHealthConditionEpisode(spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode arg);
-    spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode removeHealthConditionEpisode(spa.samples.heartpatientmonitoring.domain.types.HealthConditionEpisode arg);
-}
-
-interface HealthConditionEpisode
-{
-    readonly abstract java.util.Iterator careEpisodes;
-    readonly abstract java.time.Instant dateLatestCareEpisode;
-    abstract java.time.Instant endDate;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.HealthCondition healthCondition;
-    abstract spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode latestCareEpisode;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.SeverityLevel severityLebvel;
-    writeonly abstract spa.samples.heartpatientmonitoring.domain.types.SeverityLevel severityLevel;
-    abstract java.time.Instant startDate;
-    void addCareEpisode(spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode arg);
-    spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode removeCareEpisode(spa.samples.heartpatientmonitoring.domain.types.HealthCareEpisode arg);
-}
-
-final class HealthConditionStatus
-        extends java.lang.Enum
-{
-    domain {static Suspected, static DiagnosedConfirmed, static DiagnosedExcluded, static GettingManaged, static ManagedNotStabilized, static ManagedStabilized, static Abated}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus Abated;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus DiagnosedConfirmed;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus DiagnosedExcluded;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus GettingManaged;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus ManagedNotStabilized;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus ManagedStabilized;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus Suspected;
-    static spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.HealthConditionStatus[] values();
-}
-
-interface HealthConditionType
-{
-    readonly abstract java.util.Iterator subtypes;
-    abstract spa.samples.heartpatientmonitoring.domain.types.HealthConditionType supertype;
-    void addSubtype(spa.samples.heartpatientmonitoring.domain.types.HealthConditionType arg);
-    spa.samples.heartpatientmonitoring.domain.types.HealthConditionType removeSubtype(spa.samples.heartpatientmonitoring.domain.types.HealthConditionType arg);
-}
-
-final class IntensityLevel
-        extends java.lang.Enum
-{
-    domain {static Low, static Moderate, static High}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.IntensityLevel High;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.IntensityLevel Low;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.IntensityLevel Moderate;
-    static spa.samples.heartpatientmonitoring.domain.types.IntensityLevel valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.IntensityLevel[] values();
-}
-
-final class Interval
-        extends java.lang.Record
-{
-    Interval(float arg1, boolean arg2, float arg3, boolean arg4);
-    final boolean equals(object arg);
-    final int hashCode();
-    float lowerBound();
-    boolean lowerBoundIncluded();
-    string toString();
-    float upperBound();
-    boolean upperBoundIncluded();
-}
-
-final class Location
-        extends java.lang.Record
-{
-    Location(float arg1, float arg2, spa.samples.heartpatientmonitoring.domain.types.Address arg3, spa.samples.heartpatientmonitoring.domain.types.PointOfInterest arg4);
-    spa.samples.heartpatientmonitoring.domain.types.Address address();
-    final boolean equals(object arg);
-    final int hashCode();
-    float latitude();
-    float longitude();
-    spa.samples.heartpatientmonitoring.domain.types.PointOfInterest pointOfInterest();
-    final string toString();
-}
-
-final class NatureQRSComplexes
-        extends java.lang.Enum
-{
-    domain {static Normal, static NarrowAndPointy}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.NatureQRSComplexes NarrowAndPointy;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.NatureQRSComplexes Normal;
-    static spa.samples.heartpatientmonitoring.domain.types.NatureQRSComplexes valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.NatureQRSComplexes[] values();
-}
-
-interface Patient
-{
-    readonly abstract string SSN;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Address address;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Activity currentActivity;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Location currentLocation;
-    abstract spa.samples.heartpatientmonitoring.domain.types.PatientState currentState;
-    readonly abstract string firstName;
-    abstract spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice heartMonitor;
-    readonly abstract string lastName;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.PatientMedicalHistory medicalHistory;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.ECG mostRecentECG;
-    readonly abstract java.util.Iterator pastActivities;
-    readonly abstract java.util.Iterator pastStates;
-    void archiveCurrentActivity();
-    void archiveCurrentState();
-    java.util.Iterator getECGsBefore(java.time.Instant arg);
-    java.util.Iterator getECGsBetween(java.time.Instant arg1, java.time.Instant arg2);
-    java.util.Iterator getECGsSince(java.time.Instant arg);
-    java.util.Iterator getPastActivitiesByRecency(int[] arg);
-    java.util.Iterator getPastStatesByRecency(int[] arg);
-}
-
-interface PatientMedicalHistory
-{
-    readonly abstract java.time.Instant creationDate;
-    abstract java.time.Instant dateLatestUpdate;
-    readonly abstract java.util.Iterator healthConditions;
-    abstract spa.samples.heartpatientmonitoring.domain.types.HealthCondition latestUpdatedHealthCondition;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.Patient patient;
-    void addHealthCondition(spa.samples.heartpatientmonitoring.domain.types.HealthCondition arg);
-    spa.samples.heartpatientmonitoring.domain.types.HealthCondition removeHealthCondition(spa.samples.heartpatientmonitoring.domain.types.HealthCondition arg);
-}
-
-interface PatientState
-{
-    readonly abstract java.util.Iterator clinicalTestResults;
-    abstract java.time.Instant endDate;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Location endLocation;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel label;
-    abstract spa.samples.heartpatientmonitoring.domain.types.PatientState previousState;
-    abstract java.time.Instant startDate;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Location startLocation;
-    boolean addClinicalTestResult(spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult arg);
-    spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult removeClinicalTestResult(spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult arg);
-}
-
-final class PatientStateLabel
-        extends java.lang.Enum
-{
-    domain {static AllIsNormal, static Discomfort, static Unsafe, static Critical}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel AllIsNormal;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel Critical;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel Discomfort;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel Unsafe;
-    static spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.PatientStateLabel[] values();
-}
-
-final class PointOfInterest
-        extends java.lang.Enum
-{
-    static spa.samples.heartpatientmonitoring.domain.types.PointOfInterest valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.PointOfInterest[] values();
-}
-
-final class ProvinceOrTerritory
-        extends java.lang.Enum
-{
-    domain 
-    {
-        static ALBERTA,
-        static BRITISH_COLUMBIA,
-        static MANITOBA,
-        static NEW_BRUNSWICK,
-        static NEWFOUNDLAND_AND_LABRADOR,
-        static NOVA_SCOTIA,
-        static ONTARIO,
-        static PRINCE_EDWARD_ISLAND,
-        static QUEBEC,
-        static SASKATCHEWAN,
-        static NORTHWEST_TERRITORIES,
-        static NUNAVUT,
-        static YUKON
-    }
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory ALBERTA;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory BRITISH_COLUMBIA;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory MANITOBA;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory NEWFOUNDLAND_AND_LABRADOR;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory NEW_BRUNSWICK;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory NORTHWEST_TERRITORIES;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory NOVA_SCOTIA;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory NUNAVUT;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory ONTARIO;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory PRINCE_EDWARD_ISLAND;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory QUEBEC;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory SASKATCHEWAN;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory YUKON;
-    static spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.ProvinceOrTerritory[] values();
-}
-
-final class RhythmType
-        extends java.lang.Enum
-{
-    domain {static Regular, static Irregular, static IrregularlyIrregular}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.RhythmType Irregular;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.RhythmType IrregularlyIrregular;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.RhythmType Regular;
-    static spa.samples.heartpatientmonitoring.domain.types.RhythmType valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.RhythmType[] values();
-}
-
-final class SeverityLevel
-        extends java.lang.Enum
-{
-    domain {static Benign, static Moderate, static Severe}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.SeverityLevel Benign;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.SeverityLevel Moderate;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.SeverityLevel Severe;
-    static spa.samples.heartpatientmonitoring.domain.types.SeverityLevel valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.SeverityLevel[] values();
-}
-
-final class ShapePWaves
-        extends java.lang.Enum
-{
-    domain {static Normal, static Abnormal}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ShapePWaves Abnormal;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.ShapePWaves Normal;
-    static spa.samples.heartpatientmonitoring.domain.types.ShapePWaves valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.ShapePWaves[] values();
-}
-
 package spa.samples.heartpatientmonitoring.domain.types.device;
 
 
@@ -395,8 +23,8 @@ interface DeviceModel
     readonly abstract string manufacturer;
     abstract string modelDescription;
     readonly abstract string modelName;
-    void addECGFormat(spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat arg);
-    spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat removeECGFormat(spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat arg);
+    void addECGFormat(spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat arg);
+    spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat removeECGFormat(spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat arg);
 }
 
 final class DeviceState
@@ -479,58 +107,19 @@ final class DeviceType
     static spa.samples.heartpatientmonitoring.domain.types.device.DeviceType[] values();
 }
 
-interface ECG
-        extends spa.samples.heartpatientmonitoring.domain.types.ClinicalTestResult
-{
-    abstract spa.samples.heartpatientmonitoring.domain.types.ECGAnalysisReport analysisReport;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice device;
-    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat format;
-    abstract spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState processingState;
-    abstract spa.samples.heartpatientmonitoring.domain.types.device.ECGFile rawData;
-}
-
-interface ECGFile
-{
-}
-
-final class ECGFormat
-        extends java.lang.Enum
-{
-    domain {static CSV, static PDF_ECG, static ECG_XML, static HL7_XML, static mPCG_XML}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat CSV;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat ECG_XML;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat HL7_XML;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat PDF_ECG;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat mPCG_XML;
-    static spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.device.ECGFormat[] values();
-}
-
-final class ECGProcessingState
-        extends java.lang.Enum
-{
-    domain {static ToBeProcessed, static InProgress, static Processed, static Dismissed}
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState Dismissed;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState InProgress;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState Processed;
-    static final readonly spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState ToBeProcessed;
-    static spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState valueOf(string arg);
-    static spa.samples.heartpatientmonitoring.domain.types.device.ECGProcessingState[] values();
-}
-
 interface HeartMonitorDevice
 {
     readonly abstract java.util.Iterator ECGs;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Location currentLocation;
+    abstract spa.samples.heartpatientmonitoring.domain.types.util.Location currentLocation;
     readonly abstract string deviceID;
     readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.DeviceModel deviceModel;
     abstract spa.samples.heartpatientmonitoring.domain.types.device.DeviceState deviceState;
-    abstract spa.samples.heartpatientmonitoring.domain.types.device.ECG latestECG;
+    abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ECG latestECG;
     abstract java.time.Instant latestStartRecordingTime;
-    abstract spa.samples.heartpatientmonitoring.domain.types.Patient patient;
+    abstract string patientID;
     abstract spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality recordingModality;
-    void addECG(spa.samples.heartpatientmonitoring.domain.types.device.ECG arg);
-    spa.samples.heartpatientmonitoring.domain.types.device.ECG removeECG(spa.samples.heartpatientmonitoring.domain.types.device.ECG arg);
+    void addECG(spa.samples.heartpatientmonitoring.domain.types.ecg.ECG arg);
+    spa.samples.heartpatientmonitoring.domain.types.ecg.ECG removeECG(spa.samples.heartpatientmonitoring.domain.types.ecg.ECG arg);
 }
 
 final class RecordingModality
@@ -543,5 +132,425 @@ final class RecordingModality
     final int hashCode();
     java.time.Duration referencePeriod();
     string toString();
+}
+
+package spa.samples.heartpatientmonitoring.domain.types.ecg;
+
+
+interface ECG
+        extends spa.samples.heartpatientmonitoring.domain.types.patient.medical.ClinicalTestResult
+{
+    abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ECGAnalysisReport analysisReport;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice device;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat format;
+    abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ECGProcessingState processingState;
+    abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFile rawData;
+}
+
+interface ECGAnalysisReport
+{
+    readonly abstract java.util.Iterator classifications;
+    abstract spa.samples.heartpatientmonitoring.domain.types.ecg.NatureQRSComplexes natureQRSComplexes;
+    abstract spa.samples.heartpatientmonitoring.domain.types.util.Interval rhythm;
+    abstract spa.samples.heartpatientmonitoring.domain.types.ecg.RhythmType rhythmType;
+    abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ShapePWaves shapePWaves;
+    void addClassification(spa.samples.heartpatientmonitoring.domain.types.ecg.ECGClassification arg1, float arg2);
+    float getConfidenceLevelForClassification(spa.samples.heartpatientmonitoring.domain.types.ecg.ECGClassification arg);
+    float removeClassification(spa.samples.heartpatientmonitoring.domain.types.ecg.ECGClassification arg);
+}
+
+final class ECGClassification
+        extends java.lang.Enum
+{
+    domain {static Normal, static AtrialFibrillation, static Tachycardia}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGClassification AtrialFibrillation;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGClassification Normal;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGClassification Tachycardia;
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.ECGClassification valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.ECGClassification[] values();
+}
+
+interface ECGFile
+{
+}
+
+final class ECGFormat
+        extends java.lang.Enum
+{
+    domain {static CSV, static PDF_ECG, static ECG_XML, static HL7_XML, static mPCG_XML}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat CSV;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat ECG_XML;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat HL7_XML;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat PDF_ECG;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat mPCG_XML;
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat[] values();
+}
+
+final class ECGProcessingState
+        extends java.lang.Enum
+{
+    domain {static ToBeProcessed, static InProgress, static Processed, static Dismissed}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGProcessingState Dismissed;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGProcessingState InProgress;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGProcessingState Processed;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGProcessingState ToBeProcessed;
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.ECGProcessingState valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.ECGProcessingState[] values();
+}
+
+final class NatureQRSComplexes
+        extends java.lang.Enum
+{
+    domain {static Normal, static NarrowAndPointy}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.NatureQRSComplexes NarrowAndPointy;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.NatureQRSComplexes Normal;
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.NatureQRSComplexes valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.NatureQRSComplexes[] values();
+}
+
+final class RhythmType
+        extends java.lang.Enum
+{
+    domain {static Regular, static Irregular, static IrregularlyIrregular}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.RhythmType Irregular;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.RhythmType IrregularlyIrregular;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.RhythmType Regular;
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.RhythmType valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.RhythmType[] values();
+}
+
+final class ShapePWaves
+        extends java.lang.Enum
+{
+    domain {static Normal, static Abnormal}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ShapePWaves Abnormal;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ShapePWaves Normal;
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.ShapePWaves valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.ecg.ShapePWaves[] values();
+}
+
+package spa.samples.heartpatientmonitoring.domain.types.patient;
+
+
+final class Activity
+        extends java.lang.Record
+{
+    Activity(spa.samples.heartpatientmonitoring.domain.types.patient.Patient arg1, spa.samples.heartpatientmonitoring.domain.types.patient.ActivityType arg2, spa.samples.heartpatientmonitoring.domain.types.patient.medical.IntensityLevel arg3, java.time.Instant arg4, java.time.Instant arg5, spa.samples.heartpatientmonitoring.domain.types.util.Location arg6, spa.samples.heartpatientmonitoring.domain.types.util.Location arg7);
+    spa.samples.heartpatientmonitoring.domain.types.patient.ActivityType activityType();
+    spa.samples.heartpatientmonitoring.domain.types.util.Location endLocation();
+    java.time.Instant endTime();
+    final boolean equals(object arg);
+    final int hashCode();
+    spa.samples.heartpatientmonitoring.domain.types.patient.medical.IntensityLevel intensityLevel();
+    spa.samples.heartpatientmonitoring.domain.types.patient.Patient patient();
+    spa.samples.heartpatientmonitoring.domain.types.util.Location startLocation();
+    java.time.Instant startTime();
+    final string toString();
+}
+
+final class ActivityType
+        extends java.lang.Enum
+{
+    domain {static Walking, static Sitting, static Sleeping, static Running, static Eating}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ActivityType Eating;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ActivityType Running;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ActivityType Sitting;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ActivityType Sleeping;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ActivityType Walking;
+    static spa.samples.heartpatientmonitoring.domain.types.patient.ActivityType valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.patient.ActivityType[] values();
+}
+
+final class Address
+        extends java.lang.Record
+{
+    Address(string arg1, string arg2, string arg3, string arg4, string arg5, spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory arg6);
+    string city();
+    string doorNumber();
+    final boolean equals(object arg);
+    final int hashCode();
+    spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory provinceOrTerritory();
+    string streetName();
+    string streetNumber();
+    final string toString();
+    string zipCode();
+}
+
+interface Patient
+{
+    readonly abstract string SSN;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.Address address;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.Activity currentActivity;
+    abstract spa.samples.heartpatientmonitoring.domain.types.util.Location currentLocation;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.PatientState currentState;
+    readonly abstract string firstName;
+    abstract spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice heartMonitor;
+    readonly abstract string lastName;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.PatientMedicalHistory medicalHistory;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ECG mostRecentECG;
+    readonly abstract java.util.Iterator pastActivities;
+    readonly abstract java.util.Iterator pastStates;
+    void archiveCurrentActivity();
+    void archiveCurrentState();
+    java.util.Iterator getECGsBefore(java.time.Instant arg);
+    java.util.Iterator getECGsBetween(java.time.Instant arg1, java.time.Instant arg2);
+    java.util.Iterator getECGsSince(java.time.Instant arg);
+    java.util.Iterator getPastActivitiesByRecency(int[] arg);
+    java.util.Iterator getPastStatesByRecency(int[] arg);
+}
+
+interface PatientState
+{
+    readonly abstract java.util.Iterator clinicalTestResults;
+    abstract java.time.Instant endDate;
+    abstract spa.samples.heartpatientmonitoring.domain.types.util.Location endLocation;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.PatientStateLabel label;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.PatientState previousState;
+    abstract java.time.Instant startDate;
+    abstract spa.samples.heartpatientmonitoring.domain.types.util.Location startLocation;
+    boolean addClinicalTestResult(spa.samples.heartpatientmonitoring.domain.types.patient.medical.ClinicalTestResult arg);
+    spa.samples.heartpatientmonitoring.domain.types.patient.medical.ClinicalTestResult removeClinicalTestResult(spa.samples.heartpatientmonitoring.domain.types.patient.medical.ClinicalTestResult arg);
+}
+
+final class PatientStateLabel
+        extends java.lang.Enum
+{
+    domain {static AllIsNormal, static Discomfort, static Unsafe, static Critical}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.PatientStateLabel AllIsNormal;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.PatientStateLabel Critical;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.PatientStateLabel Discomfort;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.PatientStateLabel Unsafe;
+    static spa.samples.heartpatientmonitoring.domain.types.patient.PatientStateLabel valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.patient.PatientStateLabel[] values();
+}
+
+final class PointOfInterest
+        extends java.lang.Enum
+{
+    static spa.samples.heartpatientmonitoring.domain.types.patient.PointOfInterest valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.patient.PointOfInterest[] values();
+}
+
+final class ProvinceOrTerritory
+        extends java.lang.Enum
+{
+    domain 
+    {
+        static ALBERTA,
+        static BRITISH_COLUMBIA,
+        static MANITOBA,
+        static NEW_BRUNSWICK,
+        static NEWFOUNDLAND_AND_LABRADOR,
+        static NOVA_SCOTIA,
+        static ONTARIO,
+        static PRINCE_EDWARD_ISLAND,
+        static QUEBEC,
+        static SASKATCHEWAN,
+        static NORTHWEST_TERRITORIES,
+        static NUNAVUT,
+        static YUKON
+    }
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory ALBERTA;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory BRITISH_COLUMBIA;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory MANITOBA;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory NEWFOUNDLAND_AND_LABRADOR;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory NEW_BRUNSWICK;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory NORTHWEST_TERRITORIES;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory NOVA_SCOTIA;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory NUNAVUT;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory ONTARIO;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory PRINCE_EDWARD_ISLAND;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory QUEBEC;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory SASKATCHEWAN;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory YUKON;
+    static spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.patient.ProvinceOrTerritory[] values();
+}
+
+package spa.samples.heartpatientmonitoring.domain.types.patient.medical;
+
+
+interface ClinicalTestResult
+{
+    abstract spa.samples.heartpatientmonitoring.domain.types.util.Location endLocation;
+    readonly abstract java.time.Instant endTime;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.Patient patient;
+    abstract spa.samples.heartpatientmonitoring.domain.types.util.Location startLocation;
+    readonly abstract java.time.Instant startTime;
+}
+
+interface HealthCareAct
+{
+    readonly abstract java.util.Iterator ECGs;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareActType actType;
+    abstract java.time.Instant endDate;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareEpisode healthCareEpisode;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareProfessional performedBy;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareInstitution prodiver;
+    writeonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareInstitution provider;
+    abstract java.time.Instant startDate;
+}
+
+interface HealthCareActType
+{
+    abstract string description;
+    readonly abstract string name;
+    readonly abstract java.util.Iterator subtypes;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareActType supertype;
+    void addSubtype(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareActType arg);
+    boolean isSubtypeOf(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareActType arg);
+    spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareActType removeSubtype(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareActType arg);
+}
+
+interface HealthCareEpisode
+{
+    readonly abstract java.util.Iterator careActs;
+    readonly abstract java.time.Instant dateLatestAct;
+    abstract java.time.Instant endDate;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionEpisode healthConditionEpisode;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareAct latestCareAct;
+    abstract java.time.Instant startDate;
+    void addCareAct(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareAct arg);
+    spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareAct removeCareAct(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareAct arg);
+}
+
+final class HealthCareInstitution
+        extends java.lang.Record
+{
+    HealthCareInstitution(string arg1, string arg2, spa.samples.heartpatientmonitoring.domain.types.patient.Address arg3);
+    spa.samples.heartpatientmonitoring.domain.types.patient.Address address();
+    final boolean equals(object arg);
+    final int hashCode();
+    string name();
+    string providerCode();
+    string toString();
+}
+
+final class HealthCareProfessional
+        extends java.lang.Record
+{
+    HealthCareProfessional(string arg1, string arg2, spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareInstitution arg3);
+    spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareInstitution affiliation();
+    final boolean equals(object arg);
+    final int hashCode();
+    string id();
+    string role();
+    final string toString();
+}
+
+interface HealthCondition
+{
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionEpisode abatement;
+    abstract java.time.Instant dateLatestUpdate;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionType healthConditionType;
+    readonly abstract java.util.Iterator history;
+    writeonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionEpisode latestUpdateEpisode;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionEpisode latestUpdatedEpisode;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionEpisode onset;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.PatientMedicalHistory patientMedicalHistory;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.SeverityLevel severity;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus status;
+    void addHealthConditionEpisode(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionEpisode arg);
+    spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionEpisode removeHealthConditionEpisode(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionEpisode arg);
+}
+
+interface HealthConditionEpisode
+{
+    readonly abstract java.util.Iterator careEpisodes;
+    readonly abstract java.time.Instant dateLatestCareEpisode;
+    abstract java.time.Instant endDate;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCondition healthCondition;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareEpisode latestCareEpisode;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.SeverityLevel severityLebvel;
+    writeonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.SeverityLevel severityLevel;
+    abstract java.time.Instant startDate;
+    void addCareEpisode(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareEpisode arg);
+    spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareEpisode removeCareEpisode(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCareEpisode arg);
+}
+
+final class HealthConditionStatus
+        extends java.lang.Enum
+{
+    domain {static Suspected, static DiagnosedConfirmed, static DiagnosedExcluded, static GettingManaged, static ManagedNotStabilized, static ManagedStabilized, static Abated}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus Abated;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus DiagnosedConfirmed;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus DiagnosedExcluded;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus GettingManaged;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus ManagedNotStabilized;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus ManagedStabilized;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus Suspected;
+    static spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionStatus[] values();
+}
+
+interface HealthConditionType
+{
+    readonly abstract java.util.Iterator subtypes;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionType supertype;
+    void addSubtype(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionType arg);
+    spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionType removeSubtype(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthConditionType arg);
+}
+
+final class IntensityLevel
+        extends java.lang.Enum
+{
+    domain {static Low, static Moderate, static High}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.IntensityLevel High;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.IntensityLevel Low;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.IntensityLevel Moderate;
+    static spa.samples.heartpatientmonitoring.domain.types.patient.medical.IntensityLevel valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.patient.medical.IntensityLevel[] values();
+}
+
+interface PatientMedicalHistory
+{
+    readonly abstract java.time.Instant creationDate;
+    abstract java.time.Instant dateLatestUpdate;
+    readonly abstract java.util.Iterator healthConditions;
+    abstract spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCondition latestUpdatedHealthCondition;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.patient.Patient patient;
+    void addHealthCondition(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCondition arg);
+    spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCondition removeHealthCondition(spa.samples.heartpatientmonitoring.domain.types.patient.medical.HealthCondition arg);
+}
+
+final class SeverityLevel
+        extends java.lang.Enum
+{
+    domain {static Benign, static Moderate, static Severe}
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.SeverityLevel Benign;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.SeverityLevel Moderate;
+    static final readonly spa.samples.heartpatientmonitoring.domain.types.patient.medical.SeverityLevel Severe;
+    static spa.samples.heartpatientmonitoring.domain.types.patient.medical.SeverityLevel valueOf(string arg);
+    static spa.samples.heartpatientmonitoring.domain.types.patient.medical.SeverityLevel[] values();
+}
+
+package spa.samples.heartpatientmonitoring.domain.types.util;
+
+
+final class Interval
+        extends java.lang.Record
+{
+    Interval(float arg1, boolean arg2, float arg3, boolean arg4);
+    final boolean equals(object arg);
+    final int hashCode();
+    float lowerBound();
+    boolean lowerBoundIncluded();
+    string toString();
+    float upperBound();
+    boolean upperBoundIncluded();
+}
+
+final class Location
+        extends java.lang.Record
+{
+    Location(float arg1, float arg2, spa.samples.heartpatientmonitoring.domain.types.patient.Address arg3, spa.samples.heartpatientmonitoring.domain.types.patient.PointOfInterest arg4);
+    spa.samples.heartpatientmonitoring.domain.types.patient.Address address();
+    final boolean equals(object arg);
+    final int hashCode();
+    float latitude();
+    float longitude();
+    spa.samples.heartpatientmonitoring.domain.types.patient.PointOfInterest pointOfInterest();
+    final string toString();
 }
 

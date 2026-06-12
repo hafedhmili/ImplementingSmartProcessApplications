@@ -615,25 +615,22 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="sWI6gBt7Zz-HCTNUbYT8-27" value="ECG" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="-466" y="533" width="230" height="179" as="geometry" />
+          <mxGeometry x="-466" y="533" width="230" height="154" as="geometry" />
         </mxCell>
         <mxCell id="T49-8gWw1YxDLMmd6ECP-90" value="rawData: ECGFile" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="sWI6gBt7Zz-HCTNUbYT8-27" vertex="1">
           <mxGeometry y="29" width="230" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="p_iftuBU7bpahiXlnN0R-1" value="rawData: ECGFile" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" vertex="1" parent="sWI6gBt7Zz-HCTNUbYT8-27">
+        <mxCell id="MYkg8GPEbnuDqa89et46-2" value="analysisReport: ECGAnalysisReport" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="sWI6gBt7Zz-HCTNUbYT8-27" vertex="1">
           <mxGeometry y="54" width="230" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="MYkg8GPEbnuDqa89et46-2" value="analysisReport: ECGAnalysisReport" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="sWI6gBt7Zz-HCTNUbYT8-27" vertex="1">
+        <mxCell id="sWI6gBt7Zz-HCTNUbYT8-91" value="processingState: ECGProcessingState" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="sWI6gBt7Zz-HCTNUbYT8-27" vertex="1">
           <mxGeometry y="79" width="230" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="sWI6gBt7Zz-HCTNUbYT8-91" value="processingState: ECGProcessingState" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="sWI6gBt7Zz-HCTNUbYT8-27" vertex="1">
+        <mxCell id="sWI6gBt7Zz-HCTNUbYT8-189" value="device: HeartMonitorDevice" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="sWI6gBt7Zz-HCTNUbYT8-27" vertex="1">
           <mxGeometry y="104" width="230" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="sWI6gBt7Zz-HCTNUbYT8-189" value="device: HeartMonitorDevice" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="sWI6gBt7Zz-HCTNUbYT8-27" vertex="1">
-          <mxGeometry y="129" width="230" height="25" as="geometry" />
-        </mxCell>
         <mxCell id="sWI6gBt7Zz-HCTNUbYT8-93" value="format: ECGFormat" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" parent="sWI6gBt7Zz-HCTNUbYT8-27" vertex="1">
-          <mxGeometry y="154" width="230" height="25" as="geometry" />
+          <mxGeometry y="129" width="230" height="25" as="geometry" />
         </mxCell>
         <mxCell id="sXRn2AK2DT68VbHAYRkv-27" value="ClinicalTestResult" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=29;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="-410" y="900" width="110" height="129" as="geometry" />

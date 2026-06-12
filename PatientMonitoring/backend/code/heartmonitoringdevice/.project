@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>HeartMonitoringDomain</name>
+	<name>heartmonitoringdevice</name>
 	<comment></comment>
 	<projects>
-		<project>heartmonitoringdevice</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

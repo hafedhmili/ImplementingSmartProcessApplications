@@ -1,0 +1,16 @@
+spa/samples/heartpatientmonitoring/domain/types/util/ProvinceOrTerritory.class
+spa/samples/heartpatientmonitoring/domain/types/util/Location.class
+spa/samples/heartpatientmonitoring/domain/types/util/Address.class
+spa/samples/heartpatientmonitoring/domain/types/ecg/ECGFile.class
+spa/samples/heartpatientmonitoring/domain/types/device/DeviceModel.class
+spa/samples/heartpatientmonitoring/domain/types/device/RecordingModality.class
+spa/samples/heartpatientmonitoring/heartmonitor/Main.class
+spa/samples/heartpatientmonitoring/domain/types/device/DeviceType.class
+spa/samples/heartpatientmonitoring/domain/types/ecg/ECGraw.class
+spa/samples/heartpatientmonitoring/domain/types/util/Measurement.class
+spa/samples/heartpatientmonitoring/domain/types/util/PointOfInterest.class
+spa/samples/heartpatientmonitoring/domain/types/device/HeartMonitorDevice.class
+spa/samples/heartpatientmonitoring/domain/types/device/DeviceState.class
+spa/samples/heartpatientmonitoring/domain/types/ecg/ECGFormat.class
+spa/samples/heartpatientmonitoring/domain/types/util/Interval.class
+spa/samples/heartpatientmonitoring/domain/types/device/DeviceFamily.class

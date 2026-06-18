@@ -16,7 +16,7 @@ public interface ECGraw extends Measurement {
 	
 	public ECGFile getRawData();
 	
-	public void setRawData(ECGFile rawDataFile);
+	public void setRawData(ECGFile rawDataFile, ECGFormat format);
 	
 	public ECGFormat getFormat();
 

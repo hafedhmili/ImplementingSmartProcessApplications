@@ -1,8 +1,10 @@
 package spa.samples.heartpatientmonitoring.domain.types.device;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.util.Iterator;
 
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGraw;
 import spa.samples.heartpatientmonitoring.domain.types.util.Location;
 
@@ -120,5 +122,16 @@ public interface HeartMonitorDevice {
 	 * @return
 	 */
 	public ECGraw removeECG(ECGraw anECG);
+
+	/**
+	 * take an ECG with the specified format and duration. This is the 'command' to start taking an ECG. 
+	 * The heart monitor will take the ECG and add it to the list of ECGs, and mark it as the latest ECG.
+	 * For the captured ECG, the start time will be set to the current time, and the end time to the current time plus the duration.
+	 * The start and end location will be set to the current location of the heart monitor.
+	 * @param format
+	 * @param duration
+	 * @return
+	 */
+	public ECGraw takeECG(ECGFormat format, Duration duration);
 
 }

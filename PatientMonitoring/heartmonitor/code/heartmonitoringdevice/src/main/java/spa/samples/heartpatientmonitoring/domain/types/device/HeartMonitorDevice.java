@@ -99,11 +99,24 @@ public interface HeartMonitorDevice {
 	public Instant getLatestStartRecordingTime();
 	
 	/**
-	 * This is the 'command' to start recording at <code>startRecordingTime</code>
+	 * This is called internally to set the start recording time for the latest ECG. 
+	 * It is called by takeECG. 
 	 * @param startRecordingTime
 	 */
 	public void setLatestStartRecordingTime(Instant startRecordingTime);
 	
+	/**
+	 * returns the end recording time for the latest ECG
+	 * @return
+	 */
+	public Instant getLatestEndRecordingTime();
+	
+	/**
+	 * This is called internally to set the end recording time for the latest ECG. 
+	 * It is called by takeECG. 
+	 * @param endRecordingTime
+	 */
+	public void setLatestEndRecordingTime(Instant endRecordingTime);
 	/**
 	 * returns the list of ECGs recorded by the heart monitor
 	 * @return
@@ -128,10 +141,33 @@ public interface HeartMonitorDevice {
 	 * The heart monitor will take the ECG and add it to the list of ECGs, and mark it as the latest ECG.
 	 * For the captured ECG, the start time will be set to the current time, and the end time to the current time plus the duration.
 	 * The start and end location will be set to the current location of the heart monitor.
-	 * @param format
+	 * 
+	 * This changes the state from sleeping to recording, and then to sleeping again when the recording is done.
 	 * @param duration
 	 * @return
 	 */
-	public ECGraw takeECG(ECGFormat format, Duration duration);
+	public ECGraw takeECG(Duration duration);
 
+	/**
+	 * This method changes the state of the hearty monitor from off to sleeping.
+	 */
+	public void turnOn();
+
+	/**
+	 * This method changes the state of the hearty monitor from sleeping to off.
+	 */
+	public void turnOff();
+
+	/**
+	 * returns the current recording format for the device. 
+	 * @return
+	 */
+	public ECGFormat getCurrentECGFormat();
+
+	/**
+	 * We assume that some device models support several recording formats, and a 
+	 * given device can have the recording format set among the supported formats
+	 * @param format
+	 */
+	public void setCurrentECGFormat(ECGFormat format);
 }

@@ -19,6 +19,11 @@ import spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality;
 public class HeartMonitorDeviceImpl implements HeartMonitorDevice {
 
     /**
+     * the current ECG recording format
+     */
+    private ECGFormat currentECGFormat;
+
+    /**
      * the device model of the heart monitor device. It is a mandatory attribute and is set in the constructor.
      */
     private DeviceModel deviceModel;
@@ -57,6 +62,11 @@ public class HeartMonitorDeviceImpl implements HeartMonitorDevice {
      * the latest start recording time of the heart monitor device.
      */
     private Instant latestStartRecordingTime;
+
+       /**
+     * the latest end recording time of the heart monitor device.
+     */
+    private Instant latestEndRecordingTime;
 
     /**
      * the ECG readings recorded by the heart monitor device. It is a collection of ECGraw objects.
@@ -164,13 +174,35 @@ public class HeartMonitorDeviceImpl implements HeartMonitorDevice {
     }
 
     @Override
-    public ECGraw takeECG(ECGFormat format, Duration duration) {
+    public ECGraw takeECG(Duration duration) {
         Instant startTime = Instant.now();
-        ECGFile rawData = getECGFileForRecording(format, startTime, duration);
+        this.setLatestStartRecordingTime(startTime);
+        this.setDeviceState(DeviceState.Recording);
+        // here we fake the recording of the ECG by getting an ECG file for the specified format and duration, 
+        // and then creating an ECGraw object for it, and adding it to the list of ECGs and marking it as the latest ECG.
+        ECGFile rawData = getECGFileForRecording(currentECGFormat, startTime, duration);
                                                                             
-        ECGraw ecg = new ECGRawImpl(this.getDeviceID(), startTime, startTime.plus(duration), rawData, format);
+        ECGraw ecg = new ECGRawImpl(this.getDeviceID(), startTime, startTime.plus(duration), rawData, currentECGFormat);
+
+        // normally, the recording should have taken the specified duration, but in case it took less time, 
+        // to get the corresponding file from the dataset, we wait for the remaining time to elapse 
+        // before mimicking the end of the recording.
+        Instant nowTime = Instant.now();
+
+        Duration timeToWait = Duration.between(nowTime, startTime.plus(duration));
+
+        if (!timeToWait.isNegative()) {
+            try {
+                Thread.sleep(timeToWait.toMillis());
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
         this.addECG(ecg);
         this.setLatestECG(ecg);
+        this.setLatestEndRecordingTime(Instant.now());
+        this.setDeviceState(DeviceState.Sleeping);
         return ecg;
     }
 
@@ -191,5 +223,35 @@ public class HeartMonitorDeviceImpl implements HeartMonitorDevice {
     private ECGFile getECGFileForRecording(ECGFormat format, Instant startTime, Duration duration) {
         return ECGFileImpl.getECGFileForRecording(format, startTime, duration);
     }
-    
+
+    @Override
+    public void turnOn() {
+        this.setDeviceState(DeviceState.Sleeping);
+    }
+
+    @Override
+    public void turnOff() {
+        this.setDeviceState(DeviceState.Off);
+    }
+
+    @Override
+    public Instant getLatestEndRecordingTime() {
+        return latestEndRecordingTime;
+    }
+
+    @Override
+    public void setLatestEndRecordingTime(Instant endRecordingTime) {
+        this.latestEndRecordingTime = endRecordingTime;
+    }
+
+    @Override
+    public ECGFormat getCurrentECGFormat() {
+        return currentECGFormat;
+    }
+
+    @Override
+    public void setCurrentECGFormat(ECGFormat format) {
+        // TODO: check that the recording format is supported by the device model.
+        this.currentECGFormat = format;
+    }
 }

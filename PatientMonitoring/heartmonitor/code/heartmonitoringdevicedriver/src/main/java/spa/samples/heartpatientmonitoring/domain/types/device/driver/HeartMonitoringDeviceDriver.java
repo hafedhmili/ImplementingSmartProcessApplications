@@ -1,6 +1,7 @@
 package spa.samples.heartpatientmonitoring.domain.types.device.driver;
 
 import com.microsoft.azure.sdk.iot.device.IotHubClientProtocol;
+import com.microsoft.azure.sdk.iot.device.exceptions.IotHubClientException;
 import com.microsoft.azure.sdk.iot.device.DeviceClient;
 import spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice;
 import spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality;
@@ -17,12 +18,18 @@ public interface HeartMonitoringDeviceDriver {
 
     public String getPatientID();
 
-    public void startMonitoring();
+    public void startMonitoring() throws IotHubClientException;
 
     public void stopMonitoring();
 
     public String getIotHubConnectionString();
 
-    public void createDeviceClientWith(String iotHubConnectionString, IotHubClientProtocol iotHubConnectionProtocol);
+    public IotHubClientProtocol getIotHubClientProtocol();
+
+    public void setIotHubConnectionString(String connectionString);
+
+    public void setIotHubClientProtocol( IotHubClientProtocol protocol);
+
+    public void createDeviceClientWith() throws IotHubClientException;
 
 }

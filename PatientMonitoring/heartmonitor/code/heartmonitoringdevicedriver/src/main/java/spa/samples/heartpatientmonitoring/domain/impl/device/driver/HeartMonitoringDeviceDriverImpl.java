@@ -76,6 +76,16 @@ public class HeartMonitoringDeviceDriverImpl implements HeartMonitoringDeviceDri
         return heartMonitorDevice.getPatientID();
     }
 
+    /**
+     * This is the function that runs continuously to record ECGs of certain length (<code>durationECG</code>)
+     * in format <code>format</code> every <code>timeBetween ECG</code>.
+     * 
+     * This function is launched into its own thread by the function startMonitoring, as a CompletableFuture.
+     * 
+     * @param durationECG
+     * @param format
+     * @param timeBetweenECG
+     */
     private void recordECGsOfDurationAndFormatEvery(Duration durationECG, ECGFormat format, Duration timeBetweenECG) {
         while (monitoringStatus) {
             try {

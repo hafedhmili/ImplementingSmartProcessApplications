@@ -1,6 +1,7 @@
 package spa.samples.heartpatientmonitoring.domain.types.device;
 
 import java.util.Iterator;
+import java.util.function.BooleanSupplier;
 
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 
@@ -21,5 +22,7 @@ public interface DeviceModel {
 	public void addECGFormat(ECGFormat ecgFormat);
 	
 	public ECGFormat removeECGFormat(ECGFormat ecgFormat);
+
+	public boolean supportsFormat(ECGFormat csv);
 
 }

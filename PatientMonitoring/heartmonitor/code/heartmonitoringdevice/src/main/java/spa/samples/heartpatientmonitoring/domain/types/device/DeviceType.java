@@ -6,7 +6,7 @@ public enum DeviceType {
 	GlucoseMonitor, IndependentActivitytLivingHub, InsulinPump, PeakFlowMeter, PulseOximeter, RespirationRate, SleepApneaBreathingEquipment,
 	StrengthEquipment, Thermometer, WeightScale, DrySaltInhalationTherapyDevice, FlexibleVideoNephroscope, 
 	DenbtalImplantEndosseousPartiallyEmbedded, BareMetalIntracranialVascularStent,DualChamberImplantablePacemakerDemand,
-	IntrauterineCannulaReusable, AirConductionHearingAidAcousticTube, 
+	IntrauterineCannulaReusable, AirConductionHearingAidAcousticTube, HeartMonitor,
 	SpinalCordPeripheralNerveImplantableAnalgesicElectricalStimulationSystemLeadWiredConnection,
 	BlueLightPhototherapyLampForHomeUse, UncoatedKneeFemurProsthesisCeramic, ADAMTS13ActivityIVDKitChemiluminescentImmunoassay
 }

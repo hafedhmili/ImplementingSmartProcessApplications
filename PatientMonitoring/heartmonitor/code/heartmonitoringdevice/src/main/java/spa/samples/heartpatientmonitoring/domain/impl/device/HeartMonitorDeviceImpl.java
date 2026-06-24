@@ -15,6 +15,7 @@ import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGraw;
 import spa.samples.heartpatientmonitoring.domain.types.util.Location;
 import spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice;
 import spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality;
+import spa.samples.heartpatientmonitoring.domain.types.device.UnsupportedECGFormat;
 
 public class HeartMonitorDeviceImpl implements HeartMonitorDevice {
 
@@ -175,12 +176,19 @@ public class HeartMonitorDeviceImpl implements HeartMonitorDevice {
 
     @Override
     public ECGraw takeECG(Duration duration) {
+        // first, check if I am attached to a patient
+        if (this.getPatientID() == null || this.getPatientID().isEmpty()) {
+            System.out.println("Device " + this.deviceID + " not attached to patient. Cannot take ECG!");
+            return (ECGraw)null;
+        }
+
+        // Device is attached to patient. We are good!
         Instant startTime = Instant.now();
         this.setLatestStartRecordingTime(startTime);
         this.setDeviceState(DeviceState.Recording);
         // here we fake the recording of the ECG by getting an ECG file for the specified format and duration, 
         // and then creating an ECGraw object for it, and adding it to the list of ECGs and marking it as the latest ECG.
-        ECGFile rawData = getECGFileForRecording(currentECGFormat, startTime, duration);
+        ECGFile rawData = getECGFileForRecording(this.getPatientID(),currentECGFormat, startTime, duration);
                                                                             
         ECGraw ecg = new ECGRawImpl(this.getDeviceID(), startTime, startTime.plus(duration), rawData, currentECGFormat);
 
@@ -220,8 +228,8 @@ public class HeartMonitorDeviceImpl implements HeartMonitorDevice {
      * @param duration the duration of the recording
      * @return the ECG file
      */
-    private ECGFile getECGFileForRecording(ECGFormat format, Instant startTime, Duration duration) {
-        return ECGFileImpl.getECGFileForRecording(format, startTime, duration);
+    private ECGFile getECGFileForRecording(String patientID, ECGFormat format, Instant startTime, Duration duration) {
+        return ECGFileImpl.getECGFileForRecording(patientID,format, startTime, duration);
     }
 
     @Override
@@ -250,8 +258,13 @@ public class HeartMonitorDeviceImpl implements HeartMonitorDevice {
     }
 
     @Override
-    public void setCurrentECGFormat(ECGFormat format) {
-        // TODO: check that the recording format is supported by the device model.
+    public void setCurrentECGFormat(ECGFormat format) throws UnsupportedECGFormat{
+        if (!supportsECGFormat(format)) throw new UnsupportedECGFormat(this, format);
         this.currentECGFormat = format;
+    }
+
+    @Override
+    public boolean supportsECGFormat(ECGFormat ecgFormat) {
+        return getDeviceModel().supportsFormat(ecgFormat);
     }
 }

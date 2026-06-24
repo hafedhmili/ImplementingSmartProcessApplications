@@ -17,6 +17,8 @@ public interface DeviceFamily {
 	public Iterator<DeviceFamily> getSubfamilies();
 	
 	public void addSubfamily(DeviceFamily subFamily);
+
+	public boolean includesSubfamily(DeviceFamily subFamily);
 	
 	public DeviceFamily removeDeviceSubfamily(DeviceFamily deviceFamily);
 

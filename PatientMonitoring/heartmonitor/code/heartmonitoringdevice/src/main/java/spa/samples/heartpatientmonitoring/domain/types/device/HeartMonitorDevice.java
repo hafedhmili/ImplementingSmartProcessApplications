@@ -138,11 +138,15 @@ public interface HeartMonitorDevice {
 
 	/**
 	 * take an ECG with the specified format and duration. This is the 'command' to start taking an ECG. 
+	 * 
 	 * The heart monitor will take the ECG and add it to the list of ECGs, and mark it as the latest ECG.
 	 * For the captured ECG, the start time will be set to the current time, and the end time to the current time plus the duration.
 	 * The start and end location will be set to the current location of the heart monitor.
 	 * 
 	 * This changes the state from sleeping to recording, and then to sleeping again when the recording is done.
+	 * 
+	 * All of the above that the monitor is attached to a patient (patientID != null). If the patientID is null, it
+	 * prints an error message and returns a null.
 	 * @param duration
 	 * @return
 	 */
@@ -169,5 +173,14 @@ public interface HeartMonitorDevice {
 	 * given device can have the recording format set among the supported formats
 	 * @param format
 	 */
-	public void setCurrentECGFormat(ECGFormat format);
+	public void setCurrentECGFormat(ECGFormat format) throws UnsupportedECGFormat;
+
+
+	/**
+	 * This method checks whether this heart monitor supports the ECGFormat <code>ecgFormat</code>.
+	 * It does so by checking with the device model.
+	 * @param ecgFormat
+	 * @return
+	 */
+	public boolean supportsECGFormat(ECGFormat ecgFormat);
 }

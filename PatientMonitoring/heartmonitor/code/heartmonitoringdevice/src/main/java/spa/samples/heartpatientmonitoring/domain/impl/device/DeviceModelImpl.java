@@ -1,5 +1,7 @@
 package spa.samples.heartpatientmonitoring.domain.impl.device;
 
+import java.util.function.BooleanSupplier;
+
 import spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily;
 import spa.samples.heartpatientmonitoring.domain.types.device.DeviceModel;
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
@@ -77,6 +79,11 @@ public class DeviceModelImpl implements DeviceModel {
     public ECGFormat removeECGFormat(ECGFormat ecgFormat) {
         boolean found = ecgFormats.remove(ecgFormat);
         return found ? ecgFormat : null;
+    }
+
+    @Override
+    public boolean supportsFormat(ECGFormat ecgFormat) {
+        return ecgFormats.contains(ecgFormat);
     }
     
 }

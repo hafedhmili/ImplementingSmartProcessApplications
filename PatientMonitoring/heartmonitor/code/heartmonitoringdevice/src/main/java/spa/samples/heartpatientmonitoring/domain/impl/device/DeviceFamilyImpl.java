@@ -1,4 +1,5 @@
 package spa.samples.heartpatientmonitoring.domain.impl.device;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily;
@@ -8,7 +9,7 @@ public class DeviceFamilyImpl implements DeviceFamily {
 
     private DeviceType deviceType;
 
-	private DeviceFamily superFamily;
+	private DeviceFamily superFamily = null;
 
 	private Collection<DeviceFamily> subFamilies;
 
@@ -18,8 +19,13 @@ public class DeviceFamilyImpl implements DeviceFamily {
 
     public DeviceFamilyImpl(DeviceType deviceType, DeviceFamily superFamily, String familyName) {
         this.deviceType = deviceType;
-        this.superFamily = superFamily;
+        if (superFamily !=null) {
+            this.superFamily = superFamily;
+            superFamily.addSubfamily(this);
+        }      
         this.familyName = familyName;
+        subFamilies = new ArrayList<>();
+       
     }
 	
 
@@ -63,6 +69,12 @@ public class DeviceFamilyImpl implements DeviceFamily {
     public DeviceFamily removeDeviceSubfamily(DeviceFamily deviceFamily) {
         boolean found = subFamilies.remove(deviceFamily);
         return found ? deviceFamily : null;
+    }
+
+
+    @Override
+    public boolean includesSubfamily(DeviceFamily subFamily) {
+        return subFamilies.contains(subFamily);
     }
 
     

@@ -1,13 +1,27 @@
 package spa.samples.heartpatientmonitoring.domain.impl.ecg;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.Instant;
+import java.util.HashMap;
 
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFile;
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 
 public class ECGFileImpl implements ECGFile {
 
-    private static String DATA_ROOT_DIRECTORY = "../../../Cardiology dataset/a-large-scale-12-lead-electrocardiogram-database-for-arrhythmia-study-1.0.0/WFDBRecords/";
+    private static String DATA_ROOT_DIRECTORY = "../../../Cardiology datasets/MIT-BIH-Atrial-Fibrillation-dataset-sample/";
+
+    private static String ECG_FILE_SUFFIX = "_ekg.csv";
+
+    /**
+     * this indicates the number of ECG measurements per second for 
+     * the MIT-BIH Atrial Fibrillation Dataset
+     */
+    private static int ECG_FREQUENCY = 250;
+
+    private static HashMap<String,Integer> fileCursors = new HashMap<>();
 
     public static record FileID(String fileName, String filePath) {
     }
@@ -49,6 +63,17 @@ public class ECGFileImpl implements ECGFile {
         return endRecordingTime;
     }
 
+    /**
+     * This method will extract a data file from the MIT-BIH-Atrial-Fibrillation dataset. That dataset includes a single
+     * 10-hour ECG, for each (of 83) patient. For the purposes of the POC, we will consume the 10-hour ECG files, a 
+     * <code>duration</code> segment at a time, pretending that it was taken at <code>startTime</code>. In reality, we will
+     * simply take the next segment of the MIT-BIH ECG of length <code>duration</code>, ignoring the start time.
+     * @param patientID
+     * @param format
+     * @param startTime
+     * @param duration
+     * @return
+     */
     public static ECGFile getECGFileForRecording(String patientID, ECGFormat format, java.time.Instant startTime, java.time.Duration duration) {
         FileID fileID = getFileID(patientID,format, startTime, duration);
         Instant endTime = startTime.plus(duration);
@@ -59,7 +84,7 @@ public class ECGFileImpl implements ECGFile {
      * This method returns a FileID record that represents the ECG of the patient with id <code>patientID</code>, with
      * ECG format <code>format</code>, with the start time <code>startTime</code> and <code>duration</code>.
      * 
-     * For the time being, we will just decompose the patient to retrieve an arbitrary file from the corresponding directory
+     * For the time being, we will just decompose the 10-hour patient to retrieve an arbitrary file from the corresponding directory
      * @param patientID
      * @param format
      * @param startTime
@@ -67,24 +92,34 @@ public class ECGFileImpl implements ECGFile {
      * @return
      */
     private static FileID getFileID(String patientID, ECGFormat format, java.time.Instant startTime, java.time.Duration duration) {
-        // first, we break the patient id aroud the "."
-        String[] idComponents = patientID.split(".");
-        String topDirectory = idComponents[0];
-        String lowerDirectory = idComponents[1];
-        String filePath = DATA_ROOT_DIRECTORY + "/" + topDirectory+ "/"+ lowerDirectory + "/";
-        String fileName = null;
+        // first, we get the file containing the patient's ECG
+        String nameECGFile= patientID+ECG_FILE_SUFFIX;
+        FileReader patientECGFileReader = null;
+        try {
+            patientECGFileReader = new FileReader(DATA_ROOT_DIRECTORY+nameECGFile);
 
-        // now, pîck an arbitrary .MAT file within the directory DATA_ROOT_DIRECTORY/topDirectory/lowerDirectory
-        // Each such directory contains a RECORDS file which lists the various file names (typically, 100 names).
-        // In the actual directory, we will find a pair of files for each file name: FNAME.hea, and FNAME.MAT.
-        // The first (.hed for header) contains file metadata. The second (.mat) contains the actual ECG
-        // in .mat (MATLAB) format.
-        // Accordingly, we need to read the RECORDS file in DATA_ROOT_DIRECTORY/topDirectory/lowerDirectory, check
-        // its size (most contain 100 entries, except the last one which contains two entries), and pick
-        // one .MAT at random.
-        // Later, we will get smarter about it (e.g. take only the ECGs related to a patient of same age and gender
-        // as the hypothetical patient)
+            // check the curson position for that file. if it is the first time
+            // it means that it is the first time we access this patient's ECG
+            int startCursor = 0;
+            if (fileCursors.containsKey(nameECGFile)) {
+                startCursor = fileCursors.get(nameECGFile);
+            }
+            long endCursor =  startCursor + duration.getSeconds()*ECG_FREQUENCY;
 
-        return new FileID(fileName, filePath);
+            // check if we have afile with rows [startCursor,...,endCursor -1], which is
+            // supposed to correspond to the desired ECG, if not create one
+            String fileNameECG = patientID + "_"+ startCursor + "_" + (endCursor -1);
+
+            // @TODO: code to check existence of file, and create if needed
+
+            patientECGFileReader.close();
+            return new FileID(fileNameECG, DATA_ROOT_DIRECTORY);
+        } catch(FileNotFoundException fnfe){
+            fnfe.printStackTrace();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
+        return null;
     }
 }

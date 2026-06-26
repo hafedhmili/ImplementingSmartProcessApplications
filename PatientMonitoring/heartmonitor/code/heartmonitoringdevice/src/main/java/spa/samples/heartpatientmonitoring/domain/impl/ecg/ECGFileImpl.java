@@ -1,10 +1,17 @@
 package spa.samples.heartpatientmonitoring.domain.impl.ecg;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Instant;
 import java.util.HashMap;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFile;
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
@@ -21,7 +28,7 @@ public class ECGFileImpl implements ECGFile {
      */
     private static int ECG_FREQUENCY = 250;
 
-    private static HashMap<String,Integer> fileCursors = new HashMap<>();
+    private static HashMap<String,Long> fileCursors = new HashMap<>();
 
     public static record FileID(String fileName, String filePath) {
     }
@@ -94,25 +101,40 @@ public class ECGFileImpl implements ECGFile {
     private static FileID getFileID(String patientID, ECGFormat format, java.time.Instant startTime, java.time.Duration duration) {
         // first, we get the file containing the patient's ECG
         String nameECGFile= patientID+ECG_FILE_SUFFIX;
-        FileReader patientECGFileReader = null;
         try {
-            patientECGFileReader = new FileReader(DATA_ROOT_DIRECTORY+nameECGFile);
+            Path patientECGPath = Paths.get(DATA_ROOT_DIRECTORY+nameECGFile);
 
             // check the curson position for that file. if it is the first time
             // it means that it is the first time we access this patient's ECG
-            int startCursor = 0;
+            long startCursor = 0;
+            long endCursor = 0;
             if (fileCursors.containsKey(nameECGFile)) {
                 startCursor = fileCursors.get(nameECGFile);
             }
-            long endCursor =  startCursor + duration.getSeconds()*ECG_FREQUENCY;
+            endCursor =  startCursor + duration.getSeconds()*ECG_FREQUENCY;
+            fileCursors.put(nameECGFile,Long.valueOf(endCursor));
 
             // check if we have afile with rows [startCursor,...,endCursor -1], which is
             // supposed to correspond to the desired ECG, if not create one
             String fileNameECG = patientID + "_"+ startCursor + "_" + (endCursor -1);
 
-            // @TODO: code to check existence of file, and create if needed
+            File ecgFile = new File(DATA_ROOT_DIRECTORY,fileNameECG);
 
-            patientECGFileReader.close();
+            // if it doesn't exist, create it and populate it
+            if (!ecgFile.exists()) {
+                FileWriter ecgFileWriter = new FileWriter(ecgFile);
+                Stream<String> patientECGFileLines = Files.lines(patientECGPath);
+                patientECGFileLines.skip(startCursor-1);
+                long currentCursor = startCursor;
+
+                // copy lines from startCursor to (endCursor-1) into ecgFile
+                while (currentCursor < endCursor) {
+                    Optional<String> line = patientECGFileLines.findFirst();
+                    ecgFileWriter.append(line.get());
+                    patientECGFileLines.skip(1);
+                    currentCursor++;
+                }
+            }
             return new FileID(fileNameECG, DATA_ROOT_DIRECTORY);
         } catch(FileNotFoundException fnfe){
             fnfe.printStackTrace();

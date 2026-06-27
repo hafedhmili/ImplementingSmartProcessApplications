@@ -2,31 +2,28 @@ package spa.samples.heartpatientmonitoring.domain.impl.ecg;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.Instant;
 import java.util.HashMap;
-import java.util.Optional;
-import java.util.stream.Stream;
 
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFile;
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 
 public class ECGFileImpl implements ECGFile {
 
-    private static String DATA_ROOT_DIRECTORY = "../../../Cardiology datasets/MIT-BIH-Atrial-Fibrillation-dataset-sample/";
+    public static String DATA_ROOT_DIRECTORY = "../../../Cardiology datasets/MIT-BIH-Atrial-Fibrillation-dataset-sample/";
 
-    private static String ECG_FILE_SUFFIX = "_ekg.csv";
+    public static String ECG_FILE_SUFFIX = "_ekg.csv";
 
     /**
      * this indicates the number of ECG measurements per second for 
      * the MIT-BIH Atrial Fibrillation Dataset
      */
-    private static int ECG_FREQUENCY = 250;
+    public static int ECG_FREQUENCY = 250;
 
     private static HashMap<String,Long> fileCursors = new HashMap<>();
 
@@ -102,7 +99,7 @@ public class ECGFileImpl implements ECGFile {
         // first, we get the file containing the patient's ECG
         String nameECGFile= patientID+ECG_FILE_SUFFIX;
         try {
-            Path patientECGPath = Paths.get(DATA_ROOT_DIRECTORY+nameECGFile);
+            Path patientFullECGPath = Paths.get(DATA_ROOT_DIRECTORY+patientID+"/"+nameECGFile);
 
             // check the curson position for that file. if it is the first time
             // it means that it is the first time we access this patient's ECG
@@ -116,26 +113,29 @@ public class ECGFileImpl implements ECGFile {
 
             // check if we have afile with rows [startCursor,...,endCursor -1], which is
             // supposed to correspond to the desired ECG, if not create one
-            String fileNameECG = patientID + "_"+ startCursor + "_" + (endCursor -1);
+            String fileNameECG = patientID + "_"+ startCursor + "_" + (endCursor -1) + ECG_FILE_SUFFIX;
 
-            File ecgFile = new File(DATA_ROOT_DIRECTORY,fileNameECG);
+            String fullFileNameECG = DATA_ROOT_DIRECTORY+patientID+"/"+fileNameECG;
+            File ecgFile = new File(fullFileNameECG);
 
             // if it doesn't exist, create it and populate it
             if (!ecgFile.exists()) {
-                FileWriter ecgFileWriter = new FileWriter(ecgFile);
-                Stream<String> patientECGFileLines = Files.lines(patientECGPath);
-                patientECGFileLines.skip(startCursor-1);
-                long currentCursor = startCursor;
+                String firstLine = ",ECG1,ECG2,qrs_annotation,generic_annotation";
 
-                // copy lines from startCursor to (endCursor-1) into ecgFile
-                while (currentCursor < endCursor) {
-                    Optional<String> line = patientECGFileLines.findFirst();
-                    ecgFileWriter.append(line.get());
-                    patientECGFileLines.skip(1);
-                    currentCursor++;
-                }
+                /////
+                Path pathECGFile = Path.of(fullFileNameECG);
+                /////
+                long linesToSkip = (startCursor > 0)? startCursor -1 : 0;
+                Files.writeString(pathECGFile,firstLine + "\n",StandardOpenOption.CREATE);
+                Files.lines(patientFullECGPath).skip(linesToSkip).limit(endCursor-startCursor).forEach((line) -> {
+                    try {
+                        Files.writeString(pathECGFile,line+ "\n",StandardOpenOption.APPEND);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
             }
-            return new FileID(fileNameECG, DATA_ROOT_DIRECTORY);
+            return new FileID(fileNameECG, DATA_ROOT_DIRECTORY+patientID+"/");
         } catch(FileNotFoundException fnfe){
             fnfe.printStackTrace();
         } catch (IOException ioe) {

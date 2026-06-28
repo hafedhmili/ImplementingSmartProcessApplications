@@ -1,4 +1,5 @@
 # Heart Monitoring (Smart Process) Application
+### Hafedh Mili & Ghizlaine El Boussaidi
 
 This section of the repository presents the heart monitoring application.
 

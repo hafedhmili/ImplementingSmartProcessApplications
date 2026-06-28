@@ -1,65 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice" time="0.039" tests="3" errors="0" skipped="0" failures="0">
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="3" failures="2" name="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice" time="0.052" errors="0" skipped="0">
   <properties>
-    <property name="java.specification.version" value="25"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice/target/test-classes:/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice/target/classes:/Users/hafedhmili/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.3/junit-jupiter-api-5.11.3.jar:/Users/hafedhmili/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/hafedhmili/.m2/repository/org/junit/platform/junit-platform-commons/1.11.3/junit-platform-commons-1.11.3.jar:/Users/hafedhmili/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/hafedhmili/.m2/repository/us/hebi/matlab/mat/mfl-core/0.5.15/mfl-core-0.5.15.jar:"/>
-    <property name="java.vm.vendor" value="Homebrew"/>
-    <property name="sun.arch.data.model" value="64"/>
-    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="java.vm.specification.version" value="25"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="17.0.9+9"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/mili_h/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="user.country" value="CA"/>
-    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice/target/surefire/surefirebooter-20260626222009090_3.jar /Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice/target/surefire 2026-06-26T22-20-09_039-jvmRun1 surefire-20260626222009090_1tmp surefire_0-20260626222009090_2tmp"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/mili_h/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="17.0.9+9"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/fc/jvjyplxj3gz6vx_q8m61hqlnsk7f7t/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.8.5/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/mili_h/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/usr/local/Cellar/maven/3.8.5/libexec/conf"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice/target/test-classes:/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice/target/classes:/Users/hafedhmili/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.3/junit-jupiter-api-5.11.3.jar:/Users/hafedhmili/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/hafedhmili/.m2/repository/org/junit/platform/junit-platform-commons/1.11.3/junit-platform-commons-1.11.3.jar:/Users/hafedhmili/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/hafedhmili/.m2/repository/us/hebi/matlab/mat/mfl-core/0.5.15/mfl-core-0.5.15.jar:"/>
-    <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/Users/hafedhmili"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="12.7.6"/>
+    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.8.5/libexec/lib/jansi-native"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/mili_h"/>
+    <property name="user.timezone" value="America/Toronto"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="user.name" value="mili_h"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.8.5/libexec/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install -f /Users/mili_h/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice/pom.xml"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2026-01-20"/>
-    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home"/>
-    <property name="file.separator" value="/"/>
-    <property name="basedir" value="/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
-    <property name="line.separator" value="&#10;"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice/target/surefire/surefirebooter-20260626222009090_3.jar"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="java.runtime.version" value="25.0.2"/>
-    <property name="user.name" value="hafedhmili"/>
-    <property name="stdout.encoding" value="UTF-8"/>
-    <property name="path.separator" value=":"/>
-    <property name="os.version" value="14.6.1"/>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="Homebrew"/>
-    <property name="localRepository" value="/Users/hafedhmili/.m2/repository"/>
-    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="java.io.tmpdir" value="/var/folders/3s/rvth65t973qbqx92jbdx915c0000gp/T/"/>
-    <property name="java.version" value="25.0.2"/>
-    <property name="user.dir" value="/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/heartmonitor/code/heartmonitoringdevice"/>
-    <property name="os.arch" value="aarch64"/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="17.0.9"/>
     <property name="native.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/hafedhmili/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="stderr.encoding" value="UTF-8"/>
-    <property name="java.vendor" value="Homebrew"/>
-    <property name="java.vm.version" value="25.0.2"/>
-    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.stderr.encoding" value="UTF-8"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.8.5/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2023-10-17"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vendor.version" value="Temurin-17.0.9+9"/>
+    <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="java.class.version" value="69.0"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="testHeartMonitorDeviceCreation" classname="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice" time="0.021"/>
-  <testcase name="testDeviceModelCreation" classname="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice" time="0.001"/>
-  <testcase name="testDeviceFamilyCreation" classname="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice" time="0.0"/>
+  <testcase classname="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice" name="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice.testDeviceFamilyCreation" time="0.003"/>
+  <testcase classname="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice" name="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice.testDeviceModelCreation" time="0.002">
+    <failure message="Cannot invoke &quot;spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily.getFamilyName()&quot; because &quot;spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice.PORTABLE_ECG_MONITOR&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily.getFamilyName()&quot; because &quot;spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice.PORTABLE_ECG_MONITOR&quot; is null
+	at spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice.testDeviceModelCreation(TestHeartMonitoringDevice.java:57)
+</failure>
+  </testcase>
+  <testcase classname="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice" name="spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice.testHeartMonitorDeviceCreation" time="0.047">
+    <failure message="Cannot invoke &quot;spa.samples.heartpatientmonitoring.domain.types.device.DeviceModel.getModelName()&quot; because &quot;spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice.WHOOP_50MG_ACTIVITY_TRACKER&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;spa.samples.heartpatientmonitoring.domain.types.device.DeviceModel.getModelName()&quot; because &quot;spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice.WHOOP_50MG_ACTIVITY_TRACKER&quot; is null
+	at spa.samples.heartpatientmonitoring.domain.device.TestHeartMonitoringDevice.testHeartMonitorDeviceCreation(TestHeartMonitoringDevice.java:74)
+</failure>
+  </testcase>
 </testsuite>

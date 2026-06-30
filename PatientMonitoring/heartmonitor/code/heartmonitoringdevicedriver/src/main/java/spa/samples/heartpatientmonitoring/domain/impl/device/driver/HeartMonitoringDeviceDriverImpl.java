@@ -12,9 +12,9 @@ import com.microsoft.azure.sdk.iot.device.FileUploadCompletionNotification;
 import com.microsoft.azure.sdk.iot.device.FileUploadSasUriRequest;
 import com.microsoft.azure.sdk.iot.device.FileUploadSasUriResponse;
 import com.microsoft.azure.sdk.iot.device.IotHubClientProtocol;
+import com.microsoft.azure.sdk.iot.device.Message;
 import com.microsoft.azure.sdk.iot.device.exceptions.IotHubClientException;
 
-import spa.samples.heartpatientmonitoring.domain.types.device.DeviceState;
 import spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice;
 import spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality;
 import spa.samples.heartpatientmonitoring.domain.types.device.driver.HeartMonitoringDeviceDriver;
@@ -28,9 +28,9 @@ public class HeartMonitoringDeviceDriverImpl implements HeartMonitoringDeviceDri
 
     private DeviceClient deviceClient;
 
-    private IotHubClientProtocol iotHubClientProtocol = IotHubClientProtocol.MQTT;
+    private IotHubClientProtocol iotHubClientProtocol = null;
 
-    private String iotHubConnectionString = ""; 
+    private String iotHubConnectionString;
 
     /**
      * This task is used to simulate the monitoring process of the heart monitoring device. 
@@ -178,22 +178,32 @@ public class HeartMonitoringDeviceDriverImpl implements HeartMonitoringDeviceDri
     }
 
     @Override
-    public void createDeviceClientWith() {
-        this.deviceClient = new DeviceClient(iotHubConnectionString, iotHubClientProtocol);
-    }
-
-    @Override
     public IotHubClientProtocol getIotHubClientProtocol() {
         return iotHubClientProtocol;
     }
 
     @Override
-    public void setIotHubConnectionString(String connectionString) {
-        this.iotHubConnectionString = connectionString;
+    public void setIotHubClientProtocol(IotHubClientProtocol protocol) {
+        this.iotHubClientProtocol = protocol;
     }
 
     @Override
-    public void setIotHubClientProtocol(IotHubClientProtocol protocol) {
-        this.iotHubClientProtocol = protocol;
+    public String getIoTHubDeviceId() throws IotHubClientException {
+        return deviceClient.toString();
+    }
+
+    @Override
+    public void connectToBackEnd() throws IotHubClientException {
+        // 1. First, create a device client
+        this.deviceClient = new DeviceClient(iotHubConnectionString, iotHubClientProtocol);
+
+        // 2. Second, do a heart beat
+        try {
+                this.deviceClient.open(true);
+                this.deviceClient.sendEvent(new Message("Hello from heart monitor of patient : " + heartMonitorDevice.getPatientID()));
+            } catch (IllegalStateException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        
     }
 }

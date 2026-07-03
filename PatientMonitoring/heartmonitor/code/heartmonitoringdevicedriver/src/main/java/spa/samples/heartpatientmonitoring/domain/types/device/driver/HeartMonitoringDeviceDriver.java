@@ -2,9 +2,13 @@ package spa.samples.heartpatientmonitoring.domain.types.device.driver;
 
 import com.microsoft.azure.sdk.iot.device.IotHubClientProtocol;
 import com.microsoft.azure.sdk.iot.device.exceptions.IotHubClientException;
+
+import java.io.IOException;
+
 import com.microsoft.azure.sdk.iot.device.DeviceClient;
 import spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice;
 import spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality;
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGraw;
 
 public interface HeartMonitoringDeviceDriver {
 
@@ -101,5 +105,16 @@ public interface HeartMonitoringDeviceDriver {
      * parameters, and sends a test message.
      */
     public void connectToBackEnd() throws IotHubClientException;
+
+
+    /**
+     * Public function to upload a file to the IoT Hub using Azure IoT functionality to upload files.
+     * This function is called by the monitoring task, when it has recorded an ECG and wants to upload 
+     * it to the IoT Hub.
+     * @param ecg
+     * @throws IOException
+     * @throws IotHubClientException
+     */
+    public void uploadFile(ECGraw ecg) throws IOException, IotHubClientException ;
 
 }

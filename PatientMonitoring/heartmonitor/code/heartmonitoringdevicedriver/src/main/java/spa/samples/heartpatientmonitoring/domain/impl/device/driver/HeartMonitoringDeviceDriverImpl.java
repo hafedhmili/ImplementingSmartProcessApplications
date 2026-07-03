@@ -110,7 +110,8 @@ public class HeartMonitoringDeviceDriverImpl implements HeartMonitoringDeviceDri
      * @throws IOException
      * @throws IotHubClientException
      */
-    private void uploadFile(ECGraw ecg) throws IOException, IotHubClientException {
+    @Override
+    public void uploadFile(ECGraw ecg) throws IOException, IotHubClientException {
         ECGFile ecgFile = ecg.getRawData();
         File file = new File(ecgFile.getFilePath(), ecgFile.getFileName());
         // get parameters for uploading the ECG file to the IoT Hub

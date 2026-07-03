@@ -116,7 +116,7 @@ public class HeartMonitoringDeviceDriverImpl implements HeartMonitoringDeviceDri
         File file = new File(ecgFile.getFilePath(), ecgFile.getFileName());
         // get parameters for uploading the ECG file to the IoT Hub
         // The blob name on IoT hub will be deviceID_patientID_ECGstartTime
-        String blobName = heartMonitorDevice.getDeviceID()+ "_"+ heartMonitorDevice.getPatientID() + "_" + ecg.getStartTime();
+        String blobName = heartMonitorDevice.getDeviceID()+ "_"+ heartMonitorDevice.getPatientID() + "_" + ecg.getStartTime().getEpochSecond();
         FileUploadSasUriRequest request = new FileUploadSasUriRequest(blobName);
         FileUploadSasUriResponse sasUriResponse = deviceClient.getFileUploadSasUri(request);
 

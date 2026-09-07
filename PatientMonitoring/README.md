@@ -1,7 +1,7 @@
 # Heart Monitoring (Smart Process) Application
 ### Hafedh Mili, Ghizlaine El Boussaidi & Haroun Mili, with input from Prof. Mohamed Bouguessa, and Dr. Kamel Mili, M.D.
 
-This section of the repository presents the heart monitoring application. The case study was inspired by Dr. Kamel Mili, a practicing cardiologist with many years of experience based in Tunisia. The functional and architectural design were done by Hafedh Mili and Ghizlane ElBoussaidi. Prof. Mohamed Bouguessa, a machine learning expert, specializing in the classification of sequential and graph data helped with the machine learning strategy. Haroun Mili implemented 
+This section of the repository presents the heart monitoring application. The case study was inspired by Dr. Kamel Mili, a practicing cardiologist with many years of experience based in Tunisia. The functional and architectural design were done by Hafedh Mili and Ghizlane ElBoussaidi. Prof. Mohamed Bouguessa, a machine learning expert specializing in the classification of sequential and graph data helped with the machine learning strategy. Haroun Mili implemented the machine learning component, i.e. training an ML model with "matching" published datasets, and exposing it as a (micro)service to classify incoming ECGs.
 
 We introduce the application briefly in the [next section](#overview). The high level architecture is presented in the [High-Level Architecture](#high-level-architecture) section. Section [Heart Monitor](#heart-monitor) gives a brief introduction to the design of the heart monitor. The back-end is explained in [Back End](#back-end).
 

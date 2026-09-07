@@ -6,7 +6,7 @@
 
 ### by Hafedh Mili & Ghizlane Elboussaidi
 
-### with contributions from Mounir Boukadoum, Anis Boubaker, Petko Valtchev, Irina Muhina, and Mohamed Bouguessa
+### with contributions from Mounir Boukadoum, Irina Muhina, Petko Valtchev, Anis Boubaker, Mohamed Bouguessa, and Haroun Mili
 
 This is the companion web site to the aforementioned book, where we go over the design and implementation details of the two case studies introduced in "Chapter 4 - Case Studies for the book", which consist of two applications:
 

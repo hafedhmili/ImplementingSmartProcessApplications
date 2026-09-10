@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>HealthyGroceryShoppingDomain</name>
+	<name>heartmonitoringdomain</name>
 	<comment></comment>
 	<projects>
+		<project>heartmonitoringdomain</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -10,13 +11,19 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1789001765426</id>
+			<id>1789001765428</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

@@ -6,11 +6,11 @@
   <categories>any</categories>
   <paths xsi:type="ilog.rules.studio.model.xom:XOMPath" pathID="XOM">
     <entries xsi:type="ilog.rules.studio.model.xom:LibraryXOMPathEntry" name="org.eclipse.jdt.launching.JRE_CONTAINER" url="file:org.eclipse.jdt.launching.JRE_CONTAINER" kind="LIBRARY" exported="false"/>
-    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="heartmonitoringdomain.jar" url="platform:/HeartMonitoringBusinessObjectModel/resources/xom-libraries/heartmonitoringdomain.jar" exported="true"/>
     <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="heartmonitoringdevice-1.0-SNAPSHOT.jar" url="file:/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/common/code/heartmonitoringdevice/target/heartmonitoringdevice-1.0-SNAPSHOT.jar" exported="true"/>
+    <entries xsi:type="ilog.rules.studio.model.xom:SystemXOMPathEntry" name="heartmonitoringdomain-1.0-SNAPSHOT.jar" url="file:/Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/common/code/heartmonitoringdomainOld/heartmonitoringdomain/target/heartmonitoringdomain-1.0-SNAPSHOT.jar" exported="true"/>
   </paths>
-  <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM">
-    <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="HeartMonitoringDomain" url="platform:/HeartMonitoringBusinessObjectModel/bom/HeartMonitoringDomain.bom" origin="xom:/HeartMonitoringBusinessObjectModel//HeartMonitoringDomain"/>
+  <paths xsi:type="ilog.rules.studio.model.bom:BOMPath" pathID="BOM" pathEntriesModified="true">
+    <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="HeartMonitoringBOM" url="platform:/HeartMonitoringBusinessObjectModel/bom/HeartMonitoringBOM.bom" origin="xom:/HeartMonitoringBusinessObjectModel//Users/hafedhmili/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/common/code/heartmonitoringdevice/target/heartmonitoringdevice-1.0-SNAPSHOT.jar"/>
   </paths>
   <modelFolders xsi:type="ilog.rules.studio.model.base:SourceFolder">
     <name>rules</name>

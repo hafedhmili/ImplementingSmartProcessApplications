@@ -1,4 +1,0 @@
-# Vocabulary Properties
-uuid = 16248a69-1a58-4fc5-b46d-da9d8afa71d2
-spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice.currentLocation#phrase.action = set the current location of {this} to {current location}
-spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice.currentLocation#phrase.navigation = {current location} of {this}

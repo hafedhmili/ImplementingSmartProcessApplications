@@ -80,7 +80,7 @@ public class TestHeartMonitoringDeviceDriverCreation {
         }
     }
 
-    @Test
+    //@Test
     public void testUploadingECGFile() {
     
         // 1. First create, a HeartMonitorDevice

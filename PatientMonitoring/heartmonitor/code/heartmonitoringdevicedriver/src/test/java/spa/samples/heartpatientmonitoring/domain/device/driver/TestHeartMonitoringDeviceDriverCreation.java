@@ -13,20 +13,20 @@ import org.junit.jupiter.api.Test;
 import com.microsoft.azure.sdk.iot.device.IotHubClientProtocol;
 import com.microsoft.azure.sdk.iot.device.exceptions.IotHubClientException;
 
-import spa.samples.heartpatientmonitoring.domain.impl.device.DeviceFamilyImpl;
-import spa.samples.heartpatientmonitoring.domain.impl.device.DeviceModelImpl;
-import spa.samples.heartpatientmonitoring.domain.impl.device.HeartMonitorDeviceImpl;
-import spa.samples.heartpatientmonitoring.domain.impl.device.driver.HeartMonitoringDeviceDriverImpl;
-import spa.samples.heartpatientmonitoring.domain.impl.ecg.ECGFileImpl;
-import spa.samples.heartpatientmonitoring.domain.impl.ecg.ECGRawImpl;
-import spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily;
-import spa.samples.heartpatientmonitoring.domain.types.device.DeviceModel;
-import spa.samples.heartpatientmonitoring.domain.types.device.DeviceType;
-import spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice;
-import spa.samples.heartpatientmonitoring.domain.types.device.driver.HeartMonitoringDeviceDriver;
-import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFile;
-import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
-import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGraw;
+import spa.samples.heartpatientmonitoring.heartmonitor.impl.device.DeviceFamilyImpl;
+import spa.samples.heartpatientmonitoring.heartmonitor.impl.device.DeviceModelImpl;
+import spa.samples.heartpatientmonitoring.heartmonitor.impl.device.HeartMonitorDeviceImpl;
+import spa.samples.heartpatientmonitoring.devicedriver.impl.HeartMonitoringDeviceDriverImpl;
+import spa.samples.heartpatientmonitoring.heartmonitor.impl.ecg.ECGFileImpl;
+import spa.samples.heartpatientmonitoring.heartmonitor.impl.ecg.ECGRawImpl;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceFamily;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceModel;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceType;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice;
+import spa.samples.heartpatientmonitoring.devicedriver.types.HeartMonitoringDeviceDriver;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw;
 
 public class TestHeartMonitoringDeviceDriverCreation {
         

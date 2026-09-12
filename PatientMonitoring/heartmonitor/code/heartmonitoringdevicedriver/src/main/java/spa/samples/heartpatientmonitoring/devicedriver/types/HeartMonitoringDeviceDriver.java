@@ -1,14 +1,15 @@
-package spa.samples.heartpatientmonitoring.domain.types.device.driver;
+package spa.samples.heartpatientmonitoring.devicedriver.types;
 
 import com.microsoft.azure.sdk.iot.device.IotHubClientProtocol;
 import com.microsoft.azure.sdk.iot.device.exceptions.IotHubClientException;
 
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.RecordingModality;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw;
+
 import java.io.IOException;
 
 import com.microsoft.azure.sdk.iot.device.DeviceClient;
-import spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice;
-import spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality;
-import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGraw;
 
 public interface HeartMonitoringDeviceDriver {
 

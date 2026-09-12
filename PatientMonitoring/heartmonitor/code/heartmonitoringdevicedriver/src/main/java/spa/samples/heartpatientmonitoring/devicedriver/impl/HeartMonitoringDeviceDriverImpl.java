@@ -1,4 +1,4 @@
-package spa.samples.heartpatientmonitoring.domain.impl.device.driver;
+package spa.samples.heartpatientmonitoring.devicedriver.impl;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,12 +15,12 @@ import com.microsoft.azure.sdk.iot.device.IotHubClientProtocol;
 import com.microsoft.azure.sdk.iot.device.Message;
 import com.microsoft.azure.sdk.iot.device.exceptions.IotHubClientException;
 
-import spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice;
-import spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality;
-import spa.samples.heartpatientmonitoring.domain.types.device.driver.HeartMonitoringDeviceDriver;
-import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFile;
-import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
-import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGraw;
+import spa.samples.heartpatientmonitoring.devicedriver.types.HeartMonitoringDeviceDriver;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.RecordingModality;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw;
 
 public class HeartMonitoringDeviceDriverImpl implements HeartMonitoringDeviceDriver {
 

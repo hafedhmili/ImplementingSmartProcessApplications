@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>spa.samples.heartpatientmonitoring.domain</groupId>
-            <artifactId>domain</artifactId>
+            <artifactId>heartpatientmonitoringdomain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

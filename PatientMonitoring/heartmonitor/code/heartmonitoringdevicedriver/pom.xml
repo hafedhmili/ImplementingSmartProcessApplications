@@ -12,6 +12,9 @@
         <iot-device-client-version>2.5.1</iot-device-client-version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+
+    <reactor-bom.version>2020.0.40</reactor-bom.version> <!-- Overrides to a 3.4.x version -->
+
     </properties>
 
             <dependencies>

@@ -33,9 +33,9 @@ public class TestHeartMonitoringDeviceDriverCreation {
     
     public static IotHubClientProtocol DefaultIotHubClientProtocol = IotHubClientProtocol.MQTT;
 
-    public static String IotHubIothubownerConnectionString = "HostName=IOT-hub-for-heart-monitors.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=8PzezT5i+ZCso2FYhrUJUJ7LzFKlHJPGnAIoTCGS3ms="; 
+    public static String IotHubIothubownerConnectionString = "HostName=IOT-hub-for-heart-monitors.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=Ndm5cKbaP61pLwz+VzLY2lyUfZyafCebqAIoTBeuDK4="; 
 
-    public static String IotHubDevice04048ConnectionString = "HostName=IOT-hub-for-heart-monitors.azure-devices.net;DeviceId=heart-monitor-PID-04048;SharedAccessKey=n7TfVL8qeOXqvVoC+Zh9nEb79XM/CvQE7sYPeoAoJgk=";
+    public static String IotHubDevice04048ConnectionString = "HostName=IOT-hub-for-heart-monitors.azure-devices.net;DeviceId=heart-monitor-PID-04048;SharedAccessKey=5NDj2K3Jfc8qr9IWFLIHz5zQ2BcA66odQAIoTOun8EY=";
 
     public static DeviceModel WHOOP_50MG_MODEL = null;
 
@@ -80,7 +80,7 @@ public class TestHeartMonitoringDeviceDriverCreation {
         }
     }
 
-    //@Test
+    @Test
     public void testUploadingECGFile() {
     
         // 1. First create, a HeartMonitorDevice

@@ -7,7 +7,7 @@ Recall from [Introduction to the Heart Patient Monitoring Application](../README
 
 ![heart-RPMA processing loop](../images/heart-RPMA-processing-loop.png)
 
-Based on this algorithm, it appears that the back-end is driving. However, like we explained in the introdtcion to the case study ([Introduction](../README.md)), we should have a mixed mode where both the heart monitor and the back-end can initiate action. This entails that the back end would have two processing loops: 1) the processing loop above, amended to add handling of failures in step (10) when the back-end fails to hear from the heart monitor, and 2) an event driven loop that reacts to incoming ECGs, and that "resets the counter". This will be discussed here.
+Based on this algorithm, it appears that the back-end is driving. However, like we explained in the introduction to the case study ([Introduction](../README.md)), we should have a mixed mode where both the heart monitor and the back-end can initiate action. This entails that the back end would have two processing loops: 1) the processing loop above, amended to add handling of failures in step (10) when the back-end fails to hear from the heart monitor, and 2) an event driven loop that reacts to incoming ECGs, and that "resets the counter". This will be discussed here.
 
 In this documenty, we address:
 

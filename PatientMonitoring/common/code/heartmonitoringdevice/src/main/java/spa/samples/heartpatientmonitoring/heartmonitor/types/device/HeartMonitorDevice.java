@@ -153,12 +153,12 @@ public interface HeartMonitorDevice {
 	public ECGraw takeECG(Duration duration);
 
 	/**
-	 * This method changes the state of the hearty monitor from off to sleeping.
+	 * This method changes the state of the heart monitor from off to sleeping.
 	 */
 	public void turnOn();
 
 	/**
-	 * This method changes the state of the hearty monitor from sleeping to off.
+	 * This method changes the state of the heart monitor from sleeping to off.
 	 */
 	public void turnOff();
 

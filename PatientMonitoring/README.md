@@ -29,7 +29,7 @@ For the heart monitoring app, we chose to use two commercial products for the Io
 - [Azure IoT](https://azure.microsoft.com/en-us/solutions/iot)
 
 The resulting architecture is shown in the following Figure (Figure 7.1 from section 7.2.2 of Chapter 7 of the book). ![heart-RPMA high level architecture](images/cardiology-high-level-architecture.png)
-We use IoT Hub to  ommunicate between the heart monitors and the Azure-hosted heart RPMA back-end. To be able to send telemetry data (ECGs) and receive commands from the back-end via IoT Hub, the heart monitors (devices) need to "register" with IoT Hub (stepp (1)): this is done with Azure IoT's Device Provisiong Service (DPS), which obtains from IoT hub connection endpoints and credentials (step (2)), which it communicates back to the devices (step (3)). From that point on, heart monitors will communicate with IoT hub directly (step (4)) which forwards received events to Azure Event Grid, which implements a publish and subscribe protocol to communicate events of interest to the components of the back-end. Those components include:
+We use IoT Hub to  communicate between the heart monitors and the Azure-hosted heart RPMA back-end. To be able to send telemetry data (ECGs) and receive commands from the back-end via IoT Hub, the heart monitors (devices) need to "register" with IoT Hub (stepp (1)): this is done with Azure IoT's Device Provisiong Service (DPS), which obtains from IoT hub connection endpoints and credentials (step (2)), which it communicates back to the devices (step (3)). From that point on, heart monitors will communicate with IoT hub directly (step (4)) which forwards received events to Azure Event Grid, which implements a publish and subscribe protocol to communicate events of interest to the components of the back-end. Those components include:
 
  - The component that uses machine learning to classify the most recently uploaded ECG.
  - The component that uses business rules to figure out what to do about the results of the classification. Some of the possible outcomes include taking more frequent, or longer ECGs.
@@ -46,3 +46,8 @@ This dichotomy is typical of IoT applications where the term "device" usually re
 For the purposes of this case study, we are *simulating* the physical layer (not using real smart watches), but implementing the software layer the way it would be in real life. This is described in more detail in [Architecture of the device layer](heartmonitor/README.md). 
 ## Back end
 
+The back-end of the Heart Monitoring SPA is supposed to implement the following processing loop (see below). 
+
+![heart-RPMA processing loop](../PatientMonitoring/images/heart-RPMA-processing-loop.png)
+
+In the first step (1:), the back-end gets an ECG from the heart monitor, and records the time (step 2:). We can consider these steps to correspond to "turning on the system",Based on this algorithm, it appears that the back-end is driving. However, like we explained in the introduction to the case study ([Introduction](../README.md)), we should have a mixed mode where both the heart monitor and the back-end can initiate action. This entails that the back end would have two processing loops: 1) the processing loop above, amended to add handling of failures in step (10) when the back-end fails to hear from the heart monitor, and 2) an event driven loop that reacts to incoming ECGs, and that "resets the counter". This will be discussed here

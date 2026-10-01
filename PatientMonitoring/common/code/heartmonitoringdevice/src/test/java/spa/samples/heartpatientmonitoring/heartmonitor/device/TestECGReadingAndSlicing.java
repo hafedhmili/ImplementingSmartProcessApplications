@@ -15,7 +15,8 @@ import org.junit.jupiter.api.Test;
 
 import spa.samples.heartpatientmonitoring.heartmonitor.impl.ecg.ECGFileImpl;
 import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceState;
 
 public class TestECGReadingAndSlicing {
     @Test

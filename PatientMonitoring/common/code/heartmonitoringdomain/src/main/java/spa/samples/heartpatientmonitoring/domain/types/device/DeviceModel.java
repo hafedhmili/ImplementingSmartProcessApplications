@@ -1,9 +1,8 @@
-package spa.samples.heartpatientmonitoring.heartmonitor.types.device;
+package spa.samples.heartpatientmonitoring.domain.types.device;
 
 import java.util.Iterator;
-import java.util.function.BooleanSupplier;
 
-import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 
 public interface DeviceModel {
 	

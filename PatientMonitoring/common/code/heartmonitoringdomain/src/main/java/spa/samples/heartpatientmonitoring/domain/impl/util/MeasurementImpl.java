@@ -1,6 +1,7 @@
 package spa.samples.heartpatientmonitoring.domain.impl.util;
 import java.time.Instant;
 
+import spa.samples.heartpatientmonitoring.domain.types.device.MeasurementDevice;
 import spa.samples.heartpatientmonitoring.domain.types.util.Location;
 import spa.samples.heartpatientmonitoring.domain.types.util.Measurement;
 import spa.samples.heartpatientmonitoring.domain.types.util.MeasurementType;
@@ -12,6 +13,8 @@ public class MeasurementImpl implements Measurement {
     private Location startLocation;
     private Location endLocation;  
     private MeasurementType measurementType;
+    private MeasurementDevice measurementDevice;
+    private String measurementDeviceId;
 
     /**
      * a convenience constructor to create a measurement with the start and end time set to the current time, 
@@ -65,6 +68,19 @@ public class MeasurementImpl implements Measurement {
     @Override
     public MeasurementType getMeasurementType() {
         return measurementType;
+    }
+
+    @Override
+    public MeasurementDevice getMeasurementDevice() {
+        return this.measurementDevice;  }
+
+    @Override
+    public String getMeasurementDeviceId() {
+        if (this.measurementDevice != null) {
+            return this.measurementDevice.getDeviceID();
+        } else {
+            return this.measurementDeviceId;  
+        }
     }
     
 }

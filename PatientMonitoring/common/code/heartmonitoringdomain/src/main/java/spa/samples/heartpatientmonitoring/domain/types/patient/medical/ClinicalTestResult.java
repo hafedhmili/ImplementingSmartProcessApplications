@@ -8,4 +8,6 @@ public interface ClinicalTestResult extends Measurement {
 
 	public Patient getPatient();
 
+	public String getPatientID();
+
 }

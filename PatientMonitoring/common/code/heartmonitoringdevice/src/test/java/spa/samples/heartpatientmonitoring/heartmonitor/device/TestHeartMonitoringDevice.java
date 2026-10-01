@@ -7,15 +7,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeAll;
 
-import spa.samples.heartpatientmonitoring.heartmonitor.impl.device.DeviceFamilyImpl;
-import spa.samples.heartpatientmonitoring.heartmonitor.impl.device.DeviceModelImpl;
+import spa.samples.heartpatientmonitoring.domain.impl.device.DeviceFamilyImpl;
+import spa.samples.heartpatientmonitoring.domain.impl.device.DeviceModelImpl;
 import spa.samples.heartpatientmonitoring.heartmonitor.impl.device.HeartMonitorDeviceImpl;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceFamily;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceModel;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceState;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceType;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily;
+import spa.samples.heartpatientmonitoring.domain.impl.device.DeviceFamilyImpl;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceModel;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceState;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceType;
 import spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 
 public class TestHeartMonitoringDevice {
 

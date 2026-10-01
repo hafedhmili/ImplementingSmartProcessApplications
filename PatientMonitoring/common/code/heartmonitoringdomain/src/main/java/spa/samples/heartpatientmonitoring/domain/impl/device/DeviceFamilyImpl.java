@@ -1,9 +1,9 @@
-package spa.samples.heartpatientmonitoring.heartmonitor.impl.device;
+package spa.samples.heartpatientmonitoring.domain.impl.device;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceFamily;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceType;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceType;
 
 public class DeviceFamilyImpl implements DeviceFamily {
 

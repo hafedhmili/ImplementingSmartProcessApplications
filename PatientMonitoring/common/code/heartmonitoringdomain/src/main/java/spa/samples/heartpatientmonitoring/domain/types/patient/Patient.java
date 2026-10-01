@@ -3,7 +3,8 @@ package spa.samples.heartpatientmonitoring.domain.types.patient;
 import java.time.Instant;
 import java.util.Iterator;
 
-import spa.samples.heartpatientmonitoring.domain.types.device.HeartMonitorDevice;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceType;
+import spa.samples.heartpatientmonitoring.domain.types.device.MeasurementDevice;
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECG;
 import spa.samples.heartpatientmonitoring.domain.types.patient.medical.PatientMedicalHistory;
 import spa.samples.heartpatientmonitoring.domain.types.util.Address;
@@ -54,10 +55,12 @@ public interface Patient {
 	public Iterator<ECG> getECGsSince(Instant referenceTime);
 	
 	public Iterator<ECG> getECGsBetween(Instant startTime, Instant endTime);
+
+	public Iterator<MeasurementDevice> getMeasurementDevices();
 	
-	public HeartMonitorDevice getHeartMonitor();
+	public MeasurementDevice getDeviceOfType(DeviceType deviceType);
 	
-	public void setHeartMonitor(HeartMonitorDevice device);
+	public void addMeasurementDevice(MeasurementDevice device);
 	
 
 }

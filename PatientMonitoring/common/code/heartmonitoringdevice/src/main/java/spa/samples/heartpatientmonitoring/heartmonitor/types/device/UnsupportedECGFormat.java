@@ -1,6 +1,6 @@
 package spa.samples.heartpatientmonitoring.heartmonitor.types.device;
 
-import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 
 public class UnsupportedECGFormat extends Exception {
 

@@ -1,4 +1,4 @@
-package spa.samples.heartpatientmonitoring.heartmonitor.types.device;
+package spa.samples.heartpatientmonitoring.domain.types.device;
 
 import java.time.Duration;
 

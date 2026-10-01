@@ -4,6 +4,7 @@
 package spa.samples.heartpatientmonitoring.heartmonitor.types.ecg;
 
 import spa.samples.heartpatientmonitoring.domain.types.util.Measurement;
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 
 /**
  * Author: Hafedh Mili

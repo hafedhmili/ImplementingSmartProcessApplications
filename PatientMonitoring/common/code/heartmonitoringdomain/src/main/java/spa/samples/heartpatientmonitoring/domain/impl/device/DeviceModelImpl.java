@@ -1,10 +1,8 @@
-package spa.samples.heartpatientmonitoring.heartmonitor.impl.device;
+package spa.samples.heartpatientmonitoring.domain.impl.device;
 
-import java.util.function.BooleanSupplier;
-
-import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceFamily;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.device.DeviceModel;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceFamily;
+import spa.samples.heartpatientmonitoring.domain.types.device.DeviceModel;
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 
 public class DeviceModelImpl implements DeviceModel {
 

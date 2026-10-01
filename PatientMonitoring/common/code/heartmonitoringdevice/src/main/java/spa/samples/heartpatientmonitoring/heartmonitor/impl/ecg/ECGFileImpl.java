@@ -11,7 +11,7 @@ import java.time.Instant;
 import java.util.HashMap;
 
 import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 
 public class ECGFileImpl implements ECGFile {
 

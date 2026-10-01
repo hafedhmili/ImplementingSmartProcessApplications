@@ -1,0 +1,8 @@
+spa/samples/heartpatientmonitoring/heartmonitor/types/ecg/ECGraw.class
+spa/samples/heartpatientmonitoring/heartmonitor/types/device/UnsupportedECGFormat.class
+spa/samples/heartpatientmonitoring/heartmonitor/impl/ecg/ECGRawImpl.class
+spa/samples/heartpatientmonitoring/heartmonitor/impl/ecg/ECGFileImpl.class
+spa/samples/heartpatientmonitoring/heartmonitor/types/device/HeartMonitorDevice.class
+spa/samples/heartpatientmonitoring/heartmonitor/impl/ecg/ECGFileImpl$FileID.class
+spa/samples/heartpatientmonitoring/heartmonitor/types/ecg/ECGFile.class
+spa/samples/heartpatientmonitoring/heartmonitor/impl/device/HeartMonitorDeviceImpl.class

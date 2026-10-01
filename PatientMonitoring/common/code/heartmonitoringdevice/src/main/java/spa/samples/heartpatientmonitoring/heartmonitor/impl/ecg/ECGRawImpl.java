@@ -4,7 +4,7 @@ import java.time.Instant;
 
 import spa.samples.heartpatientmonitoring.domain.impl.util.MeasurementImpl;
 import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile;
-import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFormat;
+import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw;
 import spa.samples.heartpatientmonitoring.domain.types.util.MeasurementType;
 

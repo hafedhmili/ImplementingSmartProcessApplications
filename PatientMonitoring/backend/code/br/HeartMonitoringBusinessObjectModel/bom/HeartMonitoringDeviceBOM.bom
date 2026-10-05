@@ -1,0 +1,44 @@
+
+#loadGetterSetterAsProperties
+property origin "xom:/HeartMonitoringBusinessObjectModel//Users/mili_h/Dropbox/JRules book/2018-book/case studies/ImplementingSmartProcessApplications/PatientMonitoring/common/code/heartmonitoringdevice/target/heartmonitoringdevice-1.0-SNAPSHOT.jar"
+property uuid "a99f476c-0ddd-4905-8c68-05d328d024ae"
+package spa.samples.heartpatientmonitoring.heartmonitor.types.device;
+
+
+interface HeartMonitorDevice
+        extends spa.samples.heartpatientmonitoring.domain.types.device.MeasurementDevice
+{
+    abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat currentECGFormat;
+    boolean supportsECGFormat(spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat arg);
+    spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw takeECG(java.time.Duration arg);
+}
+
+class UnsupportedECGFormat
+        extends java.lang.Exception
+{
+    readonly spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice device;
+    readonly spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat unsupportedFormat;
+    UnsupportedECGFormat(spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice arg1, spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat arg2);
+}
+
+package spa.samples.heartpatientmonitoring.heartmonitor.types.ecg;
+
+
+interface ECGFile
+{
+    readonly abstract java.time.Instant endRecordingTime;
+    readonly abstract string fileName;
+    readonly abstract string filePath;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat format;
+    readonly abstract java.time.Instant startRecordingTime;
+}
+
+interface ECGraw
+        extends spa.samples.heartpatientmonitoring.domain.types.util.Measurement
+{
+    abstract string deviceID;
+    readonly abstract spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat format;
+    readonly abstract spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile rawData;
+    void setRawData(spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile arg1, spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat arg2);
+}
+

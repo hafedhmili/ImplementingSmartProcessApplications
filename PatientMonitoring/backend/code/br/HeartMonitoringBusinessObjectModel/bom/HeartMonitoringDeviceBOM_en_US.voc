@@ -1,0 +1,25 @@
+# Vocabulary Properties
+uuid = 85408866-75d6-4613-ab7c-4551d011569e
+
+# spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice
+spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice#concept.label = heart monitor device
+spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice.currentECGFormat#phrase.action = set the current ECGFormat of {this} to {current ECGFormat}
+spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice.currentECGFormat#phrase.navigation = {current ECGFormat} of {this}
+
+# spa.samples.heartpatientmonitoring.heartmonitor.types.device.UnsupportedECGFormat
+spa.samples.heartpatientmonitoring.heartmonitor.types.device.UnsupportedECGFormat#concept.label = unsupported ECGFormat
+spa.samples.heartpatientmonitoring.heartmonitor.types.device.UnsupportedECGFormat.device#phrase.navigation = {device} of {this}
+spa.samples.heartpatientmonitoring.heartmonitor.types.device.UnsupportedECGFormat.unsupportedFormat#phrase.navigation = {unsupported format} of {this}
+
+# spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile
+spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile#concept.label = ECGFile
+spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile.fileName#phrase.navigation = {file name} of {this}
+spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile.filePath#phrase.navigation = {file path} of {this}
+spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGFile.format#phrase.navigation = {format} of {this}
+
+# spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw
+spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw#concept.label = ECGraw
+spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw.deviceID#phrase.action = set the device ID of {this} to {device ID}
+spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw.deviceID#phrase.navigation = {device ID} of {this}
+spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw.format#phrase.navigation = {format} of {this}
+spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw.rawData#phrase.navigation = {raw data} of {this}

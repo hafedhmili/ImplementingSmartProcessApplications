@@ -6,6 +6,9 @@ import java.util.Iterator;
 
 import spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality;
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECG;
+import com.microsoft.azure.sdk.iot.service.*;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 public interface HeartRPMABackEnd {
 
@@ -132,7 +135,7 @@ public interface HeartRPMABackEnd {
      * @param perWhatPeriod
      * @param howLong
      */
-    public void setRecordingModality(int howManyTime, Duration perWhatPeriod, Duration howLong);
+    public void setRecordingModality(int howManyTimes, Duration perWhatPeriod, Duration howLong);
 
     /**
      * returns the current recording modality for ECGs.
@@ -170,4 +173,44 @@ public interface HeartRPMABackEnd {
      * @param mlComponentBinding
      */
     public void setMLComponentBinding(MLComponentBinding mlComponentBinding);
+
+    /**
+     * This method will connect to the Azure IoT Hub using the connection string and protocol specified in the IoTHubBinding record.
+     * @throws IOException
+     * @throws URISyntaxException
+     */
+    public void connectToAzureIoTHub() throws IOException, URISyntaxException;
+
+    /**
+     * This method will send a message to the Azure IoT Hub using the specified Message object. 
+     * The message will be sent using the connection string and protocol specified in the IoTHubBinding record.
+     * @param message
+     * @throws IOException
+     * @throws URISyntaxException
+     */
+    public void sendMessageToAzureIoTHub(Message message) throws IOException, URISyntaxException;
+
+    /**
+     * This method will set the IoTHubBinding for the HeartRPMABackEnd. 
+     * The IoTHubBinding contains the connection string and protocol needed to connect to the Azure IoT Hub.
+     * @param iotHubBinding
+     */
+    public void setIoTHubBinding(IoTHubBinding iotHubBinding);
+
+    /**
+     * This method will return the IoTHubBinding for the HeartRPMABackEnd.
+     * @return
+     */
+    public IoTHubBinding getIoTHubBinding();
+
+    /**
+     * This method will send a message to the HeartMonitoringDevice using the specified HeartMonitoringDeviceMessage object.
+     * The HeartMonitoringDeviceMessage contains the data to be sent to the device. In our case, it will be a message to the 
+     * device to change its recording modality. We could add other messages to the device, but for now we will keep it simple.
+     * @param device
+     * @param message
+     * @throws IOException
+     * @throws URISyntaxException
+     */
+    public void sendMessageToHeartMonitoringDevice(HeartMonitoringDevice device, HeartMonitoringDeviceMessage message) throws IOException, URISyntaxException;
 }

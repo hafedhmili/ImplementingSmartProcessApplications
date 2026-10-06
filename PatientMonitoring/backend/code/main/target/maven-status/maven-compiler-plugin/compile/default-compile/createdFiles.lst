@@ -1,3 +1,9 @@
+spa/samples/heartpatientmonitoring/backend/types/BRComponentBinding.class
 spa/samples/heartpatientmonitoring/backend/Main.class
-spa/samples/heartpatientmonitoring/backend/types/HeartMonitoringDevice.class
+spa/samples/heartpatientmonitoring/backend/impl/HeartRPMABackEndImpl.class
 spa/samples/heartpatientmonitoring/backend/types/HeartRPMABackEnd.class
+spa/samples/heartpatientmonitoring/backend/types/BackEndFactory.class
+spa/samples/heartpatientmonitoring/backend/types/IoTHubBinding.class
+spa/samples/heartpatientmonitoring/backend/types/HeartMonitoringDeviceMessage.class
+spa/samples/heartpatientmonitoring/backend/types/MLComponentBinding.class
+spa/samples/heartpatientmonitoring/backend/impl/BackEndFactoryImpl.class

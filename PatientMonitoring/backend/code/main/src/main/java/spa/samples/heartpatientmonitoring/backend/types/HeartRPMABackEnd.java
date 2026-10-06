@@ -6,6 +6,8 @@ import java.util.Iterator;
 
 import spa.samples.heartpatientmonitoring.domain.types.device.RecordingModality;
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECG;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice;
+
 import com.microsoft.azure.sdk.iot.service.*;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -115,7 +117,7 @@ public interface HeartRPMABackEnd {
      * other things to figure out whether to take its readings seriously.
      * @return
      */
-    public HeartMonitoringDevice getHeartMonitoringDevice();
+    public HeartMonitorDevice getHeartMonitoringDevice();
 
     /**
      * This method will set the recording modality for the ECG. This method will be called
@@ -182,6 +184,13 @@ public interface HeartRPMABackEnd {
     public void connectToAzureIoTHub() throws IOException, URISyntaxException;
 
     /**
+     * This method will return the ServiceClient that is used to connect to the Azure IoT Hub.
+     * The ServiceClient is created using the method connectToAzureIoTHub().
+     * @return
+     */
+    public ServiceClient getServiceClient();
+
+    /**
      * This method will send a message to the Azure IoT Hub using the specified Message object. 
      * The message will be sent using the connection string and protocol specified in the IoTHubBinding record.
      * @param message
@@ -212,5 +221,5 @@ public interface HeartRPMABackEnd {
      * @throws IOException
      * @throws URISyntaxException
      */
-    public void sendMessageToHeartMonitoringDevice(HeartMonitoringDevice device, HeartMonitoringDeviceMessage message) throws IOException, URISyntaxException;
+    public void sendMessageToHeartMonitoringDevice(HeartMonitorDevice device, HeartMonitoringDeviceMessage message) throws IOException, URISyntaxException;
 }

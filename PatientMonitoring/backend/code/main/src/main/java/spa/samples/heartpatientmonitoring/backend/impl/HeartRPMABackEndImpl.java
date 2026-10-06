@@ -12,7 +12,7 @@ import com.microsoft.azure.sdk.iot.service.Message;
 import com.microsoft.azure.sdk.iot.service.ServiceClient;
 
 import spa.samples.heartpatientmonitoring.backend.types.BRComponentBinding;
-import spa.samples.heartpatientmonitoring.backend.types.HeartMonitoringDevice;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice;
 import spa.samples.heartpatientmonitoring.backend.types.HeartMonitoringDeviceMessage;
 import spa.samples.heartpatientmonitoring.backend.types.IoTHubBinding;
 import spa.samples.heartpatientmonitoring.backend.types.MLComponentBinding;
@@ -29,7 +29,7 @@ public class HeartRPMABackEndImpl implements spa.samples.heartpatientmonitoring.
 
     private RecordingModality recordingModality;
 
-    private HeartMonitoringDevice heartMonitoringDevice;
+    private HeartMonitorDevice heartMonitoringDevice;
 
     private BRComponentBinding brComponentBinding;
 
@@ -117,7 +117,7 @@ public class HeartRPMABackEndImpl implements spa.samples.heartpatientmonitoring.
     }
 
     @Override
-    public HeartMonitoringDevice getHeartMonitoringDevice() {
+    public HeartMonitorDevice getHeartMonitoringDevice() {
         return heartMonitoringDevice;
     }
 
@@ -186,7 +186,7 @@ public class HeartRPMABackEndImpl implements spa.samples.heartpatientmonitoring.
     }
 
     @Override
-    public void sendMessageToHeartMonitoringDevice(HeartMonitoringDevice device, HeartMonitoringDeviceMessage message)
+    public void sendMessageToHeartMonitoringDevice(HeartMonitorDevice device, HeartMonitoringDeviceMessage message)
             throws IOException, URISyntaxException {
         //  1.  I need to serialize the message into a import com.microsoft.azure.sdk.iot.service.Message;
 
@@ -194,6 +194,11 @@ public class HeartRPMABackEndImpl implements spa.samples.heartpatientmonitoring.
 
         //  2.  I need to send the message to the device using the Azure IoT Hub
         throw new UnsupportedOperationException("Unimplemented method 'sendMessageToHeartMonitoringDevice'");
+    }
+
+    @Override
+    public ServiceClient getServiceClient() {
+       return this.serviceClient;
     }
     
 }

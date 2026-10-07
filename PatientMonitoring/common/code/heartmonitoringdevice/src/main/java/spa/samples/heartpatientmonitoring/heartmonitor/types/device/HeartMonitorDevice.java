@@ -1,12 +1,9 @@
 package spa.samples.heartpatientmonitoring.heartmonitor.types.device;
 
 import java.time.Duration;
-import java.time.Instant;
-import java.util.Iterator;
 
 import spa.samples.heartpatientmonitoring.domain.types.ecg.ECGFormat;
 import spa.samples.heartpatientmonitoring.heartmonitor.types.ecg.ECGraw;
-import spa.samples.heartpatientmonitoring.domain.types.util.Location;
 import spa.samples.heartpatientmonitoring.domain.types.device.MeasurementDevice;
 
 public interface HeartMonitorDevice extends MeasurementDevice {

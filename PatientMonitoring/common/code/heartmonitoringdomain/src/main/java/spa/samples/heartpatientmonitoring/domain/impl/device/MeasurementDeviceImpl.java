@@ -17,55 +17,58 @@ public abstract class MeasurementDeviceImpl implements MeasurementDevice {
         /**
      * the device model of the heart monitor device. It is a mandatory attribute and is set in the constructor.
      */
-    private DeviceModel deviceModel;
+    private DeviceModel deviceModel = null;
 
     /*
      * the unique identifier of the heart monitor device.
      */
-    private String deviceID;
+    private String deviceID = null;
 
     /**
      * the patient to whom the heart monitor device is attached. It is set by the method <code>setPatientID(String patientID)</code>.
      */
-    private String patientID;
+    private String patientID = null;
 
     /*
      * the state of the heart monitor device.
      */
-    private DeviceState deviceState;
+    private DeviceState deviceState = DeviceState.Off;
 
        /*
      * the latest ECG reading from the heart monitor device.
      */
-    private Measurement latestMeasurement;
+    private Measurement latestMeasurement = null;
     
     /**
      * the current location of the heart monitor device.
      */
-    private Location currentLocation;
+    private Location currentLocation = null;
 
     /**
      * the latest start recording time of the heart monitor device.
      */
-    private Instant latestStartRecordingTime;
+    private Instant latestStartRecordingTime = null;
 
        /**
      * the latest end recording time of the heart monitor device.
      */
-    private Instant latestEndRecordingTime;
+    private Instant latestEndRecordingTime = null;
 
     /**
      * the ECG readings recorded by the heart monitor device. It is a collection of ECGraw objects.
      */
     private java.util.Collection<Measurement> measurements;
 
+    public MeasurementDeviceImpl(String ID) {
+        this.deviceID = ID;
+        this.measurements = new java.util.ArrayList<>();
+    }
+
     private static String generateId() {return UUID.randomUUID().toString();}
 
     public MeasurementDeviceImpl(DeviceModel deviceModel) {
+        this(generateId());
         this.deviceModel = deviceModel;
-        this.deviceID = generateId();
-        this.deviceState = DeviceState.Off;
-        this.measurements = new java.util.ArrayList<>();
     }
 
     public MeasurementDeviceImpl(DeviceModel deviceModel, String patientID) {

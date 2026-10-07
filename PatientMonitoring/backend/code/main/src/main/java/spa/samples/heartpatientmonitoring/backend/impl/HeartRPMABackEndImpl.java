@@ -12,6 +12,7 @@ import com.microsoft.azure.sdk.iot.service.Message;
 import com.microsoft.azure.sdk.iot.service.ServiceClient;
 
 import spa.samples.heartpatientmonitoring.backend.types.BRComponentBinding;
+import spa.samples.heartpatientmonitoring.backend.types.BackEndFactory;
 import spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice;
 import spa.samples.heartpatientmonitoring.backend.types.HeartMonitoringDeviceMessage;
 import spa.samples.heartpatientmonitoring.backend.types.IoTHubBinding;
@@ -38,6 +39,12 @@ public class HeartRPMABackEndImpl implements spa.samples.heartpatientmonitoring.
     private IoTHubBinding iotHubBinding;
 
     private ServiceClient serviceClient;
+
+    public HeartRPMABackEndImpl(String deviceId) {
+        this.heartMonitoringDevice = BackEndFactory.getSingletonInstance().createHeartMonitoringDevice(deviceId);
+        this.toBeProcessedECGsQueue = new java.util.concurrent.ConcurrentLinkedQueue<ECG>();
+        this.processedECGsQueue = new java.util.concurrent.ConcurrentLinkedQueue<ECG>();
+    }
 
 
 
@@ -189,11 +196,21 @@ public class HeartRPMABackEndImpl implements spa.samples.heartpatientmonitoring.
     public void sendMessageToHeartMonitoringDevice(HeartMonitorDevice device, HeartMonitoringDeviceMessage message)
             throws IOException, URISyntaxException {
         //  1.  I need to serialize the message into a import com.microsoft.azure.sdk.iot.service.Message;
+        Message iotHubMessage = new Message(message.toString());
 
         //  2.  I need to make sure that I am connected to the Azure IoT Hub
+        if (serviceClient != null) {
+            this.connectToAzureIoTHub();
+        }
 
         //  2.  I need to send the message to the device using the Azure IoT Hub
-        throw new UnsupportedOperationException("Unimplemented method 'sendMessageToHeartMonitoringDevice'");
+        try {
+            serviceClient.send(device.getDeviceID(), iotHubMessage);
+            System.out.println("Successfully sent message " + iotHubMessage + " to device with ID " + device.getDeviceID() + " via Azure IoT Hub: ");
+        } catch (Exception e) {
+            System.err.println("Error sending message to Azure IoT Hub: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     @Override

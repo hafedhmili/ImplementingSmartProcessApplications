@@ -22,6 +22,10 @@ import spa.samples.heartpatientmonitoring.domain.types.util.MeasurementType;
 
 public class HeartMonitorDeviceImpl extends MeasurementDeviceImpl implements HeartMonitorDevice {
 
+    public HeartMonitorDeviceImpl(String deviceID) {
+        super(deviceID);
+    }
+
     public HeartMonitorDeviceImpl(DeviceModel deviceModel) {
         super(deviceModel);
     }

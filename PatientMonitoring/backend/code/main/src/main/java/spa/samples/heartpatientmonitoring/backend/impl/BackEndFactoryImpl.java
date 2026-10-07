@@ -5,6 +5,8 @@ import spa.samples.heartpatientmonitoring.backend.types.BackEndFactory;
 import spa.samples.heartpatientmonitoring.backend.types.HeartRPMABackEnd;
 import spa.samples.heartpatientmonitoring.backend.types.IoTHubBinding;
 import spa.samples.heartpatientmonitoring.backend.types.MLComponentBinding;
+import spa.samples.heartpatientmonitoring.heartmonitor.impl.device.HeartMonitorDeviceImpl;
+import spa.samples.heartpatientmonitoring.heartmonitor.types.device.HeartMonitorDevice;
 
 public class BackEndFactoryImpl implements BackEndFactory {
     private static BackEndFactoryImpl singletonInstance = null;
@@ -17,20 +19,31 @@ public class BackEndFactoryImpl implements BackEndFactory {
     }
 
     @Override
-    public HeartRPMABackEnd createHeartRPMABackEnd(IoTHubBinding iotHubBinding) {
-        HeartRPMABackEnd heartRPMABackEndImpl = new HeartRPMABackEndImpl();
+    public HeartRPMABackEnd createHeartRPMABackEnd(String deviceID, IoTHubBinding iotHubBinding) {
+        HeartRPMABackEnd heartRPMABackEndImpl = createHeartRPMABackEnd(deviceID);
         heartRPMABackEndImpl.setIoTHubBinding(iotHubBinding);
         return heartRPMABackEndImpl;
     }
 
     @Override
-    public HeartRPMABackEnd createHeartRPMABackEnd(IoTHubBinding iotHubBinding, MLComponentBinding mlComponentBinding,
+    public HeartRPMABackEnd createHeartRPMABackEnd(String deviceID, IoTHubBinding iotHubBinding, MLComponentBinding mlComponentBinding,
             BRComponentBinding brmsBinding) {
 
-        HeartRPMABackEnd heartRPMABackEndImpl = createHeartRPMABackEnd(iotHubBinding);
+        HeartRPMABackEnd heartRPMABackEndImpl = createHeartRPMABackEnd(deviceID, iotHubBinding);
         heartRPMABackEndImpl.setMLComponentBinding(mlComponentBinding);
         heartRPMABackEndImpl.setBRComponentBinding(brmsBinding);
         return heartRPMABackEndImpl;
     }
-    
+
+    @Override
+    public HeartMonitorDevice createHeartMonitoringDevice(String deviceId) {
+       HeartMonitorDevice heartMonitorDevice = new HeartMonitorDeviceImpl(deviceId);
+       return heartMonitorDevice;
+    }
+
+    @Override
+    public HeartRPMABackEnd createHeartRPMABackEnd(String deviceID) {
+        HeartRPMABackEnd heartRPMABackEndImpl = new HeartRPMABackEndImpl(deviceID);
+        return heartRPMABackEndImpl;
+    }
 }
